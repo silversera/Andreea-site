@@ -313,7 +313,7 @@
         </div>
         <div class="card">
           <div class="profile">
-            <div class="avatar" aria-label="Instructor photo placeholder">GA</div>
+            <img class="avatar" src="eu bun.jpg" alt="Instructor Gina Andreea" style="object-fit:cover" />
             <div>
               <h3 style="margin:0">Gina Andreea</h3>
               <p style="margin:6px 0 0; color:var(--muted); font-size:13px">Pilates • Strength • Rhythm — coaching that prioritizes control, alignment, and confidence.</p>
@@ -548,17 +548,13 @@
           <p>A quick look at the vibe.</p>
         </div>
         <div class="gallery" aria-label="Photo gallery">
-          <div class="gItem" data-title="Pilates flow" data-src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1400&q=70">
-            <img loading="lazy" alt="Pilates flow" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=70" />
-            <span class="gCap">Pilates flow</span>
+          <div class="gItem" data-title="Instructor outdoors" data-src="20250417_094943.jpg">
+            <img loading="lazy" alt="Instructor outdoors" src="20250417_094943.jpg" />
+            <span class="gCap">Outdoor session</span>
           </div>
-          <div class="gItem" data-title="Core strength" data-src="https://images.unsplash.com/photo-1518459031867-a89b944bffe4?auto=format&fit=crop&w=1400&q=70">
-            <img loading="lazy" alt="Core strength" src="https://images.unsplash.com/photo-1518459031867-a89b944bffe4?auto=format&fit=crop&w=900&q=70" />
-            <span class="gCap">Core strength</span>
-          </div>
-          <div class="gItem" data-title="Mobility" data-src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?auto=format&fit=crop&w=1400&q=70">
-            <img loading="lazy" alt="Mobility" src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?auto=format&fit=crop&w=900&q=70" />
-            <span class="gCap">Mobility</span>
+          <div class="gItem" data-title="Pilates class setup" data-src="Screenshot_20260116_150635_Facebook.jpg">
+            <img loading="lazy" alt="Pilates class setup" src="Screenshot_20260116_150635_Facebook.jpg" />
+            <span class="gCap">Pilates Mat Class</span>
           </div>
         </div>
         <p class="mini" style="margin-top:10px">Want these to be your real class photos? Upload images to the repo and I’ll swap the links.</p>
@@ -855,9 +851,4 @@
         const w = card ? (card.getBoundingClientRect().width + 14) : 360;
         slider.scrollBy({ left: dir*w, behavior: 'smooth' });
       }
-      if(prev) prev.addEventListener('click', () => scrollByCard(-1));
-      if(next) next.addEventListener('click', () => scrollByCard(1));
-    });
-  </script>
-</body>
-</html>
+      if(prev) prev.addEventListener
