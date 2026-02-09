@@ -141,6 +141,516 @@
     .map{border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; min-height:330px; background:rgba(0,0,0,.18);}
     iframe{width:100%; height:100%; border:0}
 
+    .reviewsRow{display:flex; gap:14px; overflow-x:auto; padding:14px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;}
+    .reviewsRow::-webkit-scrollbar{height:10px}
+    .reviewsRow::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12); border-radius:999px}
+    .reviewCard{flex:0 0 auto; width:min(420px, 86vw); scroll-snap-align:start; border:1px solid var(--border); background:rgba(0,0,0,.18); border-radius:var(--radius); padding:14px;}
+    .reviewTop{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px}
+    .reviewName{font-weight:700; font-size:13px}
+    .reviewMeta{color:var(--muted); font-size:12px}
+    .stars{display:inline-flex; gap:2px; font-size:12px; line-height:1}
+    .star{opacity:.95}
+    .reviewText{color:var(--text); font-size:13px; margin:10px 0 0; white-space:pre-wrap}
+    .reviewSummary{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-top:8px}
+    .reviewSummaryLeft{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+    .ratingBig{font-size:26px; font-weight:800; letter-spacing:-.4px}
+    .countMuted{color:var(--muted); font-size:12px}
+
+    footer{padding:30px 0 40px; color:var(--muted); font-size:12px}
+    .footRow{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap; border-top:1px solid var(--border); padding-top:16px}
+
+    @media (max-width: 960px){
+      .heroGrid{grid-template-columns:1fr;}
+      h1{font-size:34px}
+      .cards{grid-template-columns:1fr}
+      .twoCol{grid-template-columns:1fr}
+      .contactGrid{grid-template-columns:1fr}
+      .brand{min-width:auto}
+      .links{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Go to top">
+          <div class="logo" aria-hidden="true">AR</div>
+          <div>
+            <b>Andreea's Rhythmic Fitness</b>
+            <span>Pilates • Strength • Rhythm — Portlaoise</span>
+          </div>
+        </a>
+
+        <nav class="links" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#classes">Classes</a>
+          <a href="#schedule">Schedule</a>
+          <a href="#pricing">Pricing</a>          <a href="/terms.html">Terms</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="cta">
+          <a class="btn" href="#pricing">See pricing</a>
+          <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">WhatsApp to book</a>
+          <a class="btn primary" href="#contact">Get started</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="container">
+      <section class="hero">
+        <div class="heroGrid">
+          <div class="hCard">
+            <div class="pad">
+              <h1>Move with control.<br/>Train with rhythm.</h1>
+              <p class="sub">All-level Pilates & fitness sessions designed to build deep core strength, mobility, and confidence — with a friendly, upbeat vibe.</p>
+
+              <div class="pillRow">
+                <span class="pill">All levels welcome</span>
+                <span class="pill">45-minute sessions</span>
+                <span class="pill">Club Vitae Health & Fitness Club, Portlaoise</span>
+                <span class="pill">Pay-as-you-go or bundle</span>
+              </div>
+
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px">
+                <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book on WhatsApp</a>
+                <a class="btn" href="#schedule">View timetable</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hCard">
+            <div class="quick">
+              <div class="qItem">
+                <b>Weekly Class</b>
+                <span>Saturday • 11:00–11:45</span>
+              </div>
+              <div class="qItem">
+                <b>Location</b>
+                <span>Club Vitae Health & Fitness Club, Portlaoise</span>
+              </div>
+              <div class="qItem">
+                <b>Pay as you go</b>
+                <span>€15 / class</span>
+              </div>
+              <div class="qItem">
+                <b>Bundle</b>
+                <span>€48 / 4 sessions</span>
+              </div>
+              <div class="qItem" style="grid-column:1 / -1">
+                <b>Bring</b>
+                <span>Mat optional • water recommended • arrive 5–10 minutes early</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="sectionTitle">
+          <h2>About</h2>
+          <p>Mindful movement + practical strength training.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>Training that feels good</h3>
+            <p>Sessions blend Pilates fundamentals (breath, control, alignment) with strength and rhythm so you leave feeling energized — not wrecked.</p>
+          </div>
+          <div class="card">
+            <h3>Inclusive coaching</h3>
+            <p>Options for beginners and progressions for experienced movers. You’ll get clear cues, form fixes, and a steady pace.</p>
+          </div>
+          <div class="card">
+            <h3>Results you can measure</h3>
+            <p>Build deep core strength, posture, balance, and mobility. Consistency is the goal — the plan is designed to keep you coming back.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="classes">
+        <div class="sectionTitle">
+          <h2>Classes & Services</h2>
+          <p>Pick what fits your week and your goals.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>Pilates Strength & Rhythm</h3>
+            <p>45 minutes, full-body. Core focus, glutes, posture, plus smooth transitions and upbeat energy.</p>
+          </div>
+          <div class="card">
+            <h3>Private Coaching</h3>
+            <p>One-to-one sessions tailored to your goals (strength, mobility, confidence, technique). Ask for availability.</p>
+          </div>
+          <div class="card">
+            <h3>Small Group Training</h3>
+            <p>Train with a friend or two for extra accountability. Programming can be adjusted to your level.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule">
+        <div class="sectionTitle">
+          <h2>Schedule</h2>
+          <p>Simple weekly rhythm — consistent time, consistent progress.</p>
+        </div>
+        <div class="twoCol">
+          <div class="card">
+            <h3>This week</h3>
+            <ul class="list">
+              <li>
+                <div>
+                  <b>Saturday Pilates</b><br/>
+                  <small>All levels • 45 minutes</small>
+                </div>
+                <span class="badge">11:00–11:45</span>
+              </li>
+            </ul>
+            <p style="margin:12px 0 0; color:var(--muted); font-size:12px">Tip: message ahead so your spot is saved.</p>
+          </div>
+          <div class="card">
+            <h3>What to expect</h3>
+            <ul class="list">
+              <li><span>Warm-up + mobility</span><small>8–10 min</small></li>
+              <li><span>Core & posture work</span><small>12–15 min</small></li>
+              <li><span>Strength flow</span><small>15–18 min</small></li>
+              <li><span>Cooldown + breathwork</span><small>3–5 min</small></li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:14px" class="card">
+          <h3>Location</h3>
+          <p style="margin:0 0 12px; color:var(--muted); font-size:13px">Club Vitae Health &amp; Fitness Club, Portlaoise</p>
+          <div class="map" aria-label="Pilates Class Location" style="min-height:360px">
+            <iframe
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Club+Vitae+Health+%26+Fitness+Club+Portlaoise&output=embed">
+            </iframe>
+          </div>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn" href="https://www.google.com/maps/place/Club+Vitae+Health+%26+Fitness+Club+Portlaoise" target="_blank" rel="noreferrer">Open in Google Maps</a>
+            <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book your spot</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="sectionTitle">
+          <h2>Pricing</h2>
+          <p>Flexible options — choose pay-as-you-go or save with a bundle.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>Pay As You Go</h3>
+            <p style="margin-top:8px"><b style="font-size:28px">€15</b> <span style="color:var(--muted)">/ class</span></p>
+            <ul class="list">
+              <li><span>Drop-in friendly</span><small>best for trying it out</small></li>
+              <li><span>All levels welcome</span><small>options provided</small></li>
+            </ul>
+            <div style="margin-top:14px">
+              <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book a drop-in</a>
+            </div>
+          </div>
+          <div class="card">
+            <h3>4-Session Bundle</h3>
+            <p style="margin-top:8px"><b style="font-size:28px">€48</b> <span style="color:var(--muted)">/ 4 classes</span></p>
+            <ul class="list">
+              <li><span>€12 per class</span><small>save vs drop-in</small></li>
+              <li><span>Best for consistency</span><small>progress faster</small></li>
+            </ul>
+            <div style="margin-top:14px">
+              <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Get the bundle</a>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Payment options</h3>
+            <p>Pay in advance by bank transfer or Revolut. If you use bank transfer, please include your name as the reference.</p>
+
+            <div class="payBox" aria-label="Bank transfer details">
+              <div class="payRow">
+                <div>
+                  <div class="payLabel">Bank transfer — Account name</div>
+                  <div class="payValue">Gina Adreea Paun</div>
+                </div>
+                <button class="copyBtn" type="button" data-copy="Gina Adreea Paun">Copy</button>
+              </div>
+              <div class="payRow">
+                <div>
+                  <div class="payLabel">IBAN</div>
+                  <div class="payValue mono">IE69AIBK93351145078007</div>
+                </div>
+                <button class="copyBtn" type="button" data-copy="IE69AIBK93351145078007">Copy</button>
+              </div>
+              <div class="payRow">
+                <div>
+                  <div class="payLabel">SWIFT / BIC</div>
+                  <div class="payValue mono">AIBKIE2D</div>
+                </div>
+                <button class="copyBtn" type="button" data-copy="AIBKIE2D">Copy</button>
+              </div>
+            </div>
+
+            <div class="payBox" aria-label="Revolut details">
+              <div class="payRow">
+                <div>
+                  <div class="payLabel">Revolut</div>
+                  <div class="payValue mono">@andreed579</div>
+                </div>
+                <button class="copyBtn" type="button" data-copy="@andreed579">Copy</button>
+              </div>
+            </div>
+
+            <div class="copyHint" id="copyHint" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="sectionTitle">
+          <h2>Contact & Booking</h2>
+          <p>Fastest: WhatsApp. You can also send a message below.</p>
+        </div>
+
+        <div class="contactGrid">
+          <div class="card">
+            <h3>Send a message</h3>
+            <form id="contactForm">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Your name" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone (optional)</label>
+                <input id="phone" name="phone" placeholder="e.g., +353 ..." autocomplete="tel" />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell me your goals, experience level, and which class you want to join." required></textarea>
+              </div>
+              <button class="btn primary" type="submit">Open WhatsApp with this message</button>
+              <p class="formNote">This form doesn’t send data to a server — it simply opens WhatsApp with a pre-filled message so you can book quickly.</p>
+            </form>
+          </div>
+
+          <div class="map" aria-label="Map">
+            <iframe
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Andreea%27s+Rhythmic+Fitness+Portlaoise&output=embed">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footRow">
+          <div>© <span id="year"></span> Andreea's Rhythmic Fitness • Portlaoise</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn" href="#top">Back to top</a>
+            <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a class="btn" href="https://www.instagram.com/an3eea/?hl=en" target="_blank" rel="noreferrer">Instagram</a>
+            <a class="btn" href="https://www.facebook.com/andreea.aday" target="_blank" rel="noreferrer">Facebook</a>
+            <a class="btn" href="https://www.linkedin.com/in/gina-andreea-serafim-489ab2261/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Prefill WhatsApp message from the form
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const msg = document.getElementById('message').value.trim();
+
+      const lines = [
+        `Hi Andreea, I'm ${name}.`,
+        phone ? `My phone: ${phone}` : null,
+        msg,
+        '',
+        'I’d like to book a class — please let me know the next available spot.'
+      ].filter(Boolean);
+
+      const text = encodeURIComponent(lines.join('\n'));
+      window.open(`https://wa.me/353896032793?text=${text}`, '_blank', 'noopener');
+    });
+
+    // Copy-to-clipboard for payment details
+    function setCopyHint(text){
+      const el = document.getElementById('copyHint');
+      if(!el) return;
+      el.textContent = text;
+      clearTimeout(window.__copyHintTimer);
+      window.__copyHintTimer = setTimeout(() => { el.textContent = ''; }, 2500);
+    }
+
+    document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('.copyBtn');
+      if(!btn) return;
+      const value = btn.getAttribute('data-copy') || '';
+      try{
+        await navigator.clipboard.writeText(value);
+        setCopyHint('Copied to clipboard.');
+      }catch(err){
+        window.prompt('Copy this value:', value);
+      }
+    });
+  </script>
+</body>
+</html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Andreea's Rhythmic Fitness — Pilates, Strength & Rhythm classes in Portlaoise. All levels welcome." />
+  <title>Andreea's Rhythmic Fitness | Portlaoise</title>
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --card:#121623;
+      --muted:#a7b0c0;
+      --text:#eef2ff;
+      --accent:#7c5cff;
+      --accent2:#22c55e;
+      --border:rgba(255,255,255,.10);
+      --shadow:0 16px 50px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(124,92,255,.25), transparent 60%),
+        radial-gradient(900px 600px at 85% 15%, rgba(34,197,94,.18), transparent 55%),
+        radial-gradient(900px 600px at 50% 100%, rgba(59,130,246,.12), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background:linear-gradient(to bottom, rgba(11,13,18,.86), rgba(11,13,18,.55));
+      border-bottom:1px solid var(--border);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:14px;}
+    .brand{display:flex; align-items:center; gap:12px; min-width:210px}
+    .logo{
+      width:42px; height:42px; border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800; font-size:16px; letter-spacing:.5px;
+      background:linear-gradient(135deg, var(--accent), #60a5fa, var(--accent2));
+      color:white;
+      box-shadow:0 0 0 1px rgba(255,255,255,.18) inset, 0 6px 18px rgba(0,0,0,.35);
+    }
+    .brand b{display:block; font-size:14px; letter-spacing:.2px}
+    .brand span{display:block; font-size:12px; color:var(--muted)}
+
+    .links{display:flex; gap:16px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .links a{font-size:13px; color:var(--muted)}
+    .links a:hover{color:var(--text)}
+
+    .cta{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-size:13px;
+      font-weight:600;
+      letter-spacing:.2px;
+      transition:transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.18)}
+    .btn.primary{background:linear-gradient(135deg, rgba(124,92,255,.95), rgba(96,165,250,.85)); border-color:rgba(255,255,255,.16)}
+    .btn.primary:hover{background:linear-gradient(135deg, rgba(124,92,255,1), rgba(96,165,250,.95))}
+    .btn.whatsapp{background:linear-gradient(135deg, rgba(34,197,94,.92), rgba(16,185,129,.78)); border-color:rgba(255,255,255,.14)}
+
+    /* Hero */
+    .hero{padding:46px 0 22px}
+    .heroGrid{display:grid; grid-template-columns: 1.1fr .9fr; gap:22px; align-items:stretch;}
+    .hCard{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .hCard .pad{padding:22px}
+    h1{margin:0 0 10px; font-size:40px; line-height:1.05; letter-spacing:-.6px}
+    .sub{color:var(--muted); font-size:15px; max-width:56ch; margin:0 0 16px}
+    .pillRow{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 0}
+    .pill{font-size:12px; color:var(--muted); border:1px solid var(--border); background:rgba(0,0,0,.18); padding:7px 10px; border-radius:999px}
+
+    .quick{display:grid; grid-template-columns: 1fr 1fr; gap:12px; padding:18px;}
+    .qItem{border:1px solid var(--border); border-radius:16px; background:rgba(0,0,0,.18); padding:14px; min-height:88px;}
+    .qItem b{display:block; font-size:13px; margin-bottom:4px}
+    .qItem span{display:block; color:var(--muted); font-size:12px}
+
+    /* Sections */
+    section{padding:26px 0}
+    .sectionTitle{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:14px}
+    .sectionTitle h2{margin:0; font-size:22px; letter-spacing:-.2px}
+    .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
+
+    .cards{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    .card{border:1px solid var(--border); border-radius:var(--radius); background:rgba(255,255,255,.03); padding:16px;}
+    .card h3{margin:0 0 6px; font-size:15px}
+    .card p{margin:0; color:var(--muted); font-size:13px}
+
+    /* Schedule + Pricing */
+    .twoCol{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    .list{margin:10px 0 0; padding:0; list-style:none}
+    .list li{display:flex; justify-content:space-between; gap:10px; padding:10px 0; border-top:1px solid var(--border)}
+    .list li:first-child{border-top:none; padding-top:0}
+    .list small{color:var(--muted)}
+    .badge{font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--border); background:rgba(0,0,0,.18); color:var(--text)}
+
+    /* Payment details */
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .payBox{margin-top:10px; border:1px solid var(--border); background:rgba(0,0,0,.18); border-radius:14px; padding:12px}
+    .payRow{display:flex; align-items:flex-start; justify-content:space-between; gap:10px; padding:8px 0; border-top:1px solid var(--border)}
+    .payRow:first-child{border-top:none; padding-top:0}
+    .payLabel{color:var(--muted); font-size:12px}
+    .payValue{font-size:13px; word-break:break-word}
+    .copyBtn{flex:0 0 auto; padding:8px 10px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,.04); color:var(--text); font-size:12px; font-weight:700; cursor:pointer}
+    .copyBtn:hover{background:rgba(255,255,255,.06)}
+    .copyBtn:active{transform:translateY(1px)}
+    .copyHint{color:var(--muted); font-size:12px; margin-top:10px}
+
+    /* Contact */
+    .contactGrid{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    .field{display:flex; flex-direction:column; gap:6px; margin-bottom:10px}
+    label{font-size:12px; color:var(--muted)}
+    input, textarea{border:1px solid var(--border); background:rgba(0,0,0,.22); border-radius:14px; padding:12px 12px; color:var(--text); font-size:14px; outline:none;}
+    input:focus, textarea:focus{border-color:rgba(124,92,255,.55)}
+    textarea{min-height:110px; resize:vertical}
+    .formNote{color:var(--muted); font-size:12px; margin:10px 0 0}
+    .map{border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; min-height:330px; background:rgba(0,0,0,.18);}
+    iframe{width:100%; height:100%; border:0}
+
     /* Instagram Reel System */
     .igFeed{
       margin-top:14px;
@@ -617,3 +1127,4 @@
   </script>
 </body>
 </html>
+
