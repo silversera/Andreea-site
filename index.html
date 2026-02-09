@@ -142,6 +142,12 @@
     iframe{width:100%; height:100%; border:0}
 
     /* Reviews */
+    .reviewMap{margin-top:14px; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:rgba(0,0,0,.18);
+      height:clamp(320px, 45vw, 520px);
+    }
+    .reviewMap iframe{display:block; width:100%; height:100%;}
+
+    
     .reviewsRow{display:flex; gap:14px; overflow-x:auto; padding:14px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;}
     .reviewsRow::-webkit-scrollbar{height:10px}
     .reviewsRow::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12); border-radius:999px}
@@ -412,21 +418,13 @@
               <div class="stars" id="gStars" aria-label="Overall rating"></div>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap">
-              <a class="btn" href="https://maps.app.goo.gl/LinHqUrxDBSn8WWY6" target="_blank" rel="noreferrer">Read on Google</a>
+              <a class="btn" href="https://share.google/Sf9XrJHoiVMNNmrlC" target="_blank" rel="noreferrer">Read on Google</a>
               <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book your spot</a>
             </div>
           </div>
 
-          <div style="margin-top:14px; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; min-height:420px;">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d307356.2324675899!2d-7.662908985257552!3d52.998418325302666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473025f88b12dd97%3A0x744d8e795eb9bffd!2sAndreea&#39;s%20Rhythmic%20Fitness!5e0!3m2!1sen!2sie!4v1770641360290!5m2!1sen!2sie"
-              width="100%"
-              height="420"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+          <div class="reviewMap" aria-label="Google reviews map">
+            <iframe$1</iframe>
           </div>
         </div>
       </section>
