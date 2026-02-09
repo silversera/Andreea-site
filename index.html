@@ -247,6 +247,17 @@
 <a class="btn whatsapp" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">WhatsApp to book</a>
 <a class="btn primary" href="#contact">Get started</a>
 </div>
+    <div class="field">
+  <label for="email">Email *</label>
+  <input
+    autocomplete="email"
+    id="email"
+    name="email"
+    type="email"
+    placeholder="yourname@example.com"
+    required
+  />
+</div>
 </div>
 </div>
 </header>
@@ -567,8 +578,8 @@ Due to my background in dance &amp; choreography I am able to use music to creat
 <label for="message">Message</label>
 <textarea id="message" name="message" placeholder="Tell me your goals, experience level, and which class you want to join." required=""></textarea>
 </div>
-<button class="btn primary" type="submit">Open WhatsApp with this message</button>
-<p class="formNote">This form doesn’t send data to a server — it simply opens WhatsApp with a pre-filled message so you can book quickly.</p>
+<button class="btn primary" type="submit">Send booking email</button>
+<p class="formNote">This form doesn’t send data to a server — it simply opens Email with a pre-filled message so you can book quickly.</p>
 </form>
 </div>
 <div aria-label="Map" class="map">
@@ -614,19 +625,23 @@ Due to my background in dance &amp; choreography I am able to use music to creat
           e.preventDefault();
           const name = (document.getElementById('name')?.value || '').trim();
           const phone = (document.getElementById('phone')?.value || '').trim();
+          const email = (document.getElementById('email')?.value || '').trim();
           const msg = (document.getElementById('message')?.value || '').trim();
 
           const lines = [
             `Hi Andreea, I'm ${name}.`,
+            email ? `My email: ${email}` : null,
             phone ? `My phone: ${phone}` : null,
             msg,
             '',
             'I’d like to book a class — please let me know the next available spot.'
           ].filter(Boolean);
 
-          const text = encodeURIComponent(lines.join('
-'));
-          window.open(`https://wa.me/353896032793?text=${text}`, '_blank', 'noopener');
+const subject = encodeURIComponent('Class booking request');
+const body = encodeURIComponent(lines.join('\n'));
+
+const mailto = `mailto:aandreea.paun@gmail.com?subject=${subject}&body=${body}`;
+window.location.href = mailto;
         });
       }
 
@@ -698,4 +713,5 @@ Due to my background in dance &amp; choreography I am able to use music to creat
   </script>
 </body>
 </html>
+
 
