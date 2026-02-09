@@ -141,13 +141,17 @@
     .map{border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; min-height:330px; background:rgba(0,0,0,.18);}
     iframe{width:100%; height:100%; border:0}
 
-    /* Reviews */
-    .reviewMap{margin-top:14px; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:rgba(0,0,0,.18);
-      height:clamp(320px, 45vw, 520px);
+    /* Instagram Reel */
+    .igEmbedWrap{margin-top:14px; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:rgba(0,0,0,.18);
+      width:100%;
+      max-width:520px;
+      margin-left:auto;
+      margin-right:auto;
+      padding:12px;
     }
-    .reviewMap iframe{display:block; width:100%; height:100%;}
+    .igEmbedWrap .countMuted{padding:14px}
+    .igEmbedWrap blockquote{margin:0 !important;}
 
-    
     .reviewsRow{display:flex; gap:14px; overflow-x:auto; padding:14px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;}
     .reviewsRow::-webkit-scrollbar{height:10px}
     .reviewsRow::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12); border-radius:999px}
@@ -194,7 +198,7 @@
           <a href="#classes">Classes</a>
           <a href="#schedule">Schedule</a>
           <a href="#pricing">Pricing</a>
-          <a href="#reviews">Reviews</a>
+          <a href="#updates">Updates</a>
           <a href="/terms.html">Terms</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -402,30 +406,33 @@
         </div>
       </section>
 
-      <section id="reviews">
+      <section id="updates">
         <div class="sectionTitle">
-          <h2>User Reviews</h2>
-          <p>Recent feedback from Google.</p>
+          <h2>Latest Instagram Reel</h2>
+          <p>Fresh updates from Instagram.</p>
         </div>
 
         <div class="card">
-          <div class="reviewSummary">
+          <div class="reviewSummary" style="margin-top:0">
             <div class="reviewSummaryLeft">
               <div>
-                <div class="ratingBig" id="gRating">—</div>
-                <div class="countMuted" id="gCount">Loading reviews…</div>
+                <div class="ratingBig" style="font-size:18px">@an3eea</div>
+                <div class="countMuted" id="igStatus">Loading latest reel…</div>
               </div>
-              <div class="stars" id="gStars" aria-label="Overall rating"></div>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap">
-              <a class="btn" href="https://share.google/Sf9XrJHoiVMNNmrlC" target="_blank" rel="noreferrer">Read on Google</a>
+              <a class="btn" href="https://www.instagram.com/an3eea/?hl=en" target="_blank" rel="noreferrer">Open Instagram</a>
               <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book your spot</a>
             </div>
           </div>
 
-          <div class="reviewMap" aria-label="Google reviews map">
-            <iframe$1</iframe>
+          <div class="igEmbedWrap" aria-label="Latest Instagram reel" id="igEmbedWrap">
+            <div class="countMuted">If the reel doesn’t appear, open Instagram using the button above.</div>
           </div>
+
+          <p class="formNote" style="margin-top:12px">
+            Note: Instagram does not provide a public “latest reel from profile” feed for websites. This embed shows a reel URL (either from a small serverless endpoint or a fallback URL).
+          </p>
         </div>
       </section>
 
@@ -501,8 +508,7 @@
         'I’d like to book a class — please let me know the next available spot.'
       ].filter(Boolean);
 
-      const text = encodeURIComponent(lines.join('
-'));
+      const text = encodeURIComponent(lines.join('\\n'));
       window.open(`https://wa.me/353896032793?text=${text}`, '_blank', 'noopener');
     });
 
@@ -527,79 +533,61 @@
       }
     });
 
-    // Google reviews loader (expects /api/google-reviews)
-    function renderStars(el, rating){
-      const full = Math.floor(rating);
-      const half = (rating - full) >= 0.5;
-      const total = 5;
-      let s = '';
-      for(let i=0;i<total;i++){
-        if(i < full) s += '<span class="star">★</span>';
-        else if(i === full && half) s += '<span class="star">⯨</span>';
-        else s += '<span class="star" style="opacity:.35">★</span>';
-      }
-      el.innerHTML = s;
-    }
+    // Latest Instagram Reel loader
+    // 1) Optional: create /api/ig-latest-reel that returns: { url: "https://www.instagram.com/reel/XXXXX/" }
+    // 2) Otherwise, we fall back to a reel URL you can update.
+    const FALLBACK_REEL_URL = 'https://www.instagram.com/reel/DUaS_-sjUaX/';
 
-    function renderReviews(payload){
-      const row = document.getElementById('reviewsRow');
-      const ratingEl = document.getElementById('gRating');
-      const countEl = document.getElementById('gCount');
-      const starsEl = document.getElementById('gStars');
-      const hintEl = document.getElementById('reviewsHint');
-      if(!row) return;
-
-      const rating = Number(payload?.rating || 0);
-      const count = Number(payload?.user_ratings_total || 0);
-      if(ratingEl) ratingEl.textContent = rating ? rating.toFixed(1) : '—';
-      if(countEl) countEl.textContent = count ? `${count} Google ratings` : 'Google reviews';
-      if(starsEl && rating) renderStars(starsEl, rating);
-      if(hintEl) hintEl.style.display = 'none';
-
-      const reviews = Array.isArray(payload?.reviews) ? payload.reviews : [];
-      row.innerHTML = '';
-
-      if(!reviews.length){
-        row.innerHTML = '<div class="countMuted">No reviews returned yet. Use the “Read on Google” button above.</div>';
-        return;
-      }
-
-      reviews.slice(0, 10).forEach(r => {
-        const card = document.createElement('div');
-        card.className = 'reviewCard';
-        const name = (r.author_name || 'Google user').toString();
-        const time = (r.relative_time_description || '').toString();
-        const text = (r.text || '').toString();
-        const rr = Number(r.rating || 0);
-
-        const rrClamped = Math.max(0, Math.min(5, rr));
-        card.innerHTML = `
-          <div class="reviewTop">
-            <div>
-              <div class="reviewName">${name.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
-              <div class="reviewMeta">${time.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
-            </div>
-            <div class="stars" aria-label="${rrClamped} out of 5">${'<span class="star">★</span>'.repeat(rrClamped)}${'<span class="star" style="opacity:.35">★</span>'.repeat(5-rrClamped)}</div>
-          </div>
-          <div class="reviewText">${text.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
-        `;
-        row.appendChild(card);
+    function ensureInstagramEmbedScript(){
+      return new Promise((resolve) => {
+        if (window.instgrm && window.instgrm.Embeds) return resolve();
+        const existing = document.querySelector('script[data-ig-embed]');
+        if (existing) {
+          existing.addEventListener('load', () => resolve());
+          return;
+        }
+        const s = document.createElement('script');
+        s.src = 'https://www.instagram.com/embed.js';
+        s.async = true;
+        s.defer = true;
+        s.setAttribute('data-ig-embed', '1');
+        s.onload = () => resolve();
+        document.body.appendChild(s);
       });
     }
 
-    async function loadGoogleReviews(){
+    async function renderReel(url){
+      const wrap = document.getElementById('igEmbedWrap');
+      const status = document.getElementById('igStatus');
+      if(!wrap) return;
+
+      const permalink = url.endsWith('/') ? url : (url + '/');
+      wrap.innerHTML = `
+        <blockquote class="instagram-media" data-instgrm-permalink="${permalink}" data-instgrm-version="14" style="background:#0000; border:0; margin:0; padding:0; width:100%"></blockquote>
+      `;
+
+      await ensureInstagramEmbedScript();
+      if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
+
+      if(status) status.textContent = 'Latest reel loaded.';
+    }
+
+    async function loadLatestReel(){
+      const status = document.getElementById('igStatus');
       try{
-        const res = await fetch('/api/google-reviews', { cache: 'no-store' });
-        if(!res.ok) throw new Error('reviews request failed');
+        const res = await fetch('/api/ig-latest-reel', { cache: 'no-store' });
+        if(!res.ok) throw new Error('no endpoint');
         const data = await res.json();
-        renderReviews(data);
+        const url = (data?.url || '').toString();
+        if(!url.includes('instagram.com/reel/')) throw new Error('invalid url');
+        await renderReel(url);
       }catch(e){
-        const countEl = document.getElementById('gCount');
-        if(countEl) countEl.textContent = 'Reviews available on Google.';
+        if(status) status.textContent = 'Showing featured reel.';
+        await renderReel(FALLBACK_REEL_URL);
       }
     }
 
-    loadGoogleReviews();
+    loadLatestReel();
   </script>
 </body>
 </html>
