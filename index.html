@@ -41,11 +41,7 @@
       background:linear-gradient(to bottom, rgba(11,13,18,.86), rgba(11,13,18,.55));
       border-bottom:1px solid var(--border);
     }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:14px;
-    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:14px;}
     .brand{display:flex; align-items:center; gap:12px; min-width:210px}
     .logo{
       width:42px; height:42px; border-radius:12px;
@@ -62,9 +58,7 @@
     .links a{font-size:13px; color:var(--muted)}
     .links a:hover{color:var(--text)}
 
-    .cta{
-      display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end
-    }
+    .cta{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:10px 12px;
@@ -77,6 +71,7 @@
       letter-spacing:.2px;
       transition:transform .12s ease, background .12s ease, border-color .12s ease;
       white-space:nowrap;
+      cursor:pointer;
     }
     .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.18)}
     .btn.primary{background:linear-gradient(135deg, rgba(124,92,255,.95), rgba(96,165,250,.85)); border-color:rgba(255,255,255,.16)}
@@ -85,12 +80,7 @@
 
     /* Hero */
     .hero{padding:46px 0 22px}
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:22px;
-      align-items:stretch;
-    }
+    .heroGrid{display:grid; grid-template-columns: 1.1fr .9fr; gap:22px; align-items:stretch;}
     .hCard{
       border:1px solid var(--border);
       border-radius:var(--radius);
@@ -104,18 +94,8 @@
     .pillRow{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 0}
     .pill{font-size:12px; color:var(--muted); border:1px solid var(--border); background:rgba(0,0,0,.18); padding:7px 10px; border-radius:999px}
 
-    .quick{
-      display:grid; grid-template-columns: 1fr 1fr;
-      gap:12px;
-      padding:18px;
-    }
-    .qItem{
-      border:1px solid var(--border);
-      border-radius:16px;
-      background:rgba(0,0,0,.18);
-      padding:14px;
-      min-height:88px;
-    }
+    .quick{display:grid; grid-template-columns: 1fr 1fr; gap:12px; padding:18px;}
+    .qItem{border:1px solid var(--border); border-radius:16px; background:rgba(0,0,0,.18); padding:14px; min-height:88px;}
     .qItem b{display:block; font-size:13px; margin-bottom:4px}
     .qItem span{display:block; color:var(--muted); font-size:12px}
 
@@ -126,12 +106,7 @@
     .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
 
     .cards{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
-    .card{
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      background:rgba(255,255,255,.03);
-      padding:16px;
-    }
+    .card{border:1px solid var(--border); border-radius:var(--radius); background:rgba(255,255,255,.03); padding:16px;}
     .card h3{margin:0 0 6px; font-size:15px}
     .card p{margin:0; color:var(--muted); font-size:13px}
 
@@ -159,30 +134,14 @@
     .contactGrid{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
     .field{display:flex; flex-direction:column; gap:6px; margin-bottom:10px}
     label{font-size:12px; color:var(--muted)}
-    input, textarea{
-      border:1px solid var(--border);
-      background:rgba(0,0,0,.22);
-      border-radius:14px;
-      padding:12px 12px;
-      color:var(--text);
-      font-size:14px;
-      outline:none;
-    }
+    input, textarea{border:1px solid var(--border); background:rgba(0,0,0,.22); border-radius:14px; padding:12px 12px; color:var(--text); font-size:14px; outline:none;}
     input:focus, textarea:focus{border-color:rgba(124,92,255,.55)}
     textarea{min-height:110px; resize:vertical}
     .formNote{color:var(--muted); font-size:12px; margin:10px 0 0}
-    .map{
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      overflow:hidden;
-      min-height:330px;
-      background:rgba(0,0,0,.18);
-    }
+    .map{border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; min-height:330px; background:rgba(0,0,0,.18);}
     iframe{width:100%; height:100%; border:0}
 
-    .reelHint{margin:10px 0 0; color:var(--muted); font-size:12px}
-
-    /* Google Reviews */
+    /* Reviews */
     .reviewsRow{display:flex; gap:14px; overflow-x:auto; padding:14px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;}
     .reviewsRow::-webkit-scrollbar{height:10px}
     .reviewsRow::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12); border-radius:999px}
@@ -201,7 +160,6 @@
     footer{padding:30px 0 40px; color:var(--muted); font-size:12px}
     .footRow{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap; border-top:1px solid var(--border); padding-top:16px}
 
-    /* Responsive */
     @media (max-width: 960px){
       .heroGrid{grid-template-columns:1fr;}
       h1{font-size:34px}
@@ -231,6 +189,7 @@
           <a href="#schedule">Schedule</a>
           <a href="#pricing">Pricing</a>
           <a href="#reviews">Reviews</a>
+          <a href="/terms.html">Terms</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -293,38 +252,107 @@
         </div>
       </section>
 
-      <section id="reviews">
-        <div class="sectionTitle">
-          <h2>User Reviews</h2>
-          <p>Recent feedback from Google.</p>
-        </div>
-
-        <div class="card">
-          <div class="reviewSummary">
-            <div class="reviewSummaryLeft">
-              <div>
-                <div class="ratingBig" id="gRating">—</div>
-                <div class="countMuted" id="gCount">Loading reviews…</div>
-              </div>
-              <div class="stars" id="gStars" aria-label="Overall rating"></div>
-            </div>
-            <div style="display:flex; gap:10px; flex-wrap:wrap">
-              <a class="btn" href="https://maps.app.goo.gl/LinHqUrxDBSn8WWY6" target="_blank" rel="noreferrer">Read on Google</a>
-              <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book your spot</a>
-            </div>
-          </div>
-
-          <div class="reviewsRow" id="reviewsRow" aria-label="Google reviews"></div>
-          <p class="reelHint" id="reviewsHint" style="margin-top:12px">If reviews don’t appear, your site admin needs to connect the Google Places API key on the serverless endpoint.</p>
-        </div>
-      </section>
-
       <section id="about">
         <div class="sectionTitle">
           <h2>About</h2>
           <p>Mindful movement + practical strength training.</p>
         </div>
-        <div class="cards">$1
+        <div class="cards">
+          <div class="card">
+            <h3>Training that feels good</h3>
+            <p>Sessions blend Pilates fundamentals (breath, control, alignment) with strength and rhythm so you leave feeling energized — not wrecked.</p>
+          </div>
+          <div class="card">
+            <h3>Inclusive coaching</h3>
+            <p>Options for beginners and progressions for experienced movers. You’ll get clear cues, form fixes, and a steady pace.</p>
+          </div>
+          <div class="card">
+            <h3>Results you can measure</h3>
+            <p>Build deep core strength, posture, balance, and mobility. Consistency is the goal — the plan is designed to keep you coming back.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="classes">
+        <div class="sectionTitle">
+          <h2>Classes & Services</h2>
+          <p>Pick what fits your week and your goals.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>Pilates Strength & Rhythm</h3>
+            <p>45 minutes, full-body. Core focus, glutes, posture, plus smooth transitions and upbeat energy.</p>
+          </div>
+          <div class="card">
+            <h3>Private Coaching</h3>
+            <p>One-to-one sessions tailored to your goals (strength, mobility, confidence, technique). Ask for availability.</p>
+          </div>
+          <div class="card">
+            <h3>Small Group Training</h3>
+            <p>Train with a friend or two for extra accountability. Programming can be adjusted to your level.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule">
+        <div class="sectionTitle">
+          <h2>Schedule</h2>
+          <p>Simple weekly rhythm — consistent time, consistent progress.</p>
+        </div>
+        <div class="twoCol">
+          <div class="card">
+            <h3>This week</h3>
+            <ul class="list">
+              <li>
+                <div>
+                  <b>Saturday Pilates</b><br/>
+                  <small>All levels • 45 minutes</small>
+                </div>
+                <span class="badge">11:00–11:45</span>
+              </li>
+            </ul>
+            <p style="margin:12px 0 0; color:var(--muted); font-size:12px">Tip: message ahead so your spot is saved.</p>
+          </div>
+          <div class="card">
+            <h3>What to expect</h3>
+            <ul class="list">
+              <li><span>Warm-up + mobility</span><small>8–10 min</small></li>
+              <li><span>Core & posture work</span><small>12–15 min</small></li>
+              <li><span>Strength flow</span><small>15–18 min</small></li>
+              <li><span>Cooldown + breathwork</span><small>3–5 min</small></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="sectionTitle">
+          <h2>Pricing</h2>
+          <p>Flexible options — choose pay-as-you-go or save with a bundle.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>Pay As You Go</h3>
+            <p style="margin-top:8px"><b style="font-size:28px">€15</b> <span style="color:var(--muted)">/ class</span></p>
+            <ul class="list">
+              <li><span>Drop-in friendly</span><small>best for trying it out</small></li>
+              <li><span>All levels welcome</span><small>options provided</small></li>
+            </ul>
+            <div style="margin-top:14px">
+              <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book a drop-in</a>
+            </div>
+          </div>
+          <div class="card">
+            <h3>4-Session Bundle</h3>
+            <p style="margin-top:8px"><b style="font-size:28px">€48</b> <span style="color:var(--muted)">/ 4 classes</span></p>
+            <ul class="list">
+              <li><span>€12 per class</span><small>save vs drop-in</small></li>
+              <li><span>Best for consistency</span><small>progress faster</small></li>
+            </ul>
+            <div style="margin-top:14px">
+              <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Get the bundle</a>
+            </div>
+          </div>
           <div class="card">
             <h3>Payment options</h3>
             <p>Pay in advance by bank transfer or Revolut. If you use bank transfer, please include your name as the reference.</p>
@@ -365,6 +393,32 @@
 
             <div class="copyHint" id="copyHint" aria-live="polite"></div>
           </div>
+        </div>
+      </section>
+
+      <section id="reviews">
+        <div class="sectionTitle">
+          <h2>User Reviews</h2>
+          <p>Recent feedback from Google.</p>
+        </div>
+
+        <div class="card">
+          <div class="reviewSummary">
+            <div class="reviewSummaryLeft">
+              <div>
+                <div class="ratingBig" id="gRating">—</div>
+                <div class="countMuted" id="gCount">Loading reviews…</div>
+              </div>
+              <div class="stars" id="gStars" aria-label="Overall rating"></div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn" href="https://maps.app.goo.gl/LinHqUrxDBSn8WWY6" target="_blank" rel="noreferrer">Read on Google</a>
+              <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book your spot</a>
+            </div>
+          </div>
+
+          <div class="reviewsRow" id="reviewsRow" aria-label="Google reviews"></div>
+          <p class="formNote" id="reviewsHint" style="margin-top:12px">If reviews don’t appear, the site needs the Google Places API connected (Vercel function <span class="mono">/api/google-reviews</span>).</p>
         </div>
       </section>
 
@@ -421,7 +475,7 @@
   </main>
 
   <script>
-    // Set footer year
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Prefill WhatsApp message from the form
@@ -440,12 +494,33 @@
         'I’d like to book a class — please let me know the next available spot.'
       ].filter(Boolean);
 
-      const text = encodeURIComponent(lines.join('\n'));
-      // WhatsApp: +353 89 603 2793
+      const text = encodeURIComponent(lines.join('
+'));
       window.open(`https://wa.me/353896032793?text=${text}`, '_blank', 'noopener');
     });
 
-    // Google reviews loader
+    // Copy-to-clipboard for payment details
+    function setCopyHint(text){
+      const el = document.getElementById('copyHint');
+      if(!el) return;
+      el.textContent = text;
+      clearTimeout(window.__copyHintTimer);
+      window.__copyHintTimer = setTimeout(() => { el.textContent = ''; }, 2500);
+    }
+
+    document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('.copyBtn');
+      if(!btn) return;
+      const value = btn.getAttribute('data-copy') || '';
+      try{
+        await navigator.clipboard.writeText(value);
+        setCopyHint('Copied to clipboard.');
+      }catch(err){
+        window.prompt('Copy this value:', value);
+      }
+    });
+
+    // Google reviews loader (expects /api/google-reviews)
     function renderStars(el, rating){
       const full = Math.floor(rating);
       const half = (rating - full) >= 0.5;
@@ -457,10 +532,6 @@
         else s += '<span class="star" style="opacity:.35">★</span>';
       }
       el.innerHTML = s;
-    }
-
-    function safeText(t){
-      return (t ?? '').toString();
     }
 
     function renderReviews(payload){
@@ -482,25 +553,26 @@
       row.innerHTML = '';
 
       if(!reviews.length){
-        row.innerHTML = '<div class="reviewMeta">No reviews returned yet.</div>';
+        row.innerHTML = '<div class="countMuted">No reviews returned yet. Use the “Read on Google” button above.</div>';
         return;
       }
 
       reviews.slice(0, 10).forEach(r => {
         const card = document.createElement('div');
         card.className = 'reviewCard';
-        const name = safeText(r.author_name || 'Google user');
-        const time = safeText(r.relative_time_description || '');
-        const text = safeText(r.text || '');
+        const name = (r.author_name || 'Google user').toString();
+        const time = (r.relative_time_description || '').toString();
+        const text = (r.text || '').toString();
         const rr = Number(r.rating || 0);
 
+        const rrClamped = Math.max(0, Math.min(5, rr));
         card.innerHTML = `
           <div class="reviewTop">
             <div>
-              <div class="reviewName">${name}</div>
-              <div class="reviewMeta">${time}</div>
+              <div class="reviewName">${name.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+              <div class="reviewMeta">${time.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
             </div>
-            <div class="stars" aria-label="${rr} out of 5">${'<span class="star">★</span>'.repeat(Math.max(0, Math.min(5, rr)))}${'<span class="star" style="opacity:.35">★</span>'.repeat(Math.max(0, 5-rr))}</div>
+            <div class="stars" aria-label="${rrClamped} out of 5">${'<span class="star">★</span>'.repeat(rrClamped)}${'<span class="star" style="opacity:.35">★</span>'.repeat(5-rrClamped)}</div>
           </div>
           <div class="reviewText">${text.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
         `;
@@ -515,35 +587,12 @@
         const data = await res.json();
         renderReviews(data);
       }catch(e){
-        // keep hint visible
         const countEl = document.getElementById('gCount');
-        if(countEl) countEl.textContent = 'Connect Google reviews to display here.';
+        if(countEl) countEl.textContent = 'Reviews available on Google.';
       }
     }
 
     loadGoogleReviews();
-
-    // Copy-to-clipboard for payment details
-    function setCopyHint(text){
-      const el = document.getElementById('copyHint');
-      if(!el) return;
-      el.textContent = text;
-      clearTimeout(window.__copyHintTimer);
-      window.__copyHintTimer = setTimeout(() => { el.textContent = ''; }, 2500);
-    }
-
-    document.addEventListener('click', async (e) => {
-      const btn = e.target.closest('.copyBtn');
-      if(!btn) return;
-      const value = btn.getAttribute('data-copy') || '';
-      try{
-        await navigator.clipboard.writeText(value);
-        setCopyHint('Copied to clipboard.');
-      }catch(err){
-        // Fallback: prompt for manual copy
-        window.prompt('Copy this value:', value);
-      }
-    });
   </script>
 </body>
 </html>
