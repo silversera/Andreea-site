@@ -141,15 +141,49 @@
     .map{border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; min-height:330px; background:rgba(0,0,0,.18);}
     iframe{width:100%; height:100%; border:0}
 
-    /* Instagram Reel */
-    .igEmbedWrap{margin-top:14px; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:rgba(0,0,0,.18);
-      width:100%;
-      max-width:520px;
-      margin-left:auto;
-      margin-right:auto;
-      padding:12px;
+    /* Instagram Reel System */
+    .igFeed{
+      margin-top:14px;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
     }
-    .igEmbedWrap .countMuted{padding:14px}
+
+    .igCarousel{
+      display:flex;
+      gap:14px;
+      overflow-x:auto;
+      padding:10px;
+      scroll-snap-type:x mandatory;
+    }
+    .igCarousel::-webkit-scrollbar{height:8px}
+    .igCarousel::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15); border-radius:999px}
+
+    .igSlide{
+      flex:0 0 auto;
+      width:min(340px, 85vw);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      overflow:hidden;
+      scroll-snap-align:start;
+      background:rgba(0,0,0,.18);
+      padding:10px;
+    }
+
+    .igGrid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      gap:14px;
+    }
+
+    .igGridItem{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:rgba(0,0,0,.18);
+      padding:10px;
+    }
+
     .igEmbedWrap blockquote{margin:0 !important;}
 
     .reviewsRow{display:flex; gap:14px; overflow-x:auto; padding:14px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;}
@@ -408,31 +442,36 @@
 
       <section id="updates">
         <div class="sectionTitle">
-          <h2>Latest Instagram Reel</h2>
-          <p>Fresh updates from Instagram.</p>
+          <h2>Instagram Highlights</h2>
+          <p>Latest reels, carousel and preview grid.</p>
         </div>
 
         <div class="card">
-          <div class="reviewSummary" style="margin-top:0">
-            <div class="reviewSummaryLeft">
-              <div>
-                <div class="ratingBig" style="font-size:18px">@an3eea</div>
-                <div class="countMuted" id="igStatus">Loading latest reel…</div>
-              </div>
+
+          <div class="igFeed">
+
+            <div>
+              <h3>Newest Reel</h3>
+              <div class="igEmbedWrap" id="igNewest"></div>
             </div>
-            <div style="display:flex; gap:10px; flex-wrap:wrap">
-              <a class="btn" href="https://www.instagram.com/an3eea/?hl=en" target="_blank" rel="noreferrer">Open Instagram</a>
-              <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book your spot</a>
+
+            <div>
+              <h3>Reel Carousel</h3>
+              <div class="igCarousel" id="igCarousel"></div>
             </div>
+
+            <div>
+              <h3>Preview Grid</h3>
+              <div class="igGrid" id="igGrid"></div>
+            </div>
+
           </div>
 
-          <div class="igEmbedWrap" aria-label="Latest Instagram reel" id="igEmbedWrap">
-            <div class="countMuted">If the reel doesn’t appear, open Instagram using the button above.</div>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn" href="https://www.instagram.com/an3eea/?hl=en" target="_blank">Open Instagram</a>
+            <a class="btn primary" href="https://wa.me/353896032793" target="_blank">Book your spot</a>
           </div>
 
-          <p class="formNote" style="margin-top:12px">
-            Note: Instagram does not provide a public “latest reel from profile” feed for websites. This embed shows a reel URL (either from a small serverless endpoint or a fallback URL).
-          </p>
         </div>
       </section>
 
@@ -508,7 +547,7 @@
         'I’d like to book a class — please let me know the next available spot.'
       ].filter(Boolean);
 
-      const text = encodeURIComponent(lines.join('\\n'));
+      const text = encodeURIComponent(lines.join('\n'));
       window.open(`https://wa.me/353896032793?text=${text}`, '_blank', 'noopener');
     });
 
@@ -536,58 +575,68 @@
     // Latest Instagram Reel loader
     // 1) Optional: create /api/ig-latest-reel that returns: { url: "https://www.instagram.com/reel/XXXXX/" }
     // 2) Otherwise, we fall back to a reel URL you can update.
-    const FALLBACK_REEL_URL = 'https://www.instagram.com/reel/DUaS_-sjUaX/';
+    const FALLBACK_REEL_URL = 'https://www.instagram.com/reel/DUDLqDLjZfz/';
 
-    function ensureInstagramEmbedScript(){
+    async function ensureInstagramEmbedScript(){
       return new Promise((resolve) => {
         if (window.instgrm && window.instgrm.Embeds) return resolve();
-        const existing = document.querySelector('script[data-ig-embed]');
-        if (existing) {
-          existing.addEventListener('load', () => resolve());
-          return;
-        }
         const s = document.createElement('script');
         s.src = 'https://www.instagram.com/embed.js';
         s.async = true;
-        s.defer = true;
-        s.setAttribute('data-ig-embed', '1');
-        s.onload = () => resolve();
+        s.onload = resolve;
         document.body.appendChild(s);
       });
     }
 
-    async function renderReel(url){
-      const wrap = document.getElementById('igEmbedWrap');
-      const status = document.getElementById('igStatus');
-      if(!wrap) return;
+    
+      return new Promise((resolve) => {
+        if (window.instgrm && window.instgrm.Embeds) return resolve();
+        const s = document.createElement('script');
+        s.src = 'https://www.instagram.com/embed.js';
+        s.async = true;
+        s.onload = resolve;
+        document.body.appendChild(s);
+      });
+    }
 
-      const permalink = url.endsWith('/') ? url : (url + '/');
-      wrap.innerHTML = `
-        <blockquote class="instagram-media" data-instgrm-permalink="${permalink}" data-instgrm-version="14" style="background:#0000; border:0; margin:0; padding:0; width:100%"></blockquote>
-      `;
+    function buildEmbed(url){
+      const permalink = url.endsWith('/') ? url : url + '/';
+      return `<blockquote class="instagram-media" data-instgrm-permalink="${permalink}" data-instgrm-version="14"></blockquote>`;
+    }
 
+    async function renderFeed(){
       await ensureInstagramEmbedScript();
-      if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
 
-      if(status) status.textContent = 'Latest reel loaded.';
-    }
+      const newest = document.getElementById('igNewest');
+      const carousel = document.getElementById('igCarousel');
+      const grid = document.getElementById('igGrid');
 
-    async function loadLatestReel(){
-      const status = document.getElementById('igStatus');
+      let reels = [];
+
       try{
-        const res = await fetch('/api/ig-latest-reel', { cache: 'no-store' });
-        if(!res.ok) throw new Error('no endpoint');
+        const res = await fetch('/api/ig-latest-reels');
         const data = await res.json();
-        const url = (data?.url || '').toString();
-        if(!url.includes('instagram.com/reel/')) throw new Error('invalid url');
-        await renderReel(url);
+        reels = data.reels || [];
       }catch(e){
-        if(status) status.textContent = 'Showing featured reel.';
-        await renderReel(FALLBACK_REEL_URL);
+        reels = [FALLBACK_REEL_URL];
       }
+
+      if(reels.length === 0) reels = [FALLBACK_REEL_URL];
+
+      newest.innerHTML = buildEmbed(reels[0]);
+
+      carousel.innerHTML = reels.map(url => `
+        <div class="igSlide">${buildEmbed(url)}</div>
+      `).join('');
+
+      grid.innerHTML = reels.slice(0,6).map(url => `
+        <div class="igGridItem">${buildEmbed(url)}</div>
+      `).join('');
+
+      if(window.instgrm) window.instgrm.Embeds.process();
     }
 
-    loadLatestReel();
+    renderFeed();
   </script>
 </body>
 </html>
