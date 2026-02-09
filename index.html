@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Andreea's Rhythmic Fitness — Pilates, Strength & Rhythm classes in Portlaoise. All levels welcome." />
-  <title>Andreea's Rhythmic Fitness | Portlaoise</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Andreea's Rhythmic Fitness — Pilates, Strength &amp; Rhythm classes in Portlaoise. All levels welcome." name="description"/>
+<title>Andreea's Rhythmic Fitness | Portlaoise</title>
+<style>
     :root{
       --bg:#0b0d12;
       --card:#121623;
@@ -197,479 +197,406 @@
       .gItem img{height:240px}
       .calendarWrap iframe, .reviewEmbed iframe{height:520px}
     }
-  </style>
+  
+
+    .iconBtn{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      transition:transform .15s ease, background .15s ease, border-color .15s ease;
+      font-size:13px;
+      color:var(--text);
+    }
+    .iconBtn:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.07);
+      border-color:rgba(255,255,255,.18);
+    }
+    .iconBtn svg{flex:0 0 auto}
+    .iconBtn span{white-space:nowrap}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="nav">
-        <a class="brand" href="#top" aria-label="Go to top">
-          <div class="logo" aria-hidden="true">AR</div>
-          <div>
-            <b>Andreea's Rhythmic Fitness</b>
-            <span>Pilates • Strength • Rhythm — Portlaoise</span>
-          </div>
-        </a>
+<header>
+<div class="container">
+<div class="nav">
+<a aria-label="Go to top" class="brand" href="#top">
+<div aria-hidden="true" class="logo">AR</div>
+<div>
+<b>Andreea's Rhythmic Fitness</b>
+<span>Pilates • Strength • Rhythm — Portlaoise</span>
+</div>
+</a>
+<nav aria-label="Primary" class="links">
+<a href="#about">About</a>
+<a href="#instructor">Instructor</a>
+<a href="#classes">Classes</a>
+<a href="#schedule">Schedule</a>
+<a href="#pricing">Pricing</a>
+<a href="#reviews">Reviews</a>
+<a href="#gallery">Gallery</a>
+<a href="#testimonials">Testimonials</a>
+<a href="/terms.html">Terms</a>
+<a href="#contact">Contact</a>
+</nav>
+<div class="cta">
+<a class="btn whatsapp" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">WhatsApp to book</a>
+<a class="btn primary" href="#contact">Get started</a>
+</div>
+</div>
+</div>
+</header>
+<main id="top">
+<div class="container">
+<section class="hero">
+<div class="heroGrid">
+<div class="hCard">
+<div class="pad">
+<h1>Move with control.<br/>Train with rhythm.</h1>
+<p class="sub">All-level Pilates &amp; fitness sessions designed to build deep core strength, mobility, and confidence — with a friendly, upbeat vibe.</p>
+<div class="pillRow">
+<span class="pill">All levels welcome</span>
+<span class="pill">45-minute sessions</span>
+<span class="pill">Club Vitae Health &amp; Fitness Club, Portlaoise</span>
+<span class="pill">Pay-as-you-go or bundle</span>
+</div>
+<div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px">
+<a class="btn" href="#schedule">View timetable</a>
+</div>
+</div>
+</div>
+<div class="hCard">
+<div class="quick">
+<div class="qItem">
+<b>Weekly Class</b>
+<span>Saturday • 11:00–11:45</span>
+</div>
+<div class="qItem">
+<b>Location</b>
+<span>Club Vitae Health &amp; Fitness Club, Portlaoise</span>
+</div>
+<div class="qItem">
+<b>Pay as you go</b>
+<span>€15 / class</span>
+</div>
+<div class="qItem">
+<b>Bundle</b>
+<span>€48 / 4 sessions</span>
+</div>
+<div class="qItem" style="grid-column:1 / -1">
+<b>Bring</b>
+<span>Mat optional • water recommended • arrive 5–10 minutes early</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="about">
+<div class="sectionTitle">
+<h2>About</h2>
+<p>Mindful movement + practical strength training.</p>
+</div>
+<div class="cards">
+<div class="card">
+<h3>Training that feels good</h3>
+<p>Sessions blend Pilates fundamentals (breath, control, alignment) with strength and rhythm so you leave feeling energized — not wrecked.</p>
+</div>
+<div class="card">
+<h3>Inclusive coaching</h3>
+<p>Options for beginners and progressions for experienced movers. You’ll get clear cues, form fixes, and a steady pace.</p>
+</div>
+<div class="card">
+<h3>Results you can measure</h3>
+<p>Build deep core strength, posture, balance, and mobility. Consistency is the goal — the plan is designed to keep you coming back.</p>
+</div>
+</div>
+</section>
+<section id="instructor">
+<div class="sectionTitle">
+<h2>Instructor</h2>
+<p>Meet your coach.</p>
+</div>
+<div class="card">
+<div class="profile">
+<div aria-label="Instructor photo placeholder" class="avatar">GA</div>
+<div>
+<h3 style="margin:0">Gina Andreea</h3>
+<p style="margin:6px 0 0; color:var(--muted); font-size:13px; white-space:pre-line">I am a dedicated fitness instructor which has a passion for teaching a variety of fitness classes like:
+Dance Fitness, Step, Spinning, Box exercise
+Due to my background in dance &amp; choreography I am able to use music to create fitness routines for both beginners and the most demanding clients. Testimonials to this are the Google reviews I received from my clients.</p>
+<div class="chips">
+<span class="pill">Beginner-friendly</span>
+<span class="pill">Technique-first</span>
+<span class="pill">Mobility + core</span>
+</div>
+<div class="calendarTools">
+<a class="btn" href="https://www.instagram.com/an3eea/?hl=en" rel="noreferrer" target="_blank">Instagram</a>
+<a class="btn" href="https://www.facebook.com/andreea.aday" rel="noreferrer" target="_blank">Facebook</a>
+<a class="btn" href="https://www.linkedin.com/in/gina-andreea-serafim-489ab2261/" rel="noreferrer" target="_blank">LinkedIn</a>
+</div>
 
-        <nav class="links" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#instructor">Instructor</a>
-          <a href="#classes">Classes</a>
-          <a href="#schedule">Schedule</a>
-          <a href="#booking">Booking</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="/terms.html">Terms</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <div class="cta">
-          <a class="btn" href="#booking">Book now</a>
-          <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">WhatsApp to book</a>
-          <a class="btn primary" href="#contact">Get started</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main id="top">
-    <div class="container">
-      <section class="hero">
-        <div class="heroGrid">
-          <div class="hCard">
-            <div class="pad">
-              <h1>Move with control.<br/>Train with rhythm.</h1>
-              <p class="sub">All-level Pilates & fitness sessions designed to build deep core strength, mobility, and confidence — with a friendly, upbeat vibe.</p>
-
-              <div class="pillRow">
-                <span class="pill">All levels welcome</span>
-                <span class="pill">45-minute sessions</span>
-                <span class="pill">Club Vitae Health & Fitness Club, Portlaoise</span>
-                <span class="pill">Pay-as-you-go or bundle</span>
-              </div>
-
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px">
-                <a class="btn primary" href="#booking">Book a class</a>
-                <a class="btn" href="#schedule">View timetable</a>
-              </div>
-              <p class="mini" style="margin:12px 0 0">Want reminders? Add the class to your calendar below.</p>
-            </div>
-          </div>
-
-          <div class="hCard">
-            <div class="quick">
-              <div class="qItem">
-                <b>Weekly Class</b>
-                <span>Saturday • 11:00–11:45</span>
-              </div>
-              <div class="qItem">
-                <b>Location</b>
-                <span>Club Vitae Health & Fitness Club, Portlaoise</span>
-              </div>
-              <div class="qItem">
-                <b>Pay as you go</b>
-                <span>€15 / class</span>
-              </div>
-              <div class="qItem">
-                <b>Bundle</b>
-                <span>€48 / 4 sessions</span>
-              </div>
-              <div class="qItem" style="grid-column:1 / -1">
-                <b>Bring</b>
-                <span>Mat optional • water recommended • arrive 5–10 minutes early</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about">
-        <div class="sectionTitle">
-          <h2>About</h2>
-          <p>Mindful movement + practical strength training.</p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <h3>Training that feels good</h3>
-            <p>Sessions blend Pilates fundamentals (breath, control, alignment) with strength and rhythm so you leave feeling energized — not wrecked.</p>
-          </div>
-          <div class="card">
-            <h3>Inclusive coaching</h3>
-            <p>Options for beginners and progressions for experienced movers. You’ll get clear cues, form fixes, and a steady pace.</p>
-          </div>
-          <div class="card">
-            <h3>Results you can measure</h3>
-            <p>Build deep core strength, posture, balance, and mobility. Consistency is the goal — the plan is designed to keep you coming back.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="instructor">
-        <div class="sectionTitle">
-          <h2>Instructor</h2>
-          <p>Meet your coach.</p>
-        </div>
-        <div class="card">
-          <div class="profile">
-            <img class="avatar" src="eu bun.jpg" alt="Instructor Gina Andreea" style="object-fit:cover" />
-            <div>
-              <h3 style="margin:0">Gina Andreea</h3>
-              <p style="margin:6px 0 0; color:var(--muted); font-size:13px">Pilates • Strength • Rhythm — coaching that prioritizes control, alignment, and confidence.</p>
-              <div class="chips">
-                <span class="pill">Beginner-friendly</span>
-                <span class="pill">Technique-first</span>
-                <span class="pill">Mobility + core</span>
-              </div>
-              <div class="calendarTools">
-                <a class="btn" href="https://www.instagram.com/an3eea/?hl=en" target="_blank" rel="noreferrer">Instagram</a>
-                <a class="btn" href="https://www.facebook.com/andreea.aday" target="_blank" rel="noreferrer">Facebook</a>
-                <a class="btn" href="https://www.linkedin.com/in/gina-andreea-serafim-489ab2261/" target="_blank" rel="noreferrer">LinkedIn</a>
-              </div>
-              <p class="mini" style="margin-top:10px">If you have an instructor photo, I can replace the placeholder instantly.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="classes">
-        <div class="sectionTitle">
-          <h2>Classes & Services</h2>
-          <p>Pick what fits your week and your goals.</p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <h3>Pilates Strength & Rhythm</h3>
-            <p>45 minutes, full-body. Core focus, glutes, posture, plus smooth transitions and upbeat energy.</p>
-          </div>
-          <div class="card">
-            <h3>Private Coaching</h3>
-            <p>One-to-one sessions tailored to your goals (strength, mobility, confidence, technique). Ask for availability.</p>
-          </div>
-          <div class="card">
-            <h3>Small Group Training</h3>
-            <p>Train with a friend or two for extra accountability. Programming can be adjusted to your level.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="schedule">
-        <div class="sectionTitle">
-          <h2>Schedule</h2>
-          <p>Simple weekly rhythm — consistent time, consistent progress.</p>
-        </div>
-        <div class="twoCol">
-          <div class="card">
-            <h3>This week</h3>
-            <ul class="list">
-              <li>
-                <div>
-                  <b>Saturday Pilates</b><br/>
-                  <small>All levels • 45 minutes</small>
-                </div>
-                <span class="badge">11:00–11:45</span>
-              </li>
-            </ul>
-            <p style="margin:12px 0 0; color:var(--muted); font-size:12px">Tip: message ahead so your spot is saved.</p>
-          </div>
-          <div class="card">
-            <h3>What to expect</h3>
-            <ul class="list">
-              <li><span>Warm-up + mobility</span><small>8–10 min</small></li>
-              <li><span>Core & posture work</span><small>12–15 min</small></li>
-              <li><span>Strength flow</span><small>15–18 min</small></li>
-              <li><span>Cooldown + breathwork</span><small>3–5 min</small></li>
-            </ul>
-          </div>
-        </div>
-
-        <div style="margin-top:14px" class="card">
-          <h3>Location</h3>
-          <p style="margin:0 0 12px; color:var(--muted); font-size:13px">Club Vitae Health &amp; Fitness Club, Portlaoise</p>
-          <div class="map" aria-label="Pilates Class Location" style="min-height:360px">
-            <iframe
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Club+Vitae+Health+%26+Fitness+Club+Portlaoise&output=embed">
-            </iframe>
-          </div>
-          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap">
-            <a class="btn" href="https://www.google.com/maps/place/Club+Vitae+Health+%26+Fitness+Club+Portlaoise" target="_blank" rel="noreferrer">Open in Google Maps</a>
-            <a class="btn primary" href="#booking">Book your spot</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="booking">
-        <div class="sectionTitle">
-          <h2>Book a Class</h2>
-          <p>Reserve your spot and add reminders to your calendar.</p>
-        </div>
-
-        <div class="twoCol">
-          <div class="card">
-            <h3>Booking Calendar</h3>
-            <p class="mini">Option A (recommended): embed Calendly / Google Calendar here. Option B: book via WhatsApp.</p>
-
-            <div class="calendarWrap" aria-label="Booking calendar">
-              <!--
-                Replace the iframe src with your booking tool.
-                Example Calendly embed:
-                src="https://calendly.com/YOUR-USERNAME/your-class?embed_domain=YOURDOMAIN&embed_type=Inline"
-
-                Example Google Calendar embed (public calendar):
-                src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=Europe%2FDublin"
-              -->
-              <iframe
-                title="Booking calendar"
-                loading="lazy"
-                src="https://calendar.google.com/calendar/embed?src=en.irish%23holiday%40group.v.calendar.google.com&ctz=Europe%2FDublin"></iframe>
-            </div>
-
-            <div class="calendarTools">
-              <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book on WhatsApp</a>
-              <button class="btn" id="btnAddGoogle" type="button">Add next class to Google Calendar</button>
-              <button class="btn" id="btnDownloadICS" type="button">Download .ics reminder</button>
-            </div>
-            <p class="mini" id="nextClassText" style="margin-top:10px">Next class: —</p>
-          </div>
-
-          <div class="card">
-            <h3>Automatic Reminders</h3>
-            <p class="mini">Right now, the site supports “Add to Calendar” reminders (Google / Apple / Outlook). If you want SMS or email reminders, that needs a booking system (Calendly/MindBody) or an email tool (Mailchimp) + automation.</p>
-            <ul class="list">
-              <li><span>Add to Google Calendar</span><small>1-click</small></li>
-              <li><span>Download .ics (Apple/Outlook)</span><small>works everywhere</small></li>
-              <li><span>WhatsApp booking</span><small>fastest confirmation</small></li>
-            </ul>
-            <div class="calendarTools">
-              <a class="btn primary" href="#contact">Ask about reminders</a>
-            </div>
-            <p class="mini" style="margin-top:10px">Tell me if you want reminders by <b>email</b> or <b>SMS</b> and I’ll wire it up with the right tool.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="pricing">
-        <div class="sectionTitle">
-          <h2>Pricing</h2>
-          <p>Flexible options — choose pay-as-you-go or save with a bundle.</p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <h3>Pay As You Go</h3>
-            <p style="margin-top:8px"><b style="font-size:28px">€15</b> <span style="color:var(--muted)">/ class</span></p>
-            <ul class="list">
-              <li><span>Drop-in friendly</span><small>best for trying it out</small></li>
-              <li><span>All levels welcome</span><small>options provided</small></li>
-            </ul>
-            <div style="margin-top:14px">
-              <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book a drop-in</a>
-            </div>
-          </div>
-          <div class="card">
-            <h3>4-Session Bundle</h3>
-            <p style="margin-top:8px"><b style="font-size:28px">€48</b> <span style="color:var(--muted)">/ 4 classes</span></p>
-            <ul class="list">
-              <li><span>€12 per class</span><small>save vs drop-in</small></li>
-              <li><span>Best for consistency</span><small>progress faster</small></li>
-            </ul>
-            <div style="margin-top:14px">
-              <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Get the bundle</a>
-            </div>
-          </div>
-          <div class="card">
-            <h3>Payment options</h3>
-            <p>Pay in advance by bank transfer or Revolut. If you use bank transfer, please include your name as the reference.</p>
-
-            <div class="payBox" aria-label="Bank transfer details">
-              <div class="payRow">
-                <div>
-                  <div class="payLabel">Bank transfer — Account name</div>
-                  <div class="payValue">Gina Adreea Paun</div>
-                </div>
-                <button class="copyBtn" type="button" data-copy="Gina Adreea Paun">Copy</button>
-              </div>
-              <div class="payRow">
-                <div>
-                  <div class="payLabel">IBAN</div>
-                  <div class="payValue mono">IE69AIBK93351145078007</div>
-                </div>
-                <button class="copyBtn" type="button" data-copy="IE69AIBK93351145078007">Copy</button>
-              </div>
-              <div class="payRow">
-                <div>
-                  <div class="payLabel">SWIFT / BIC</div>
-                  <div class="payValue mono">AIBKIE2D</div>
-                </div>
-                <button class="copyBtn" type="button" data-copy="AIBKIE2D">Copy</button>
-              </div>
-            </div>
-
-            <div class="payBox" aria-label="Revolut details">
-              <div class="payRow">
-                <div>
-                  <div class="payLabel">Revolut</div>
-                  <div class="payValue mono">@andreed579</div>
-                </div>
-                <button class="copyBtn" type="button" data-copy="@andreed579">Copy</button>
-              </div>
-            </div>
-
-            <div class="copyHint" id="copyHint" aria-live="polite"></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="reviews">
-        <div class="sectionTitle">
-          <h2>Google Reviews</h2>
-          <p>See feedback for Andreea's Rhythmic Fitness.</p>
-        </div>
-        <div class="card">
-          <div class="reviewEmbed" aria-label="Google reviews">
-            <iframe
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Andreea%27s+Rhythmic+Fitness+Portlaoise&output=embed"></iframe>
-          </div>
-          <div class="calendarTools">
-            <a class="btn" href="https://www.google.com/maps/place/Andreea's+Rhythmic+Fitness/@52.9984608,-7.3332921" target="_blank" rel="noreferrer">Read on Google</a>
-            <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book your spot</a>
-          </div>
-          <p class="mini" style="margin-top:10px">Google embeds don't allow full custom styling of reviews, but this stays up to date automatically.</p>
-        </div>
-      </section>
-
-      <section id="gallery">
-        <div class="sectionTitle">
-          <h2>Photo Gallery</h2>
-          <p>A quick look at the vibe.</p>
-        </div>
-        <div class="gallery" aria-label="Photo gallery">
-          <div class="gItem" data-title="Instructor outdoors" data-src="20250417_094943.jpg">
-            <img loading="lazy" alt="Instructor outdoors" src="20250417_094943.jpg" />
-            <span class="gCap">Outdoor session</span>
-          </div>
-          <div class="gItem" data-title="Pilates class setup" data-src="Screenshot_20260116_150635_Facebook.jpg">
-            <img loading="lazy" alt="Pilates class setup" src="Screenshot_20260116_150635_Facebook.jpg" />
-            <span class="gCap">Pilates Mat Class</span>
-          </div>
-        </div>
-        <p class="mini" style="margin-top:10px">Want these to be your real class photos? Upload images to the repo and I’ll swap the links.</p>
-      </section>
-
-      <section id="testimonials">
-        <div class="sectionTitle">
-          <h2>Testimonials</h2>
-          <p>What clients say.</p>
-        </div>
-        <div class="card">
-          <div class="slider" id="tSlider" aria-label="Testimonials slider">
-            <div class="tCard">
-              <div class="tTop">
-                <div>
-                  <div class="tName">Client review</div>
-                  <div class="tMeta">Beginner • 4 weeks</div>
-                </div>
-                <span class="pill">★★★★★</span>
-              </div>
-              <div class="tText">“Clear instructions and a great pace. I feel stronger in my core and my posture has improved.”</div>
-            </div>
-            <div class="tCard">
-              <div class="tTop">
-                <div>
-                  <div class="tName">Client review</div>
-                  <div class="tMeta">Consistency • Bundle</div>
-                </div>
-                <span class="pill">★★★★★</span>
-              </div>
-              <div class="tText">“The sessions are challenging but doable. Andreea always gives options so I can progress safely.”</div>
-            </div>
-            <div class="tCard">
-              <div class="tTop">
-                <div>
-                  <div class="tName">Client review</div>
-                  <div class="tMeta">Strength + mobility</div>
-                </div>
-                <span class="pill">★★★★★</span>
-              </div>
-              <div class="tText">“I love the rhythm and flow — it keeps me motivated. Great vibe and coaching.”</div>
-            </div>
-          </div>
-          <div class="calendarTools" style="justify-content:space-between">
-            <button class="btn" id="tPrev" type="button">‹ Prev</button>
-            <button class="btn" id="tNext" type="button">Next ›</button>
-          </div>
-          <p class="mini" style="margin-top:10px">You can replace these with real testimonials (name + short quote).</p>
-        </div>
-      </section>
-
-      <section id="contact">
-        <div class="sectionTitle">
-          <h2>Contact & Booking</h2>
-          <p>Fastest: WhatsApp. You can also send a message below.</p>
-        </div>
-
-        <div class="contactGrid">
-          <div class="card">
-            <h3>Send a message</h3>
-            <form id="contactForm">
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" name="name" placeholder="Your name" autocomplete="name" required />
-              </div>
-              <div class="field">
-                <label for="phone">Phone (optional)</label>
-                <input id="phone" name="phone" placeholder="e.g., +353 ..." autocomplete="tel" />
-              </div>
-              <div class="field">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell me your goals, experience level, and which class you want to join." required></textarea>
-              </div>
-              <button class="btn primary" type="submit">Open WhatsApp with this message</button>
-              <p class="formNote">This form doesn’t send data to a server — it simply opens WhatsApp with a pre-filled message so you can book quickly.</p>
-            </form>
-          </div>
-
-          <div class="map" aria-label="Map">
-            <iframe
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Andreea%27s+Rhythmic+Fitness+Portlaoise&output=embed">
-            </iframe>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <div class="footRow">
-          <div>© <span id="year"></span> Andreea's Rhythmic Fitness • Portlaoise</div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap">
-            <a class="btn" href="#top">Back to top</a>
-            <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">WhatsApp</a>
-            <a class="btn" href="https://www.instagram.com/an3eea/?hl=en" target="_blank" rel="noreferrer">Instagram</a>
-            <a class="btn" href="https://www.facebook.com/andreea.aday" target="_blank" rel="noreferrer">Facebook</a>
-            <a class="btn" href="https://www.linkedin.com/in/gina-andreea-serafim-489ab2261/" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </main>
-
-  <!-- Lightbox -->
-  <div class="lb" id="lb" aria-hidden="true" role="dialog" aria-label="Image viewer">
-    <div class="lbInner">
-      <div class="lbTop">
-        <b id="lbTitle">Image</b>
-        <button class="btn" id="lbClose" type="button">Close</button>
-      </div>
-      <img class="lbImg" id="lbImg" alt="" />
-    </div>
-  </div>
-
-  <script>
+</div>
+</div>
+</div>
+</section>
+<section id="classes">
+<div class="sectionTitle">
+<h2>Classes &amp; Services</h2>
+<p>Pick what fits your week and your goals.</p>
+</div>
+<div class="cards"><div class="card"><h3>Pilates Strength &amp; Rhythm</h3><p>45 minutes, full-body. Core focus, glutes, posture, plus smooth transitions and upbeat energy.</p></div><div class="card"><h3>Dance Fitness</h3><p>High-energy dance-inspired workout that improves cardio fitness, coordination, and confidence.</p></div><div class="card"><h3>Step</h3><p>Classic step choreography for cardio endurance, leg strength, and rhythm—options for all levels.</p></div><div class="card"><h3>Spinning</h3><p>Indoor cycling sessions with music-driven intervals to build stamina, power, and fat-burning intensity.</p></div><div class="card"><h3>Box Exercise (Boxercise)</h3><p>Punch, jab, and move—boxing-style conditioning for cardio, core, and total-body strength.</p></div><div class="card"><h3>Private Coaching</h3><p>One-to-one sessions tailored to your goals (strength, mobility, confidence, technique). Ask for availability.</p></div><div class="card"><h3>Small Group Training</h3><p>Train with a friend or two for extra accountability. Programming can be adjusted to your level.</p></div></div>
+</section>
+<section id="schedule">
+<div class="sectionTitle">
+<h2>Schedule</h2>
+<p>Simple weekly rhythm — consistent time, consistent progress.</p>
+</div>
+<div class="twoCol">
+<div class="card">
+<h3>This week</h3>
+<ul class="list">
+<li>
+<div>
+<b>Saturday Pilates</b><br/>
+<small>All levels • 45 minutes</small>
+</div>
+<span class="badge">11:00–11:45</span>
+</li>
+</ul>
+<p style="margin:12px 0 0; color:var(--muted); font-size:12px">Tip: book via WhatsApp, phone, or email to save your spot.</p>
+</div>
+<div class="card">
+<h3>What to expect</h3>
+<ul class="list">
+<li><span>Warm-up + mobility</span><small>8–10 min</small></li>
+<li><span>Core &amp; posture work</span><small>12–15 min</small></li>
+<li><span>Strength flow</span><small>15–18 min</small></li>
+<li><span>Cooldown + breathwork</span><small>3–5 min</small></li>
+</ul>
+</div>
+</div>
+<div class="card" style="margin-top:14px">
+<h3>Location</h3>
+<p style="margin:0 0 12px; color:var(--muted); font-size:13px">Club Vitae Health &amp; Fitness Club, Portlaoise</p>
+<div aria-label="Pilates Class Location" class="map" style="min-height:360px">
+<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Club+Vitae+Health+%26+Fitness+Club+Portlaoise&amp;output=embed">
+</iframe>
+</div>
+<div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap">
+<a class="btn" href="https://www.google.com/maps/place/Club+Vitae+Health+%26+Fitness+Club+Portlaoise" rel="noreferrer" target="_blank">Open in Google Maps</a>
+<a class="btn primary" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Book on WhatsApp</a>
+</div><div class="contactIcons" style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;"><a aria-label="+353 89 603 2793" class="iconBtn" href="tel:+353896032793"><svg aria-hidden="true" fill="none" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.3 1.7.54 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.06a2 2 0 0 1 2.11-.45c.8.24 1.64.42 2.5.54A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><span>+353 89 603 2793</span></a><a aria-label="aandreea.paun@gmail.com" class="iconBtn" href="mailto:aandreea.paun@gmail.com"><svg aria-hidden="true" fill="none" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4V4z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><span>aandreea.paun@gmail.com</span></a><a aria-label="WhatsApp" class="iconBtn" href="https://wa.me/353896032793"><svg aria-hidden="true" fill="none" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><span>WhatsApp</span></a></div>
+</div>
+</section>
+<section id="pricing">
+<div class="sectionTitle">
+<h2>Pricing</h2>
+<p>Flexible options — choose pay-as-you-go or save with a bundle.</p>
+</div>
+<div class="cards">
+<div class="card">
+<h3>Pay As You Go</h3>
+<p style="margin-top:8px"><b style="font-size:28px">€15</b> <span style="color:var(--muted)">/ class</span></p>
+<ul class="list">
+<li><span>Drop-in friendly</span><small>best for trying it out</small></li>
+<li><span>All levels welcome</span><small>options provided</small></li>
+</ul>
+<div style="margin-top:14px">
+<a class="btn whatsapp" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Book a drop-in</a>
+</div>
+</div>
+<div class="card">
+<h3>4-Session Bundle</h3>
+<p style="margin-top:8px"><b style="font-size:28px">€48</b> <span style="color:var(--muted)">/ 4 classes</span></p>
+<ul class="list">
+<li><span>€12 per class</span><small>save vs drop-in</small></li>
+<li><span>Best for consistency</span><small>progress faster</small></li>
+</ul>
+<div style="margin-top:14px">
+<a class="btn primary" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Get the bundle</a>
+</div>
+</div>
+<div class="card">
+<h3>Payment options</h3>
+<p>Pay in advance by bank transfer or Revolut. If you use bank transfer, please include your name as the reference.</p>
+<div aria-label="Bank transfer details" class="payBox">
+<div class="payRow">
+<div>
+<div class="payLabel">Bank transfer — Account name</div>
+<div class="payValue">Gina Adreea Paun</div>
+</div>
+<button class="copyBtn" data-copy="Gina Adreea Paun" type="button">Copy</button>
+</div>
+<div class="payRow">
+<div>
+<div class="payLabel">IBAN</div>
+<div class="payValue mono">IE69AIBK93351145078007</div>
+</div>
+<button class="copyBtn" data-copy="IE69AIBK93351145078007" type="button">Copy</button>
+</div>
+<div class="payRow">
+<div>
+<div class="payLabel">SWIFT / BIC</div>
+<div class="payValue mono">AIBKIE2D</div>
+</div>
+<button class="copyBtn" data-copy="AIBKIE2D" type="button">Copy</button>
+</div>
+</div>
+<div aria-label="Revolut details" class="payBox">
+<div class="payRow">
+<div>
+<div class="payLabel">Revolut</div>
+<div class="payValue mono">@andreed579</div>
+</div>
+<button class="copyBtn" data-copy="@andreed579" type="button">Copy</button>
+</div>
+</div>
+<div aria-live="polite" class="copyHint" id="copyHint"></div>
+</div>
+</div>
+</section>
+<section id="reviews">
+<div class="sectionTitle">
+<h2>Google Reviews</h2>
+<p>See feedback for Andreea's Rhythmic Fitness.</p>
+</div>
+<div class="card">
+<div aria-label="Google reviews" class="reviewEmbed">
+<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Andreea%27s+Rhythmic+Fitness+Portlaoise&amp;output=embed"></iframe>
+</div>
+<div class="calendarTools">
+<a class="btn" href="https://www.google.com/maps/place/Andreea's+Rhythmic+Fitness/@52.9984608,-7.3332921" rel="noreferrer" target="_blank">Read on Google</a>
+<a class="btn primary" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Book your spot</a>
+</div>
+<p class="mini" style="margin-top:10px">Google embeds don't allow full custom styling of reviews, but this stays up to date automatically.</p>
+</div>
+</section>
+<section id="gallery">
+<div class="sectionTitle">
+<h2>Photo Gallery</h2>
+<p>A quick look at the vibe.</p>
+</div>
+<div aria-label="Photo gallery" class="gallery">
+<div class="gItem" data-src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=1400&amp;q=70" data-title="Pilates flow">
+<img alt="Pilates flow" loading="lazy" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=900&amp;q=70"/>
+<span class="gCap">Pilates flow</span>
+</div>
+<div class="gItem" data-src="https://images.unsplash.com/photo-1518459031867-a89b944bffe4?auto=format&amp;fit=crop&amp;w=1400&amp;q=70" data-title="Core strength">
+<img alt="Core strength" loading="lazy" src="https://images.unsplash.com/photo-1518459031867-a89b944bffe4?auto=format&amp;fit=crop&amp;w=900&amp;q=70"/>
+<span class="gCap">Core strength</span>
+</div>
+<div class="gItem" data-src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?auto=format&amp;fit=crop&amp;w=1400&amp;q=70" data-title="Mobility">
+<img alt="Mobility" loading="lazy" src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?auto=format&amp;fit=crop&amp;w=900&amp;q=70"/>
+<span class="gCap">Mobility</span>
+</div>
+</div>
+<p class="mini" style="margin-top:10px">Want these to be your real class photos? Upload images to the repo and I’ll swap the links.</p>
+</section>
+<section id="testimonials">
+<div class="sectionTitle">
+<h2>Testimonials</h2>
+<p>What clients say.</p>
+</div>
+<div class="card">
+<div aria-label="Testimonials slider" class="slider" id="tSlider">
+<div class="tCard">
+<div class="tTop">
+<div>
+<div class="tName">Client review</div>
+<div class="tMeta">Beginner • 4 weeks</div>
+</div>
+<span class="pill">★★★★★</span>
+</div>
+<div class="tText">“Clear instructions and a great pace. I feel stronger in my core and my posture has improved.”</div>
+</div>
+<div class="tCard">
+<div class="tTop">
+<div>
+<div class="tName">Client review</div>
+<div class="tMeta">Consistency • Bundle</div>
+</div>
+<span class="pill">★★★★★</span>
+</div>
+<div class="tText">“The sessions are challenging but doable. Andreea always gives options so I can progress safely.”</div>
+</div>
+<div class="tCard">
+<div class="tTop">
+<div>
+<div class="tName">Client review</div>
+<div class="tMeta">Strength + mobility</div>
+</div>
+<span class="pill">★★★★★</span>
+</div>
+<div class="tText">“I love the rhythm and flow — it keeps me motivated. Great vibe and coaching.”</div>
+</div>
+</div>
+<div class="calendarTools" style="justify-content:space-between">
+<button class="btn" id="tPrev" type="button">‹ Prev</button>
+<button class="btn" id="tNext" type="button">Next ›</button>
+</div>
+<p class="mini" style="margin-top:10px">You can replace these with real testimonials (name + short quote).</p>
+</div>
+</section>
+<section id="contact">
+<div class="sectionTitle">
+<h2>Contact &amp; Booking</h2>
+<p>Fastest: WhatsApp. You can also send a message below.</p>
+</div>
+<div class="contactGrid">
+<div class="card">
+<h3>Send a message</h3>
+<form id="contactForm">
+<div class="field">
+<label for="name">Name</label>
+<input autocomplete="name" id="name" name="name" placeholder="Your name" required=""/>
+</div>
+<div class="field">
+<label for="phone">Phone (optional)</label>
+<input autocomplete="tel" id="phone" name="phone" placeholder="e.g., +353 ..."/>
+</div>
+<div class="field">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Tell me your goals, experience level, and which class you want to join." required=""></textarea>
+</div>
+<button class="btn primary" type="submit">Open WhatsApp with this message</button>
+<p class="formNote">This form doesn’t send data to a server — it simply opens WhatsApp with a pre-filled message so you can book quickly.</p>
+</form>
+</div>
+<div aria-label="Map" class="map">
+<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Andreea%27s+Rhythmic+Fitness+Portlaoise&amp;output=embed">
+</iframe>
+</div>
+</div>
+</section>
+<footer>
+<div class="footRow">
+<div>© <span id="year"></span> Andreea's Rhythmic Fitness • Portlaoise</div>
+<div style="display:flex; gap:10px; flex-wrap:wrap">
+<a class="btn" href="#top">Back to top</a>
+<a class="btn whatsapp" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">WhatsApp</a>
+<a class="btn" href="https://www.instagram.com/an3eea/?hl=en" rel="noreferrer" target="_blank">Instagram</a>
+<a class="btn" href="https://www.facebook.com/andreea.aday" rel="noreferrer" target="_blank">Facebook</a>
+<a class="btn" href="https://www.linkedin.com/in/gina-andreea-serafim-489ab2261/" rel="noreferrer" target="_blank">LinkedIn</a>
+</div>
+</div>
+</footer>
+</div>
+</main>
+<!-- Lightbox -->
+<div aria-hidden="true" aria-label="Image viewer" class="lb" id="lb" role="dialog">
+<div class="lbInner">
+<div class="lbTop">
+<b id="lbTitle">Image</b>
+<button class="btn" id="lbClose" type="button">Close</button>
+</div>
+<img alt="" class="lbImg" id="lbImg"/>
+</div>
+</div>
+<script>
     document.addEventListener('DOMContentLoaded', () => {
       // Footer year
       const yearEl = document.getElementById('year');
@@ -719,97 +646,6 @@
         }
       });
 
-      // ===== Booking reminders (next occurrence + add-to-calendar) =====
-      // Class: Saturday 11:00–11:45 Europe/Dublin
-      const TZ = 'Europe/Dublin';
-
-      function nextSaturdayAt(hour, minute){
-        const now = new Date();
-        const local = new Date(now.toLocaleString('en-US', { timeZone: TZ }));
-        const day = local.getDay(); // 0 Sun .. 6 Sat
-        const daysUntilSat = (6 - day + 7) % 7;
-        const target = new Date(local);
-        target.setDate(local.getDate() + daysUntilSat);
-        target.setHours(hour, minute, 0, 0);
-        // If today is Saturday and time already passed, go to next week
-        if(daysUntilSat === 0 && local.getTime() >= target.getTime()){
-          target.setDate(target.getDate() + 7);
-        }
-        // Convert back to real Date in user's local timezone by using UTC components of that TZ time
-        // (Good enough for generating calendar links; Google Calendar accepts UTC zulu times.)
-        return target;
-      }
-
-      function fmtDate(d){
-        return d.toLocaleString('en-IE', { timeZone: TZ, weekday:'long', year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit' });
-      }
-
-      function toICSDate(d){
-        // produce UTC YYYYMMDDTHHMMSSZ
-        const utc = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours(), d.getMinutes(), 0));
-        const pad = (n) => String(n).padStart(2,'0');
-        return `${utc.getUTCFullYear()}${pad(utc.getUTCMonth()+1)}${pad(utc.getUTCDate())}T${pad(utc.getUTCHours())}${pad(utc.getUTCMinutes())}00Z`;
-      }
-
-      const start = nextSaturdayAt(11, 0);
-      const end = new Date(start); end.setMinutes(end.getMinutes() + 45);
-
-      const nextTextEl = document.getElementById('nextClassText');
-      if(nextTextEl){
-        nextTextEl.textContent = `Next class: ${fmtDate(start)} (${TZ})`;
-      }
-
-      const gTitle = "Pilates Strength & Rhythm";
-      const gLocation = "Club Vitae Health & Fitness Club, Portlaoise";
-      const gDetails = "Book via WhatsApp: +353 89 603 2793";
-
-      const btnAddGoogle = document.getElementById('btnAddGoogle');
-      if(btnAddGoogle){
-        btnAddGoogle.addEventListener('click', () => {
-          const dates = `${toICSDate(start)}/${toICSDate(end)}`;
-          const url = new URL('https://calendar.google.com/calendar/render');
-          url.searchParams.set('action','TEMPLATE');
-          url.searchParams.set('text', gTitle);
-          url.searchParams.set('dates', dates);
-          url.searchParams.set('details', gDetails);
-          url.searchParams.set('location', gLocation);
-          window.open(url.toString(), '_blank', 'noopener');
-        });
-      }
-
-      const btnDownloadICS = document.getElementById('btnDownloadICS');
-      if(btnDownloadICS){
-        btnDownloadICS.addEventListener('click', () => {
-          const uid = `ar-${Date.now()}@andreea-site`;
-          const ics = [
-            'BEGIN:VCALENDAR',
-            'VERSION:2.0',
-            'PRODID:-//Andreea\'s Rhythmic Fitness//Booking//EN',
-            'CALSCALE:GREGORIAN',
-            'BEGIN:VEVENT',
-            `UID:${uid}`,
-            `DTSTAMP:${toICSDate(new Date())}`,
-            `DTSTART:${toICSDate(start)}`,
-            `DTEND:${toICSDate(end)}`,
-            `SUMMARY:${gTitle}`,
-            `LOCATION:${gLocation}`,
-            `DESCRIPTION:${gDetails}`,
-            'END:VEVENT',
-            'END:VCALENDAR'
-          ].join('
-');
-
-          const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-          const a = document.createElement('a');
-          a.href = URL.createObjectURL(blob);
-          a.download = 'andreea-class.ics';
-          document.body.appendChild(a);
-          a.click();
-          a.remove();
-          setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-        });
-      }
-
       // ===== Gallery lightbox =====
       const lb = document.getElementById('lb');
       const lbImg = document.getElementById('lbImg');
@@ -851,4 +687,9 @@
         const w = card ? (card.getBoundingClientRect().width + 14) : 360;
         slider.scrollBy({ left: dir*w, behavior: 'smooth' });
       }
-      if(prev) prev.addEventListener
+      if(prev) prev.addEventListener('click', () => scrollByCard(-1));
+      if(next) next.addEventListener('click', () => scrollByCard(1));
+    });
+  </script>
+</body>
+</html>
