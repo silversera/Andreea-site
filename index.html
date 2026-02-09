@@ -218,6 +218,47 @@
     }
     .iconBtn svg{flex:0 0 auto}
     .iconBtn span{white-space:nowrap}
+
+/* =========================
+   MOBILE LAYOUT FIXES
+   ========================= */
+
+/* Prevent any horizontal scrolling */
+html, body { overflow-x: hidden; }
+
+/* Improve layout on tablets & phones */
+@media (max-width: 960px){
+
+  /* HERO spacing */
+  .hCard .pad { padding: 18px; }
+  .quick { padding: 14px; }
+
+  /* Instructor section */
+  .avatar {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: cover;
+  }
+
+  /* Contact icons (phone / email / WhatsApp) */
+  .contactIcons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .iconBtn {
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+
+  .iconBtn span {
+    white-space: normal;        /* allow wrapping */
+    overflow-wrap: anywhere;    /* break long emails */
+    word-break: break-word;
+  }
+}
 </style>
 </head>
 <body>
@@ -246,17 +287,6 @@
 <div class="cta">
 <a class="btn whatsapp" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">WhatsApp to book</a>
 <a class="btn primary" href="#contact">Get started</a>
-</div>
-    <div class="field">
-  <label for="email">Email *</label>
-  <input
-    autocomplete="email"
-    id="email"
-    name="email"
-    type="email"
-    placeholder="yourname@example.com"
-    required
-  />
 </div>
 </div>
 </div>
@@ -575,11 +605,14 @@ Due to my background in dance &amp; choreography I am able to use music to creat
 <input autocomplete="tel" id="phone" name="phone" placeholder="e.g., +353 ..."/>
 </div>
 <div class="field">
+<label for="email">Email *</label>
+<input autocomplete="email" id="email" name="email" type="email" placeholder="yourname@example.com" required=""/>
+</div>
+<div class="field">
 <label for="message">Message</label>
 <textarea id="message" name="message" placeholder="Tell me your goals, experience level, and which class you want to join." required=""></textarea>
 </div>
 <button class="btn primary" type="submit">Send booking email</button>
-<p class="formNote">This form doesn’t send data to a server — it simply opens Email with a pre-filled message so you can book quickly.</p>
 </form>
 </div>
 <div aria-label="Map" class="map">
@@ -618,7 +651,7 @@ Due to my background in dance &amp; choreography I am able to use music to creat
       const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // Prefill WhatsApp message from the form
+      // Prefill Email message from the form
       const form = document.getElementById('contactForm');
       if (form) {
         form.addEventListener('submit', (e) => {
