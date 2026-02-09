@@ -168,31 +168,23 @@
     }
     iframe{width:100%; height:100%; border:0}
 
-    /* Instagram Reel Gallery */
-    .reelGallery{
-      display:flex;
-      gap:14px;
-      overflow-x:auto;
-      padding:14px;
-      scroll-snap-type:x mandatory;
-      -webkit-overflow-scrolling:touch;
-    }
-    .reelGallery::-webkit-scrollbar{height:10px}
-    .reelGallery::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12); border-radius:999px}
-    .reelCard{
-      flex:0 0 auto;
-      width: min(340px, 86vw);
-      scroll-snap-align:start;
-      border:1px solid var(--border);
-      background:rgba(0,0,0,.18);
-      border-radius:var(--radius);
-      overflow:hidden;
-    }
-    .reelAspect{aspect-ratio: 9 / 16; width:100%; background:rgba(0,0,0,.22)}
-    .reelAspect iframe{width:100%; height:100%; border:0}
-    .reelMeta{padding:12px 14px; color:var(--muted); font-size:12px; display:flex; justify-content:space-between; gap:10px}
-    .reelMeta a{color:var(--text)}
     .reelHint{margin:10px 0 0; color:var(--muted); font-size:12px}
+
+    /* Google Reviews */
+    .reviewsRow{display:flex; gap:14px; overflow-x:auto; padding:14px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;}
+    .reviewsRow::-webkit-scrollbar{height:10px}
+    .reviewsRow::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12); border-radius:999px}
+    .reviewCard{flex:0 0 auto; width:min(420px, 86vw); scroll-snap-align:start; border:1px solid var(--border); background:rgba(0,0,0,.18); border-radius:var(--radius); padding:14px;}
+    .reviewTop{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px}
+    .reviewName{font-weight:700; font-size:13px}
+    .reviewMeta{color:var(--muted); font-size:12px}
+    .stars{display:inline-flex; gap:2px; font-size:12px; line-height:1}
+    .star{opacity:.95}
+    .reviewText{color:var(--text); font-size:13px; margin:10px 0 0; white-space:pre-wrap}
+    .reviewSummary{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-top:8px}
+    .reviewSummaryLeft{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+    .ratingBig{font-size:26px; font-weight:800; letter-spacing:-.4px}
+    .countMuted{color:var(--muted); font-size:12px}
 
     footer{padding:30px 0 40px; color:var(--muted); font-size:12px}
     .footRow{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap; border-top:1px solid var(--border); padding-top:16px}
@@ -226,6 +218,7 @@
           <a href="#classes">Classes</a>
           <a href="#schedule">Schedule</a>
           <a href="#pricing">Pricing</a>
+          <a href="#reviews">Reviews</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -288,19 +281,30 @@
         </div>
       </section>
 
-      <section id="video">
+      <section id="reviews">
         <div class="sectionTitle">
-          <h2>See the Class in Action</h2>
-          <p>Scroll through recent reels.</p>
+          <h2>User Reviews</h2>
+          <p>Recent feedback from Google.</p>
         </div>
 
-        <div class="card" style="padding:0">
-          <div class="reelGallery" id="reelGallery" aria-label="Instagram reel gallery">
-            <!-- Reels are injected by the script below. -->
+        <div class="card">
+          <div class="reviewSummary">
+            <div class="reviewSummaryLeft">
+              <div>
+                <div class="ratingBig" id="gRating">—</div>
+                <div class="countMuted" id="gCount">Loading reviews…</div>
+              </div>
+              <div class="stars" id="gStars" aria-label="Overall rating"></div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn" href="https://maps.app.goo.gl/LinHqUrxDBSn8WWY6" target="_blank" rel="noreferrer">Read on Google</a>
+              <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book your spot</a>
+            </div>
           </div>
-        </div>
 
-        <p class="reelHint">Tip: swipe left/right on mobile to browse. For the full feed, visit <a href="https://www.instagram.com/an3eea/?hl=en" target="_blank" rel="noreferrer">@an3eea</a>.</p>
+          <div class="reviewsRow" id="reviewsRow" aria-label="Google reviews"></div>
+          <p class="reelHint" id="reviewsHint" style="margin-top:12px">If reviews don’t appear, your site admin needs to connect the Google Places API key on the serverless endpoint.</p>
+        </div>
       </section>
 
       <section id="about">
@@ -494,79 +498,84 @@
       // WhatsApp: +353 89 603 2793
       window.open(`https://wa.me/353896032793?text=${text}`, '_blank', 'noopener');
     });
-  
 
-    // -------- Instagram Reels: responsive + scroll gallery --------
-    // Add your reel/post URLs here (any Instagram post or reel URL works).
-    // Example: https://www.instagram.com/reel/DUaS_-sjUaX/
-    const REEL_URLS_FALLBACK = [
-      'https://www.instagram.com/reel/DUaS_-sjUaX/',
-      // Add more URLs below:
-      // 'https://www.instagram.com/reel/XXXXXXXXXXX/',
-      // 'https://www.instagram.com/p/YYYYYYYYYYY/'
-    ];
-
-    // Optional auto-sync (requires an external JSON feed endpoint):
-    // Because Instagram does not allow fetching a user's latest posts from the browser without authentication,
-    // you need either (a) a small backend/serverless endpoint using the Instagram Graph API, or (b) a third-party widget.
-    // If you have an endpoint that returns: { "items": ["https://www.instagram.com/reel/.../", ...] }
-    // then set IG_FEED_ENDPOINT to that URL.
-    const IG_FEED_ENDPOINT = '/api/ig-feed'; // serverless endpoint that returns { items: [instaUrl, ...] }
-
-    function toEmbedUrl(instaUrl){
-      // Ensure trailing slash then convert to /embed
-      const u = instaUrl.split('?')[0].replace(/\/+$/, '') + '/';
-      return u + 'embed';
+    // Google reviews loader
+    function renderStars(el, rating){
+      const full = Math.floor(rating);
+      const half = (rating - full) >= 0.5;
+      const total = 5;
+      let s = '';
+      for(let i=0;i<total;i++){
+        if(i < full) s += '<span class="star">★</span>';
+        else if(i === full && half) s += '<span class="star">⯨</span>';
+        else s += '<span class="star" style="opacity:.35">★</span>';
+      }
+      el.innerHTML = s;
     }
 
-    function renderReels(urls){
-      const gallery = document.getElementById('reelGallery');
-      if(!gallery) return;
-      gallery.innerHTML = '';
+    function safeText(t){
+      return (t ?? '').toString();
+    }
 
-      urls.forEach((u) => {
-        const embed = toEmbedUrl(u);
+    function renderReviews(payload){
+      const row = document.getElementById('reviewsRow');
+      const ratingEl = document.getElementById('gRating');
+      const countEl = document.getElementById('gCount');
+      const starsEl = document.getElementById('gStars');
+      const hintEl = document.getElementById('reviewsHint');
+      if(!row) return;
+
+      const rating = Number(payload?.rating || 0);
+      const count = Number(payload?.user_ratings_total || 0);
+      if(ratingEl) ratingEl.textContent = rating ? rating.toFixed(1) : '—';
+      if(countEl) countEl.textContent = count ? `${count} Google ratings` : 'Google reviews';
+      if(starsEl && rating) renderStars(starsEl, rating);
+      if(hintEl) hintEl.style.display = 'none';
+
+      const reviews = Array.isArray(payload?.reviews) ? payload.reviews : [];
+      row.innerHTML = '';
+
+      if(!reviews.length){
+        row.innerHTML = '<div class="reviewMeta">No reviews returned yet.</div>';
+        return;
+      }
+
+      reviews.slice(0, 10).forEach(r => {
         const card = document.createElement('div');
-        card.className = 'reelCard';
+        card.className = 'reviewCard';
+        const name = safeText(r.author_name || 'Google user');
+        const time = safeText(r.relative_time_description || '');
+        const text = safeText(r.text || '');
+        const rr = Number(r.rating || 0);
+
         card.innerHTML = `
-          <div class="reelAspect">
-            <iframe src="${embed}" loading="lazy" allowfullscreen></iframe>
+          <div class="reviewTop">
+            <div>
+              <div class="reviewName">${name}</div>
+              <div class="reviewMeta">${time}</div>
+            </div>
+            <div class="stars" aria-label="${rr} out of 5">${'<span class="star">★</span>'.repeat(Math.max(0, Math.min(5, rr)))}${'<span class="star" style="opacity:.35">★</span>'.repeat(Math.max(0, 5-rr))}</div>
           </div>
-          <div class="reelMeta">
-            <span>Instagram</span>
-            <a href="${u}" target="_blank" rel="noreferrer">Open</a>
-          </div>
+          <div class="reviewText">${text.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
         `;
-        gallery.appendChild(card);
+        row.appendChild(card);
       });
+    }
 
-      // If only one reel is configured, duplicate it so the scroll gallery still feels like a gallery.
-      if(urls.length === 1){
-        const clone = urls[0];
-        const clone2 = urls[0];
-        renderReels([urls[0], clone, clone2]);
+    async function loadGoogleReviews(){
+      try{
+        const res = await fetch('/api/google-reviews', { cache: 'no-store' });
+        if(!res.ok) throw new Error('reviews request failed');
+        const data = await res.json();
+        renderReviews(data);
+      }catch(e){
+        // keep hint visible
+        const countEl = document.getElementById('gCount');
+        if(countEl) countEl.textContent = 'Connect Google reviews to display here.';
       }
     }
 
-    async function loadInstagramReels(){
-      if(IG_FEED_ENDPOINT){
-        try{
-          const res = await fetch(IG_FEED_ENDPOINT, { cache: 'no-store' });
-          if(!res.ok) throw new Error('Feed request failed');
-          const data = await res.json();
-          const items = Array.isArray(data?.items) ? data.items : [];
-          if(items.length){
-            renderReels(items.slice(0, 12));
-            return;
-          }
-        }catch(e){
-          // fall back
-        }
-      }
-      renderReels(REEL_URLS_FALLBACK);
-    }
-
-    loadInstagramReels();
+    loadGoogleReviews();
   </script>
 </body>
 </html>
