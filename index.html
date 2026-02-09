@@ -143,6 +143,18 @@
     .list small{color:var(--muted)}
     .badge{font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--border); background:rgba(0,0,0,.18); color:var(--text)}
 
+    /* Payment details */
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .payBox{margin-top:10px; border:1px solid var(--border); background:rgba(0,0,0,.18); border-radius:14px; padding:12px}
+    .payRow{display:flex; align-items:flex-start; justify-content:space-between; gap:10px; padding:8px 0; border-top:1px solid var(--border)}
+    .payRow:first-child{border-top:none; padding-top:0}
+    .payLabel{color:var(--muted); font-size:12px}
+    .payValue{font-size:13px; word-break:break-word}
+    .copyBtn{flex:0 0 auto; padding:8px 10px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,.04); color:var(--text); font-size:12px; font-weight:700; cursor:pointer}
+    .copyBtn:hover{background:rgba(255,255,255,.06)}
+    .copyBtn:active{transform:translateY(1px)}
+    .copyHint{color:var(--muted); font-size:12px; margin-top:10px}
+
     /* Contact */
     .contactGrid{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
     .field{display:flex; flex-direction:column; gap:6px; margin-bottom:10px}
@@ -312,112 +324,46 @@
           <h2>About</h2>
           <p>Mindful movement + practical strength training.</p>
         </div>
-        <div class="cards">
+        <div class="cards">$1
           <div class="card">
-            <h3>Training that feels good</h3>
-            <p>Sessions blend Pilates fundamentals (breath, control, alignment) with strength and rhythm so you leave feeling energized — not wrecked.</p>
-          </div>
-          <div class="card">
-            <h3>Inclusive coaching</h3>
-            <p>Options for beginners and progressions for experienced movers. You’ll get clear cues, form fixes, and a steady pace.</p>
-          </div>
-          <div class="card">
-            <h3>Results you can measure</h3>
-            <p>Build deep core strength, posture, balance, and mobility. Consistency is the goal — the plan is designed to keep you coming back.</p>
-          </div>
-        </div>
-      </section>
+            <h3>Payment options</h3>
+            <p>Pay in advance by bank transfer or Revolut. If you use bank transfer, please include your name as the reference.</p>
 
-      <section id="classes">
-        <div class="sectionTitle">
-          <h2>Classes & Services</h2>
-          <p>Pick what fits your week and your goals.</p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <h3>Pilates Strength & Rhythm</h3>
-            <p>45 minutes, full-body. Core focus, glutes, posture, plus smooth transitions and upbeat energy.</p>
-          </div>
-          <div class="card">
-            <h3>Private Coaching</h3>
-            <p>One-to-one sessions tailored to your goals (strength, mobility, confidence, technique). Ask for availability.</p>
-          </div>
-          <div class="card">
-            <h3>Small Group Training</h3>
-            <p>Train with a friend or two for extra accountability. Programming can be adjusted to your level.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="schedule">
-        <div class="sectionTitle">
-          <h2>Schedule</h2>
-          <p>Simple weekly rhythm — consistent time, consistent progress.</p>
-        </div>
-        <div class="twoCol">
-          <div class="card">
-            <h3>This week</h3>
-            <ul class="list">
-              <li>
+            <div class="payBox" aria-label="Bank transfer details">
+              <div class="payRow">
                 <div>
-                  <b>Saturday Pilates</b><br/>
-                  <small>All levels • 45 minutes</small>
+                  <div class="payLabel">Bank transfer — Account name</div>
+                  <div class="payValue">Gina Adreea Paun</div>
                 </div>
-                <span class="badge">11:00–11:45</span>
-              </li>
-            </ul>
-            <p style="margin:12px 0 0; color:var(--muted); font-size:12px">Tip: message ahead so your spot is saved.</p>
-          </div>
-          <div class="card">
-            <h3>What to expect</h3>
-            <ul class="list">
-              <li><span>Warm-up + mobility</span><small>8–10 min</small></li>
-              <li><span>Core & posture work</span><small>12–15 min</small></li>
-              <li><span>Strength flow</span><small>15–18 min</small></li>
-              <li><span>Cooldown + breathwork</span><small>3–5 min</small></li>
-            </ul>
-          </div>
-        </div>
-      </section>
+                <button class="copyBtn" type="button" data-copy="Gina Adreea Paun">Copy</button>
+              </div>
+              <div class="payRow">
+                <div>
+                  <div class="payLabel">IBAN</div>
+                  <div class="payValue mono">IE69AIBK93351145078007</div>
+                </div>
+                <button class="copyBtn" type="button" data-copy="IE69AIBK93351145078007">Copy</button>
+              </div>
+              <div class="payRow">
+                <div>
+                  <div class="payLabel">SWIFT / BIC</div>
+                  <div class="payValue mono">AIBKIE2D</div>
+                </div>
+                <button class="copyBtn" type="button" data-copy="AIBKIE2D">Copy</button>
+              </div>
+            </div>
 
-      <section id="pricing">
-        <div class="sectionTitle">
-          <h2>Pricing</h2>
-          <p>Flexible options — choose pay-as-you-go or save with a bundle.</p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <h3>Pay As You Go</h3>
-            <p style="margin-top:8px"><b style="font-size:28px">€15</b> <span style="color:var(--muted)">/ class</span></p>
-            <ul class="list">
-              <li><span>Drop-in friendly</span><small>best for trying it out</small></li>
-              <li><span>All levels welcome</span><small>options provided</small></li>
-            </ul>
-            <div style="margin-top:14px">
-              <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book a drop-in</a>
+            <div class="payBox" aria-label="Revolut details">
+              <div class="payRow">
+                <div>
+                  <div class="payLabel">Revolut</div>
+                  <div class="payValue mono">@andreed579</div>
+                </div>
+                <button class="copyBtn" type="button" data-copy="@andreed579">Copy</button>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <h3>4-Session Bundle</h3>
-            <p style="margin-top:8px"><b style="font-size:28px">€48</b> <span style="color:var(--muted)">/ 4 classes</span></p>
-            <ul class="list">
-              <li><span>€12 per class</span><small>save vs drop-in</small></li>
-              <li><span>Best for consistency</span><small>progress faster</small></li>
-            </ul>
-            <div style="margin-top:14px">
-              <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Get the bundle</a>
-            </div>
-          </div>
-          <div class="card">
-            <h3>Private / Small Group</h3>
-            <p>Pricing depends on session length and goals. Message for availability and options.</p>
-            <ul class="list">
-              <li><span>Personal training</span><small>tailored programming</small></li>
-              <li><span>Small groups</span><small>accountability + fun</small></li>
-            </ul>
-            <div style="margin-top:14px">
-              <a class="btn" href="#contact">Request details</a>
-            </div>
+
+            <div class="copyHint" id="copyHint" aria-live="polite"></div>
           </div>
         </div>
       </section>
@@ -576,6 +522,28 @@
     }
 
     loadGoogleReviews();
+
+    // Copy-to-clipboard for payment details
+    function setCopyHint(text){
+      const el = document.getElementById('copyHint');
+      if(!el) return;
+      el.textContent = text;
+      clearTimeout(window.__copyHintTimer);
+      window.__copyHintTimer = setTimeout(() => { el.textContent = ''; }, 2500);
+    }
+
+    document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('.copyBtn');
+      if(!btn) return;
+      const value = btn.getAttribute('data-copy') || '';
+      try{
+        await navigator.clipboard.writeText(value);
+        setCopyHint('Copied to clipboard.');
+      }catch(err){
+        // Fallback: prompt for manual copy
+        window.prompt('Copy this value:', value);
+      }
+    });
   </script>
 </body>
 </html>
