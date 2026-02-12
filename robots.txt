@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://andreea-rhythmic-sm32.vercel.app/sitemap.xml
+Sitemap: https://andreeafitness.ie/sitemap.xml
