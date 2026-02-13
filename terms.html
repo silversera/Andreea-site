@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Terms & Conditions for Andreea's Rhythmic Fitness classes in Portlaoise." />
   <title>Terms & Conditions | Andreea's Rhythmic Fitness</title>
+
   <style>
     :root{
       --bg:#0b0d12;
@@ -22,7 +23,7 @@
     html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background:
         radial-gradient(1200px 700px at 15% 10%, rgba(124,92,255,.25), transparent 60%),
         radial-gradient(900px 600px at 85% 15%, rgba(34,197,94,.18), transparent 55%),
@@ -34,59 +35,48 @@
     a{color:inherit; text-decoration:none}
     .container{max-width:var(--max); margin:0 auto; padding:0 20px}
 
-    /* Header */
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter:saturate(140%) blur(10px);
       background:linear-gradient(to bottom, rgba(11,13,18,.86), rgba(11,13,18,.55));
       border-bottom:1px solid var(--border);
     }
+
     .nav{
       display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:14px;
+      padding:14px 0; gap:14px;
     }
+
     .brand{display:flex; align-items:center; gap:12px; min-width:210px}
     .logo{
       width:42px; height:42px; border-radius:12px;
       display:flex; align-items:center; justify-content:center;
-      font-weight:800; font-size:16px; letter-spacing:.5px;
+      font-weight:800; font-size:16px;
       background:linear-gradient(135deg, var(--accent), #60a5fa, var(--accent2));
       color:white;
-      box-shadow:0 0 0 1px rgba(255,255,255,.18) inset, 0 6px 18px rgba(0,0,0,.35);
     }
-    .brand b{display:block; font-size:14px; letter-spacing:.2px}
-    .brand span{display:block; font-size:12px; color:var(--muted)}
 
-    .links{display:flex; gap:16px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .links{display:flex; gap:16px; align-items:center}
     .links a{font-size:13px; color:var(--muted)}
     .links a:hover{color:var(--text)}
     .links a.active{color:var(--text)}
 
-    .cta{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:10px 12px;
       border-radius:12px;
       border:1px solid var(--border);
       background:rgba(255,255,255,.04);
-      color:var(--text);
       font-size:13px;
       font-weight:600;
-      letter-spacing:.2px;
-      transition:transform .12s ease, background .12s ease, border-color .12s ease;
-      white-space:nowrap;
     }
-    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.18)}
-    .btn.primary{background:linear-gradient(135deg, rgba(124,92,255,.95), rgba(96,165,250,.85)); border-color:rgba(255,255,255,.16)}
-    .btn.primary:hover{background:linear-gradient(135deg, rgba(124,92,255,1), rgba(96,165,250,.95))}
-    .btn.whatsapp{background:linear-gradient(135deg, rgba(34,197,94,.92), rgba(16,185,129,.78)); border-color:rgba(255,255,255,.14)}
+    .btn.primary{background:linear-gradient(135deg, rgba(124,92,255,.95), rgba(96,165,250,.85))}
+    .btn.whatsapp{background:linear-gradient(135deg, rgba(34,197,94,.92), rgba(16,185,129,.78))}
 
-    /* Content */
     main{padding:26px 0 40px}
     .sectionTitle{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin:18px 0 14px}
-    .sectionTitle h1{margin:0; font-size:28px; letter-spacing:-.3px}
-    .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
+    .sectionTitle h1{margin:0; font-size:28px}
+    .muted{color:var(--muted); font-size:13px}
 
     .card{
       border:1px solid var(--border);
@@ -95,141 +85,139 @@
       padding:16px;
       box-shadow:var(--shadow);
     }
-    .card h2{margin:18px 0 8px; font-size:16px}
-    .card h2:first-child{margin-top:0}
-    .muted{color:var(--muted); font-size:13px}
 
+    .card h2{margin:18px 0 8px; font-size:16px}
     .list{margin:10px 0 0; padding:0; list-style:none}
     .list li{padding:10px 0; border-top:1px solid var(--border)}
     .list li:first-child{border-top:none; padding-top:0}
 
     footer{padding:30px 0 40px; color:var(--muted); font-size:12px}
-    .footRow{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap; border-top:1px solid var(--border); padding-top:16px}
-
-    @media (max-width: 960px){
-      .brand{min-width:auto}
-      .links{display:none}
-    }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <div class="nav">
-        <a class="brand" href="/" aria-label="Go to home">
-          <div class="logo" aria-hidden="true">AR</div>
-          <div>
-            <b>Andreea's Rhythmic Fitness</b>
-            <span>Pilates • Strength • Rhythm — Portlaoise</span>
-          </div>
-        </a>
 
-        <nav class="links" aria-label="Primary">
-          <a href="/#about">About</a>
-          <a href="/#classes">Classes</a>
-          <a href="/#schedule">Schedule</a>
-          <a href="/#pricing">Pricing</a>
-          <a href="/#reviews">Reviews</a>
-          <a class="active" href="/terms.html">Terms</a>
-          <a href="/#contact">Contact</a>
-        </nav>
-
-        <div class="cta">
-          <a class="btn" href="/#pricing">See pricing</a>
-          <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">WhatsApp to book</a>
-          <a class="btn primary" href="/#contact">Get started</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <div class="container">
-      <div class="sectionTitle">
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="/">
+        <div class="logo">AR</div>
         <div>
-          <h1>Terms & Conditions</h1>
-          <p>Last updated: <span id="updated">—</span></p>
+          <b>Andreea's Rhythmic Fitness</b>
+          <span>Pilates • Strength • Rhythm — Portlaoise</span>
         </div>
-        <p class="muted">Please read before participating.</p>
-      </div>
+      </a>
 
-      <div class="card">
-        <p class="muted">By attending classes with Andreea's Rhythmic Fitness, you agree to the following terms.</p>
-
-        <h2>Eligibility</h2>
-        <ul class="list">
-          <li>Participants must be 18 years or older.</li>
-          <li>Classes are not suitable during pregnancy or within 12 weeks postpartum unless medically cleared.</li>
-        </ul>
-
-        <h2>Health & Safety</h2>
-        <ul class="list">
-          <li>Inform the instructor of any injuries, illnesses, or medical conditions before participating.</li>
-          <li>Stop exercising immediately if you feel pain, dizziness, or discomfort.</li>
-        </ul>
-
-        <h2>Liability Waiver</h2>
-        <ul class="list">
-          <li>Fitness classes involve physical activity and carry inherent risks.</li>
-          <li>You accept full responsibility for your participation and wellbeing.</li>
-        </ul>
-
-        <h2>Payments</h2>
-        <ul class="list">
-          <li>Full payment is required in advance to secure your class booking.</li>
-          <li>Payment must be completed within 24 hours of booking.</li>
-        </ul>
-
-        <h2>Cancellations & Refunds</h2>
-        <ul class="list">
-          <li>24 hours notice is required for cancellations to receive class credit or rescheduling.</li>
-          <li>Cancellations made less than 24 hours before class are non-refundable.</li>
-        </ul>
-
-        <h2>Lateness & No-Shows</h2>
-        <ul class="list">
-          <li>Please arrive on time. Late arrivals may not be permitted to join the class.</li>
-          <li>No-shows are non-refundable.</li>
-        </ul>
-
-        <h2>Personal Belongings</h2>
-        <ul class="list">
-          <li>Participants are responsible for their own belongings.</li>
-          <li>Andreea's Rhythmic Fitness accepts no liability for lost or damaged items.</li>
-        </ul>
-
-        <h2>Data Protection</h2>
-        <ul class="list">
-          <li>Personal information collected is used only for class management and communication and will be kept confidential.</li>
-        </ul>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
-          <a class="btn" href="/">Back to home</a>
-          <a class="btn primary" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">Book on WhatsApp</a>
-        </div>
-      </div>
-
-      <footer>
-        <div class="footRow">
-          <div>© <span id="year"></span> Andreea's Rhythmic Fitness • Portlaoise</div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap">
-            <a class="btn" href="/">Home</a>
-            <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">WhatsApp</a>
-            <a class="btn" href="https://www.instagram.com/an3eea/?hl=en" target="_blank" rel="noreferrer">Instagram</a>
-            <a class="btn" href="https://www.facebook.com/andreea.aday" target="_blank" rel="noreferrer">Facebook</a>
-            <a class="btn" href="https://www.linkedin.com/in/gina-andreea-serafim-489ab2261/" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
-        </div>
-      </footer>
+      <nav class="links">
+        <a href="/#about">About</a>
+        <a href="/#classes">Classes</a>
+        <a href="/#schedule">Schedule</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#testimonials">Reviews</a>
+        <a class="active" href="/terms.html">Terms</a>
+        <a href="/#contact">Contact</a>
+      </nav>
     </div>
-  </main>
+  </div>
+</header>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Set a simple "Last updated" date (today) — change manually if you prefer.
-    const d = new Date();
-    const fmt = d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
-    document.getElementById('updated').textContent = fmt;
-  </script>
+<main>
+  <div class="container">
+
+    <div class="sectionTitle">
+      <div>
+        <h1>Terms & Conditions</h1>
+        <p>Last updated: <span id="updated">—</span></p>
+      </div>
+      <p class="muted">Please read before participating.</p>
+    </div>
+
+    <div class="card">
+
+      <p class="muted">
+        These Terms & Conditions apply to classes organised and delivered independently
+        by Andreea's Rhythmic Fitness. By attending any session, you confirm that you
+        have read, understood, and agree to the following terms.
+      </p>
+
+      <h2>Client Forms</h2>
+      <p>
+        All participants must review and complete the required form prior to attending
+        their first session.
+      </p>
+
+      <p>
+        <a class="btn primary" href="/assets/forms/pilates-terms-waiver-intake.pdf" target="_blank" rel="noopener">
+          Download Terms, Waiver & Intake Form (PDF)
+        </a>
+      </p>
+
+      <p>
+        <a class="btn" href="/assets/forms/pilates-class-acknowledgment.pdf" target="_blank" rel="noopener">
+          Download Ongoing Class Acknowledgment Form (PDF)
+        </a>
+      </p>
+
+      <h2>Eligibility</h2>
+      <ul class="list">
+        <li>Participants must be 18 years or older.</li>
+        <li>Classes are not suitable during pregnancy or within 12 weeks postpartum unless medically cleared.</li>
+      </ul>
+
+      <h2>Health & Safety</h2>
+      <ul class="list">
+        <li>You must inform the instructor of any injuries, medical conditions, or health concerns before participating.</li>
+        <li>Stop exercising immediately if you experience pain, dizziness, or discomfort.</li>
+      </ul>
+
+      <h2>Liability</h2>
+      <ul class="list">
+        <li>Fitness classes involve physical activity and carry inherent risks of injury.</li>
+        <li>Participation is at your own risk.</li>
+        <li>The instructor shall not be held liable for injuries, damages, or losses arising from participation, except in cases of proven negligence.</li>
+      </ul>
+
+      <h2>Payments</h2>
+      <ul class="list">
+        <li>Full payment is required in advance to secure your booking.</li>
+        <li>Payment must be completed within 24 hours of booking.</li>
+      </ul>
+
+      <h2>Cancellations</h2>
+      <ul class="list">
+        <li>24 hours notice is required to receive credit or reschedule.</li>
+        <li>Cancellations made less than 24 hours before class are non-refundable.</li>
+      </ul>
+
+      <h2>Lateness & No-Shows</h2>
+      <ul class="list">
+        <li>Late arrivals may not be permitted to join once class has started.</li>
+        <li>No-shows are non-refundable.</li>
+      </ul>
+
+      <h2>Personal Belongings</h2>
+      <ul class="list">
+        <li>Participants are responsible for their own belongings.</li>
+        <li>No liability is accepted for lost or damaged items.</li>
+      </ul>
+
+      <h2>Data Protection</h2>
+      <ul class="list">
+        <li>Personal information (name, phone, email, health disclosures) is used solely for class administration and safety.</li>
+        <li>Information is stored securely and handled in accordance with GDPR regulations.</li>
+        <li>No data is shared with third parties without consent.</li>
+      </ul>
+
+    </div>
+
+  </div>
+</main>
+
+<script>
+  const d = new Date();
+  document.getElementById('updated').textContent =
+    d.toLocaleDateString(undefined, { year:'numeric', month:'long', day:'numeric' });
+</script>
+
 </body>
 </html>
