@@ -77,26 +77,28 @@
 }</script>
 <style>
     :root{
-      --bg:#0b0d12;
-      --card:#121623;
-      --muted:#a7b0c0;
-      --text:#eef2ff;
-      --accent:#7c5cff;
-      --accent2:#22c55e;
+      --bg:#0E1117;
+      --card:#161B22;
+      --muted:#B8C1CC;
+      --text:#F5F7FA;
+      --accent:#FF6F61;          /* primary brand accent (CTA) */
+      --accentHover:#FF5848;
+      --accentSoft:#C6A8FF;      /* secondary accent */
+      --accent2:#22c55e;         /* keep for WhatsApp / success */
       --border:rgba(255,255,255,.10);
       --shadow:0 16px 50px rgba(0,0,0,.45);
       --radius:18px;
       --max:1120px;
     }
-    *{box-sizing:border-box}
+*{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:
-        radial-gradient(1200px 700px at 15% 10%, rgba(124,92,255,.25), transparent 60%),
-        radial-gradient(900px 600px at 85% 15%, rgba(34,197,94,.18), transparent 55%),
-        radial-gradient(900px 600px at 50% 100%, rgba(59,130,246,.12), transparent 55%),
+            background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(198,168,255,.22), transparent 60%),
+        radial-gradient(900px 600px at 85% 15%, rgba(255,111,97,.18), transparent 55%),
+        radial-gradient(900px 600px at 50% 100%, rgba(255,111,97,.10), transparent 55%),
         var(--bg);
       color:var(--text);
       line-height:1.5;
@@ -108,7 +110,7 @@
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter:saturate(140%) blur(10px);
-      background:linear-gradient(to bottom, rgba(11,13,18,.86), rgba(11,13,18,.55));
+      background:linear-gradient(to bottom, rgba(14,17,23,.86), rgba(14,17,23,.55));
       border-bottom:1px solid var(--border);
     }
     .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:14px;}
@@ -117,7 +119,7 @@
       width:42px; height:42px; border-radius:12px;
       display:flex; align-items:center; justify-content:center;
       font-weight:800; font-size:16px; letter-spacing:.5px;
-      background:linear-gradient(135deg, var(--accent), #60a5fa, var(--accent2));
+      background:linear-gradient(135deg, var(--accentSoft), #60a5fa, var(--accent));
       color:white;
       box-shadow:0 0 0 1px rgba(255,255,255,.18) inset, 0 6px 18px rgba(0,0,0,.35);
     }
@@ -159,8 +161,8 @@
   display: block;
 }
     .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.18)}
-    .btn.primary{background:linear-gradient(135deg, rgba(124,92,255,.95), rgba(96,165,250,.85)); border-color:rgba(255,255,255,.16)}
-    .btn.primary:hover{background:linear-gradient(135deg, rgba(124,92,255,1), rgba(96,165,250,.95))}
+    .btn.primary{background:linear-gradient(135deg, rgba(255,111,97,.95), rgba(255,88,72,.88)); border-color:rgba(255,255,255,.16)}
+    .btn.primary:hover{background:linear-gradient(135deg, rgba(255,111,97,1), rgba(255,88,72,.96))}
     .btn.whatsapp{background:linear-gradient(135deg, rgba(34,197,94,.92), rgba(16,185,129,.78)); border-color:rgba(255,255,255,.14)}
 
     
@@ -173,22 +175,22 @@
       padding:14px 18px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.18);
-      background:linear-gradient(135deg, rgba(34,197,94,.95), rgba(16,185,129,.85));
+      background:linear-gradient(135deg, rgba(255,111,97,.96), rgba(255,88,72,.88));
       color:var(--text);
       font-weight:800;
       letter-spacing:.2px;
       text-decoration:none;
-      box-shadow:0 14px 40px rgba(34,197,94,.22);
+      box-shadow:0 14px 40px rgba(255,111,97,.22);
       transition:transform .12s ease, filter .12s ease, box-shadow .12s ease;
       margin:14px 0 6px;
     }
     .cta-btn:hover{
       transform:translateY(-1px);
       filter:brightness(1.03);
-      box-shadow:0 18px 46px rgba(34,197,94,.28);
+      box-shadow:0 18px 46px rgba(255,111,97,.28);
     }
     .cta-btn:focus-visible{
-      outline:3px solid rgba(34,197,94,.45);
+      outline:3px solid rgba(255,111,97,.45);
       outline-offset:3px;
     }
 
@@ -288,7 +290,7 @@
     .field{display:flex; flex-direction:column; gap:6px; margin-bottom:10px}
     label{font-size:12px; color:var(--muted)}
     input, textarea{border:1px solid var(--border); background:rgba(0,0,0,.22); border-radius:14px; padding:12px 12px; color:var(--text); font-size:14px; outline:none;}
-    input:focus, textarea:focus{border-color:rgba(124,92,255,.55)}
+    input:focus, textarea:focus{border-color:rgba(255,111,97,.55)}
     textarea{min-height:110px; resize:vertical}
     .formNote{color:var(--muted); font-size:12px; margin:10px 0 0}
     .map{border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; min-height:330px; background:rgba(0,0,0,.18);}
@@ -409,7 +411,7 @@ html, body { overflow-x: hidden; }
 <a href="#schedule">Schedule</a>
 <a href="#pricing">Pricing</a>
 <a href="#gallery">Gallery</a>
-<a href="#testimonials">Reviews</a></a>
+<a href="#testimonials">Reviews</a>
 <a href="/terms.html">Terms</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -435,7 +437,7 @@ Based in Portlaoise, Andreea offers 1:1 personal training, small group Pilates a
 </p>
 <a class="cta-btn" href="#contact">Book a Free Consultation</a>
 <p class="local-note">
-Providing in-person training across Portlaoise and County Laois, with online coaching available throughout Ireland and worldwide.
+Providing in-person training across County Laois, with online coaching available throughout Ireland and worldwide.
 </p>
 <div class="pillRow">
 <span class="pill">All levels welcome</span>
@@ -955,11 +957,6 @@ window.location.href = mailto;
   </script>
 </body>
 </html>
-
-
-
-
-
 
 
 
