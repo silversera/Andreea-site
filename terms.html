@@ -92,6 +92,39 @@
     .list li:first-child{border-top:none; padding-top:0}
 
     footer{padding:30px 0 40px; color:var(--muted); font-size:12px}
+    /* Mobile fixes for Terms page header + CTA wrapping */
+@media (max-width: 960px){
+  .nav{
+    flex-wrap:wrap;
+    align-items:flex-start;
+  }
+  .cta{
+    width:100%;
+    justify-content:flex-start;
+  }
+}
+
+@media (max-width: 640px){
+  .brand{
+    width:100%;
+    min-width:0;
+  }
+  .cta{
+    width:100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+  }
+  .cta .btn{
+    width:100%;
+    text-align:center;
+  }
+}
+
+/* Safety: prevent accidental horizontal scrolling */
+html, body{
+  overflow-x:hidden;
+}
   </style>
 </head>
 
