@@ -314,7 +314,16 @@
       .calendarWrap iframe, .reviewEmbed iframe{height:520px}
     }
   
-
+@media (max-width: 640px){
+  .cta{
+    width:100%;
+    justify-content:space-between;
+  }
+  .cta .btn{
+    flex:1;
+    text-align:center;
+  }
+}
     .iconBtn{
       display:inline-flex;
       gap:10px;
@@ -393,12 +402,11 @@ html, body { overflow-x: hidden; }
 <div aria-hidden="true" class="logo">AR</div>
 <div>
 <b>Andreea's Rhythmic Fitness</b>
-<span>Pilates • Strength • Rhythm — Portlaoise</span>
+<span>Personal Trainer & Pilates Classes in Portlaoise</span>
 </div>
 </a>
 <nav aria-label="Primary" class="links">
 <a href="#about">About</a>
-<a href="#instructor">Instructor</a>
 <a href="#classes">Classes</a>
 <a href="#schedule">Schedule</a>
 <a href="#pricing">Pricing</a>
@@ -408,8 +416,10 @@ html, body { overflow-x: hidden; }
 <a href="#contact">Contact</a>
 </nav>
 <div class="cta">
-<a class="btn whatsapp" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">WhatsApp to book</a>
-<a class="btn primary" href="#contact">Get started</a>
+  <a class="btn" href="/#pricing">See pricing</a>
+  <a class="btn primary" href="/#contact">Get started</a>
+  <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">WhatsApp</a>
+  <a class="btn" href="/terms.html">Terms</a>
 </div>
 </div>
 </div>
@@ -468,40 +478,73 @@ Providing in-person training across County Laois, with online coaching available
 </div>
 </div>
 </section>
+
 <section id="about">
-<div class="sectionTitle">
-<h2>About</h2>
-<p>Mindful movement + practical strength training.</p>
-</div>
-<div class="cards">
-<div class="card">
-<h3>Training that feels good</h3>
-<p>Sessions blend Pilates fundamentals (breath, control, alignment) with strength and rhythm so you leave feeling energized — not wrecked.</p>
-</div>
-<div class="card">
-<h3>Inclusive coaching</h3>
-<p>Options for beginners and progressions for experienced movers. You’ll get clear cues, form fixes, and a steady pace.</p>
-</div>
-<div class="card">
-<h3>Results you can measure</h3>
-<p>Build deep core strength, posture, balance, and mobility. Consistency is the goal — the plan is designed to keep you coming back.</p>
-</div>
-</div>
+  <div class="sectionTitle">
+    <h2>About</h2>
+    <p>Mindful movement + practical strength training.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Training that feels good</h3>
+      <p>
+        Sessions blend Pilates fundamentals (breath, control, alignment)
+        with strength and rhythm so you leave feeling energized — not wrecked.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Inclusive coaching</h3>
+      <p>
+        Options for beginners and progressions for experienced movers.
+        You’ll get clear cues, form fixes, and a steady pace.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Results you can measure</h3>
+      <p>
+        Build deep core strength, posture, balance, and mobility.
+        Consistency is the goal — the plan is designed to keep you coming back.
+      </p>
+    </div>
+  </div>
 </section>
 <section id="instructor">
-<div class="sectionTitle">
-<h2>Instructor</h2>
-<p>Meet your coach.</p>
-</div>
-<div class="card">
-<div class="profile">
-<img alt="Gina Andreea Serafim – Fitness Instructor" class="avatar" loading="lazy" src="eu bun.jpg"/>
-<div>
-<h3 style="margin:0">Gina Andreea Serafim</h3>
-<p class="copyHint" style="margin:6px 0 0;">REPs Ireland Registered • Fully insured (public liability)</p>
-<div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
-  <a class="btn" href="https://repsireland.ie/member-profile/?member=76395" target="_blank" rel="noopener">View REPs profile</a>
-</div>
+  <div class="sectionTitle">
+    <h2>Meet Your Instructor – Personal Trainer in Portlaoise</h2>
+    <p>Meet your coach.</p>
+  </div>
+
+  <div class="card">
+    <div class="profile">
+      <img 
+        alt="Gina Andreea Serafim – Personal Trainer in Portlaoise"
+        class="avatar"
+        loading="lazy"
+        src="eu bun.jpg"
+      />
+
+      <div>
+        <h3 style="margin:0">Gina Andreea Serafim</h3>
+        <p class="copyHint" style="margin:6px 0 0;">
+          REPs Ireland Registered • Fully insured (public liability)
+        </p>
+
+        <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn"
+             href="https://repsireland.ie/member-profile/?member=76395"
+             target="_blank"
+             rel="noopener">
+            View REPs profile
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 <p style="margin:6px 0 0; color:var(--muted); font-size:13px; white-space:pre-line">I am a dedicated fitness instructor which has a passion for teaching a variety of fitness classes like:
 Dance Fitness, Step, Spinning, Box exercise
 Due to my background in dance &amp; choreography I am able to use music to create fitness routines for both beginners and the most demanding clients. Testimonials to this are the Google reviews I received from my clients.</p>
