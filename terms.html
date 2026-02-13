@@ -7,26 +7,28 @@
   <title>Terms & Conditions | Andreea's Rhythmic Fitness</title>
   <style>
     :root{
-      --bg:#0b0d12;
-      --card:#121623;
-      --muted:#a7b0c0;
-      --text:#eef2ff;
-      --accent:#7c5cff;
-      --accent2:#22c55e;
+      --bg:#0E1117;
+      --card:#161B22;
+      --muted:#B8C1CC;
+      --text:#F5F7FA;
+      --accent:#FF6F61;          /* primary brand accent (CTA) */
+      --accentHover:#FF5848;
+      --accentSoft:#C6A8FF;      /* secondary accent */
+      --accent2:#22c55e;         /* keep for WhatsApp / success */
       --border:rgba(255,255,255,.10);
       --shadow:0 16px 50px rgba(0,0,0,.45);
       --radius:18px;
       --max:1120px;
     }
-    *{box-sizing:border-box}
+*{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:
-        radial-gradient(1200px 700px at 15% 10%, rgba(124,92,255,.25), transparent 60%),
-        radial-gradient(900px 600px at 85% 15%, rgba(34,197,94,.18), transparent 55%),
-        radial-gradient(900px 600px at 50% 100%, rgba(59,130,246,.12), transparent 55%),
+            background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(198,168,255,.22), transparent 60%),
+        radial-gradient(900px 600px at 85% 15%, rgba(255,111,97,.18), transparent 55%),
+        radial-gradient(900px 600px at 50% 100%, rgba(255,111,97,.10), transparent 55%),
         var(--bg);
       color:var(--text);
       line-height:1.5;
@@ -38,7 +40,7 @@
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter:saturate(140%) blur(10px);
-      background:linear-gradient(to bottom, rgba(11,13,18,.86), rgba(11,13,18,.55));
+      background:linear-gradient(to bottom, rgba(14,17,23,.86), rgba(14,17,23,.55));
       border-bottom:1px solid var(--border);
     }
     .nav{
@@ -51,7 +53,7 @@
       width:42px; height:42px; border-radius:12px;
       display:flex; align-items:center; justify-content:center;
       font-weight:800; font-size:16px; letter-spacing:.5px;
-      background:linear-gradient(135deg, var(--accent), #60a5fa, var(--accent2));
+      background:linear-gradient(135deg, var(--accentSoft), #60a5fa, var(--accent));
       color:white;
       box-shadow:0 0 0 1px rgba(255,255,255,.18) inset, 0 6px 18px rgba(0,0,0,.35);
     }
@@ -78,8 +80,8 @@
       white-space:nowrap;
     }
     .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.18)}
-    .btn.primary{background:linear-gradient(135deg, rgba(124,92,255,.95), rgba(96,165,250,.85)); border-color:rgba(255,255,255,.16)}
-    .btn.primary:hover{background:linear-gradient(135deg, rgba(124,92,255,1), rgba(96,165,250,.95))}
+    .btn.primary{background:linear-gradient(135deg, rgba(255,111,97,.95), rgba(255,88,72,.88)); border-color:rgba(255,255,255,.16)}
+    .btn.primary:hover{background:linear-gradient(135deg, rgba(255,111,97,1), rgba(255,88,72,.96))}
     .btn.whatsapp{background:linear-gradient(135deg, rgba(34,197,94,.92), rgba(16,185,129,.78)); border-color:rgba(255,255,255,.14)}
 
     /* Content */
@@ -168,10 +170,11 @@
           <li>Stop exercising immediately if you feel pain, dizziness, or discomfort.</li>
         </ul>
 
-        <h2>Liability Waiver</h2>
+                <h2>Liability</h2>
         <ul class="list">
-          <li>Fitness classes involve physical activity and carry inherent risks.</li>
-          <li>You accept full responsibility for your participation and wellbeing.</li>
+          <li>Participation in fitness classes involves physical exertion and carries inherent risks, including the risk of injury.</li>
+          <li>By booking and attending a session, you confirm that you participate voluntarily and at your own risk.</li>
+          <li>Andreea's Rhythmic Fitness shall not be liable for any injury, loss, or damage arising from participation, except where caused by proven negligence.</li>
         </ul>
 
         <h2>Payments</h2>
@@ -198,9 +201,16 @@
           <li>Andreea's Rhythmic Fitness accepts no liability for lost or damaged items.</li>
         </ul>
 
-        <h2>Data Protection</h2>
+                <h2>Data Protection</h2>
         <ul class="list">
-          <li>Personal information collected is used only for class management and communication and will be kept confidential.</li>
+          <li>Personal information (name, phone, email, and any health disclosures) is used solely for class administration, communication, and safety.</li>
+          <li>Information is stored securely and handled in accordance with GDPR.</li>
+          <li>No personal data is shared with third parties without your consent, unless required by law.</li>
+        </ul>
+
+        <h2>Governing Law</h2>
+        <ul class="list">
+          <li>These terms are governed by the laws of the Republic of Ireland.</li>
         </ul>
 
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
