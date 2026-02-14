@@ -425,10 +425,16 @@ html, body { overflow-x: hidden; }
 /* ===== Pricing (services) ===== */
 .pricingGrid{
   display:grid;
-  grid-template-columns: repeat(5, minmax(210px, 1fr));
-  gap:14px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:18px;
   align-items:stretch;
 }
+
+/* IMPORTANT: prevent clipping */
+#pricing, #pricing .pricingGrid, #pricing .sectionTitle {
+  overflow: visible !important;
+}
+
 .priceCard h3{ margin:0; font-size:28px; letter-spacing:-.3px; }
 .priceCard .muted{ color:var(--muted); font-size:13px; font-weight:600; }
 .priceCard .subPrice{ margin:8px 0 0; color:var(--muted); font-size:13px; }
@@ -708,6 +714,14 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 
     <!-- Pilates Bundle -->
     <div class="card priceCard featured">
+    <h3>€15 <span>/ class</span></h3>
+  <ul>
+    <li>Drop-in friendly</li>
+    <li>All levels welcome</li>
+    <li>Perfect for trying it out</li>
+  </ul>
+  <a href="#contact" class="btn">Book a drop-in</a>
+</div>
       <h3>€48 <span class="muted">/ 4 classes</span></h3>
       <p class="subPrice">€12 per class</p>
       <ul class="list">
@@ -1117,6 +1131,7 @@ window.location.href = mailto;
   </script>
 </body>
 </html>
+
 
 
 
