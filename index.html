@@ -105,11 +105,22 @@
     }
     a{color:inherit; text-decoration:none}
     .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+  
+  .profile .bio {
+  margin-top: 16px;
+  line-height: 1.7;
+}
 
-  .pricingGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  .profile a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity .2s ease, text-decoration .2s ease;
+}
+
+.profile a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
 }
 
     /* Header */
@@ -398,6 +409,39 @@ html, body { overflow-x: hidden; }
   .hero{ padding-top: 28px; }
 }
 
+/* ===== Pricing (services) ===== */
+.pricingGrid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(210px, 1fr));
+  gap:14px;
+  align-items:stretch;
+}
+.priceCard h3{ margin:0; font-size:28px; letter-spacing:-.3px; }
+.priceCard .muted{ color:var(--muted); font-size:13px; font-weight:600; }
+.priceCard .subPrice{ margin:8px 0 0; color:var(--muted); font-size:13px; }
+.priceCard .blockPrice{ margin:12px 0 0; color:var(--muted); font-size:13px; line-height:1.5; }
+.priceCard ul.list{ margin-top:10px; }
+.priceCard ul.list li{ border-top:1px solid var(--border); }
+.priceCard ul.list li:first-child{ border-top:none; }
+.priceCard.featured{
+  background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+  border-color:rgba(255,255,255,.16);
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+.pricingNote{ margin:14px 0 0; color:var(--muted); font-size:12px; }
+
+/* Payment block below pricing */
+.paymentSection{ margin-top:18px; }
+.paymentCard{ padding:18px; }
+.payCols{ margin-top:8px; }
+.payCols b{ display:inline-block; margin-bottom:8px; }
+@media (max-width: 1100px){
+  .pricingGrid{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+}
+@media (max-width: 560px){
+  .pricingGrid{ grid-template-columns: 1fr; }
+}
+
 </style>
 <link href="/favicon.ico" rel="icon"/><link href="/apple-touch-icon.png" rel="apple-touch-icon"/></head>
 <body>
@@ -443,7 +487,7 @@ Based in Portlaoise, Andreea offers 1:1 personal training, small group Pilates a
 </p>
 <a class="cta-btn" href="#contact">Book a Free Consultation</a>
 <p class="local-note">
-Providing in-person training across County Laois, with online coaching available throughout Ireland and worldwide.
+Providing in-person training across Portlaoise and County Laois, with online coaching available throughout Ireland and worldwide.
 </p>
 <div class="pillRow">
 <span class="pill">All levels welcome</span>
@@ -525,18 +569,18 @@ Providing in-person training across County Laois, with online coaching available
 
   <div class="card">
     <div class="profile">
-      <img 
-        alt="Gina Andreea Serafim – Personal Trainer in Portlaoise"
-        class="avatar"
-        loading="lazy"
-        src="eu bun.jpg"
-      />
+     <img 
+    class="avatar"
+    src="eu bun.jpg"
+    alt="Gina Andreea Serafim – Personal Trainer in Portlaoise"
+    loading="lazy"
+  />
 
-      <div>
-        <h3 style="margin:0">Gina Andreea Serafim</h3>
-        <p class="copyHint" style="margin:6px 0 0;">
-          REPs Ireland Registered • Fully insured (public liability)
-        </p>
+  <div>
+    <h3 style="margin:0">Gina Andreea Serafim</h3>
+    <p class="copyHint" style="margin:6px 0 0;">
+      REPs Ireland Registered • Fully insured (public liability)
+    </p>
 
         <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn"
@@ -546,27 +590,27 @@ Providing in-person training across County Laois, with online coaching available
             View REPs profile
           </a>
         </div>
-      </div>
 
+        <!-- BIO STARTS HERE -->
+        <p style="margin-top:16px; line-height:1.6;">
+          Andreea brings her modern dance and choreography background primarily into her fitness classes, where rhythm, musicality, and energy are central to the experience.
+          She has worked with well-known Romanian artists as a professional dancer and choreographer, performing on stage and contributing to official music video productions, including collaborations with
+          <a href="https://en.wikipedia.org/wiki/Andra_(singer)" target="_blank" rel="noopener">Andra</a>, 
+          <a href="https://en.wikipedia.org/wiki/Deepcentral" target="_blank" rel="noopener">Deepcentral</a>, and 
+          <a href="https://en.wikipedia.org/wiki/Fly_Project" target="_blank" rel="noopener">Fly Project</a>, 
+          and has danced in internationally recognised venues such as
+          <a href="https://www.amnesia.es/" target="_blank" rel="noopener">Amnesia Ibiza</a>
+       </p>
+
+<p class="bio">
+  Her professional performance experience allows her to design rhythm-driven fitness sessions that are engaging for beginners while remaining challenging for advanced clients.
+</p>
+        <!-- BIO ENDS HERE -->
+
+      </div>
     </div>
   </div>
-</section>
-<p style="margin:6px 0 0; color:var(--muted); font-size:13px; white-space:pre-line">I am a dedicated fitness instructor which has a passion for teaching a variety of fitness classes like:
-Dance Fitness, Step, Spinning, Box exercise
-Due to my background in dance &amp; choreography I am able to use music to create fitness routines for both beginners and the most demanding clients. Testimonials to this are the Google reviews I received from my clients.</p>
-<div class="chips">
-<span class="pill">Beginner-friendly</span>
-<span class="pill">Technique-first</span>
-<span class="pill">Mobility + core</span>
-</div>
-<div class="calendarTools">
-<a class="btn" href="https://www.instagram.com/an3eea/?hl=en" rel="noreferrer" target="_blank">Instagram</a>
-<a class="btn" href="https://www.facebook.com/andreea.aday" rel="noreferrer" target="_blank">Facebook</a>
-<a class="btn" href="https://www.linkedin.com/in/gina-andreea-serafim-489ab2261/" rel="noreferrer" target="_blank">LinkedIn</a>
-</div>
-</div>
-</div>
-</div>
+
 </section>
 <section id="classes">
 <div class="sectionTitle">
@@ -626,89 +670,160 @@ Due to my background in dance &amp; choreography I am able to use music to creat
 <section id="pricing">
   <div class="sectionTitle">
     <h2>Pricing</h2>
-    <p>Simple, transparent options to suit your goals.</p>
+    <p>Simple options — classes, mobile 1:1, and small group training.</p>
   </div>
 
-  <div class="pricingGrid">
+  <div class="pricingGrid" aria-label="Pricing options">
 
     <!-- Pilates Drop-In -->
-    <div class="priceCard">
-      <h3>€15 <span>/ class</span></h3>
-      <ul>
-        <li>Drop-in friendly</li>
-        <li>All levels welcome</li>
-        <li>Perfect for trying it out</li>
+    <div class="card priceCard">
+      <h3>€15 <span class="muted">/ class</span></h3>
+      <ul class="list">
+        <li><span>Drop-in friendly</span><small>best for trying it out</small></li>
+        <li><span>All levels welcome</span><small>options provided</small></li>
+        <li><span>45 minutes</span><small>core + mobility + strength flow</small></li>
       </ul>
-      <a href="#contact" class="btn btnPrimary">Book a drop-in</a>
+      <div style="margin-top:14px">
+        <a class="btn whatsapp" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Book a drop-in</a>
+      </div>
     </div>
 
     <!-- Pilates Bundle -->
-    <div class="priceCard featured">
-      <h3>€48 <span>/ 4 classes</span></h3>
+    <div class="card priceCard featured">
+      <h3>€48 <span class="muted">/ 4 classes</span></h3>
       <p class="subPrice">€12 per class</p>
-      <ul>
-        <li>Best for consistency</li>
-        <li>Progress faster</li>
-        <li>Save vs drop-in</li>
+      <ul class="list">
+        <li><span>Best for consistency</span><small>progress faster</small></li>
+        <li><span>Save vs drop-in</span><small>great value</small></li>
       </ul>
-      <a href="#contact" class="btn btnAccent">Get the bundle</a>
+      <div style="margin-top:14px">
+        <a class="btn primary" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Get the bundle</a>
+      </div>
     </div>
 
-    <!-- 1:1 Mobile Personal Training -->
-    <div class="priceCard">
-      <h3>€50 <span>/ session</span></h3>
-      <p class="subPrice">1:1 Mobile Training</p>
-      <ul>
-        <li>Pilates + resistance training</li>
-        <li>Fully personalised</li>
-        <li>Equipment provided</li>
-        <li>Portlaoise & surrounding areas</li>
+    <!-- 1:1 Mobile -->
+    <div class="card priceCard">
+      <h3>€50 <span class="muted">/ session</span></h3>
+      <p class="subPrice">1:1 Mobile Training (60 min)</p>
+      <ul class="list">
+        <li><span>Pilates + resistance training</span><small>strength & posture</small></li>
+        <li><span>Fully personalised</span><small>all levels</small></li>
+        <li><span>Equipment provided</span><small>bring a mat if you have one</small></li>
       </ul>
-      <p class="blockPrice">
-        5 sessions: €240<br>
-        10 sessions: €450
-      </p>
-      <a href="#contact" class="btn btnPrimary">Enquire Now</a>
+      <p class="blockPrice">5 sessions: €240<br>10 sessions: €450</p>
+      <div style="margin-top:14px">
+        <a class="btn" href="#contact">Enquire now</a>
+      </div>
     </div>
 
-    <!-- Semi-Private (2 People) -->
-    <div class="priceCard">
-      <h3>€65 <span>/ session</span></h3>
-      <p class="subPrice">2 People (Total Price)</p>
-      <ul>
-        <li>Train with a friend</li>
-        <li>Individual coaching</li>
-        <li>Shared cost</li>
-        <li>Same location required</li>
+    <!-- 2 People -->
+    <div class="card priceCard">
+      <h3>€65 <span class="muted">/ session</span></h3>
+      <p class="subPrice">2 People (Total Price, 60 min)</p>
+      <ul class="list">
+        <li><span>Train with a friend</span><small>extra motivation</small></li>
+        <li><span>Individual coaching</span><small>form + progressions</small></li>
+        <li><span>Same location required</span><small>one home/location</small></li>
       </ul>
-      <p class="blockPrice">
-        5 sessions: €300
-      </p>
-      <a href="#contact" class="btn btnPrimary">Book Together</a>
+      <p class="blockPrice">5 sessions: €300</p>
+      <div style="margin-top:14px">
+        <a class="btn" href="#contact">Book together</a>
+      </div>
     </div>
 
-    <!-- Small Group (3 People) -->
-    <div class="priceCard">
-      <h3>€25 <span>/ person</span></h3>
-      <p class="subPrice">3 People Small Group</p>
-      <ul>
-        <li>Max 3 participants</li>
-        <li>Pilates strength focus</li>
-        <li>Supportive environment</li>
+    <!-- 3 People -->
+    <div class="card priceCard">
+      <h3>€25 <span class="muted">/ person</span></h3>
+      <p class="subPrice">Small Group (3 People, 60 min)</p>
+      <ul class="list">
+        <li><span>Max 3 participants</span><small>still very personal</small></li>
+        <li><span>Pilates strength focus</span><small>core + full body</small></li>
+        <li><span>Supportive environment</span><small>accountability</small></li>
       </ul>
-      <p class="blockPrice">
-        5 sessions: €110 per person
-      </p>
-      <a href="#contact" class="btn btnPrimary">Start a Group</a>
+      <p class="blockPrice">5 sessions: €110 per person</p>
+      <div style="margin-top:14px">
+        <a class="btn" href="#contact">Start a group</a>
+      </div>
     </div>
 
   </div>
 
-  <div class="pricingNote">
-    <p>
-      Home sessions available within Portlaoise and surrounding areas 
-      (approximately 20 minutes). Locations further afield may include a small travel supplement.
-    </p>
+  <p class="pricingNote">
+    Home sessions available within Portlaoise and surrounding areas (approximately 20 minutes). Locations further afield may include a small travel supplement.
+  </p>
+
+  <!-- Payment (full width, below pricing) -->
+  <div class="paymentSection" aria-label="Payment options">
+    <div class="card paymentCard">
+      <div class="sectionTitle" style="margin-bottom:10px">
+        <h2 style="font-size:18px">Payment</h2>
+        <p>Pay in advance to secure your spot.</p>
+      </div>
+
+      <div class="twoCol payCols">
+        <div>
+          <b>Bank transfer (preferred)</b>
+          <div class="payBox" aria-label="Bank transfer details">
+            <div class="payRow">
+              <div>
+                <div class="payLabel">Account name (maiden name)</div>
+                <div class="payValue">Gina Andreea Paun</div>
+              </div>
+              <button class="copyBtn" data-copy="Gina Andreea Paun" type="button">Copy</button>
+            </div>
+            <div class="copyHint">Note: My bank account is in my maiden name (Paun).</div>
+
+            <div class="payRow">
+              <div>
+                <div class="payLabel">IBAN</div>
+                <div class="payValue mono">IE69AIBK93351145078007</div>
+              </div>
+              <button class="copyBtn" data-copy="IE69AIBK93351145078007" type="button">Copy</button>
+            </div>
+
+            <div class="payRow">
+              <div>
+                <div class="payLabel">SWIFT / BIC</div>
+                <div class="payValue mono">AIBKIE2D</div>
+              </div>
+              <button class="copyBtn" data-copy="AIBKIE2D" type="button">Copy</button>
+            </div>
+
+            <div class="payRow">
+              <div>
+                <div class="payLabel">Reference</div>
+                <div class="payValue">Your name + session date</div>
+              </div>
+              <button class="copyBtn" data-copy="Your name + session date" type="button">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <b>Revolut</b>
+          <div class="payBox" aria-label="Revolut details">
+            <div class="payRow">
+              <div>
+                <div class="payLabel">Handle</div>
+                <div class="payValue mono">@andreed579</div>
+              </div>
+              <button class="copyBtn" data-copy="@andreed579" type="button">Copy</button>
+            </div>
+          </div>
+
+          <p class="copyHint" style="margin-top:10px">
+            After payment, send me a quick WhatsApp message with your preferred date/time and I’ll confirm your booking.
+          </p>
+
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn whatsapp" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Message on WhatsApp</a>
+            <a class="btn" href="mailto:hello@andreeafitness.ie">Email</a>
+          </div>
+        </div>
+      </div>
+
+      <div aria-live="polite" class="copyHint" id="copyHint"></div>
+    </div>
   </div>
 </section>
 <section id="contact">
@@ -984,6 +1099,13 @@ window.location.href = mailto;
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 
