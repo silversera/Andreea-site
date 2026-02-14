@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta name="robots" content="index, follow">
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Certified & Insured Female Personal Trainer in Portlaoise | Pilates & Fitness Coaching</title>
+<title>REPs Ireland Certified Female Personal Trainer in Portlaoise | Pilates & Fitness Coaching</title>
 <meta content="Female personal trainer in Portlaoise offering Pilates, 1:1 coaching, small group training and fitness classes. Friendly, supportive and results-driven sessions. Book today." name="description"/>
 <meta content="#0b0d12" name="theme-color"/><link href="https://andreeafitness.ie/" rel="canonical"/>
 <meta content="website" property="og:type"/>
@@ -409,6 +409,39 @@ html, body { overflow-x: hidden; }
   .hero{ padding-top: 28px; }
 }
 
+/* ===== Pricing (services) ===== */
+.pricingGrid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(210px, 1fr));
+  gap:14px;
+  align-items:stretch;
+}
+.priceCard h3{ margin:0; font-size:28px; letter-spacing:-.3px; }
+.priceCard .muted{ color:var(--muted); font-size:13px; font-weight:600; }
+.priceCard .subPrice{ margin:8px 0 0; color:var(--muted); font-size:13px; }
+.priceCard .blockPrice{ margin:12px 0 0; color:var(--muted); font-size:13px; line-height:1.5; }
+.priceCard ul.list{ margin-top:10px; }
+.priceCard ul.list li{ border-top:1px solid var(--border); }
+.priceCard ul.list li:first-child{ border-top:none; }
+.priceCard.featured{
+  background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+  border-color:rgba(255,255,255,.16);
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+.pricingNote{ margin:14px 0 0; color:var(--muted); font-size:12px; }
+
+/* Payment block below pricing */
+.paymentSection{ margin-top:18px; }
+.paymentCard{ padding:18px; }
+.payCols{ margin-top:8px; }
+.payCols b{ display:inline-block; margin-bottom:8px; }
+@media (max-width: 1100px){
+  .pricingGrid{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+}
+@media (max-width: 560px){
+  .pricingGrid{ grid-template-columns: 1fr; }
+}
+
 </style>
 <link href="/favicon.ico" rel="icon"/><link href="/apple-touch-icon.png" rel="apple-touch-icon"/></head>
 <body>
@@ -447,19 +480,18 @@ html, body { overflow-x: hidden; }
 <div class="heroGrid">
 <div class="hCard">
 <div class="pad">
-<h1>Certified &amp; Insured Female Personal Trainer in Portlaoise</h1>
+<h1>REPs Ireland Certified Female Personal Trainer in Portlaoise</h1>
 <p class="hero-tagline">Move with control. Train with rhythm.</p>
 <p class="sub">
-Based in Portlaoise, Andreea offers 1:1 personal training, small group Pilates and fitness classes, and online coaching designed to build core strength, improve mobility, and boost confidence — all in a supportive, upbeat environment. REPs Ireland registered and fully insured (public liability).
+Based in Portlaoise, I offer 1:1 personal training, small group sessions and Pilates classes designed to build core strength, improve mobility and help you feel stronger and more confident — all in a supportive, welcoming environment.
 </p>
 <a class="cta-btn" href="#contact">Book a Free Consultation</a>
 <p class="local-note">
-Providing in-person training across Portlaoise and County Laois, with online coaching available throughout Ireland and worldwide.
+I provide in-person training across Portlaoise and County Laois, with online coaching available throughout Ireland and worldwide.
 </p>
 <div class="pillRow">
 <span class="pill">All levels welcome</span>
 <span class="pill">REPs Ireland registered</span>
-<span class="pill">Fully insured (public liability)</span>
 <span class="pill">45-minute sessions</span>
 <span class="pill">Club Vitae Health &amp; Fitness Club, Portlaoise</span>
 <span class="pill">Pay-as-you-go or bundle</span>
@@ -546,7 +578,7 @@ Providing in-person training across Portlaoise and County Laois, with online coa
   <div>
     <h3 style="margin:0">Gina Andreea Serafim</h3>
     <p class="copyHint" style="margin:6px 0 0;">
-      REPs Ireland Registered • Fully insured (public liability)
+      REPs Ireland Registered 
     </p>
 
         <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
@@ -560,8 +592,8 @@ Providing in-person training across Portlaoise and County Laois, with online coa
 
         <!-- BIO STARTS HERE -->
         <p style="margin-top:16px; line-height:1.6;">
-          Andreea brings her modern dance and choreography background primarily into her fitness classes, where rhythm, musicality, and energy are central to the experience.
-          She has worked with well-known Romanian artists as a professional dancer and choreographer, performing on stage and contributing to official music video productions, including collaborations with
+          I bring my background in modern dance and choreography into my fitness classes, where rhythm, musicality and energy shape the overall experience.
+          I have worked professionally as a dancer and choreographer with well-known Romanian artists, performing on stage and contributing to official music video productions, including collaborations with
           <a href="https://en.wikipedia.org/wiki/Andra_(singer)" target="_blank" rel="noopener">Andra</a>, 
           <a href="https://en.wikipedia.org/wiki/Deepcentral" target="_blank" rel="noopener">Deepcentral</a>, and 
           <a href="https://en.wikipedia.org/wiki/Fly_Project" target="_blank" rel="noopener">Fly Project</a>, 
@@ -570,7 +602,7 @@ Providing in-person training across Portlaoise and County Laois, with online coa
        </p>
 
 <p class="bio">
-  Her professional performance experience allows her to design rhythm-driven fitness sessions that are engaging for beginners while remaining challenging for advanced clients.
+  This professional experience allows me to design dynamic, rhythm-led fitness sessions that are accessible for beginners while still offering progression and challenge for more advanced clients.
 </p>
         <!-- BIO ENDS HERE -->
 
@@ -635,76 +667,168 @@ Providing in-person training across Portlaoise and County Laois, with online coa
 </div>
 </section>
 <section id="pricing">
-<div class="sectionTitle">
-<h2>Pricing</h2>
-<p>Flexible options — choose pay-as-you-go or save with a bundle.</p>
-</div>
-<div class="cards">
-<div class="card">
-<h3>Pay As You Go</h3>
-<p style="margin-top:8px"><b style="font-size:28px">€15</b> <span style="color:var(--muted)">/ class</span></p>
-<ul class="list">
-<li><span>Drop-in friendly</span><small>best for trying it out</small></li>
-<li><span>All levels welcome</span><small>options provided</small></li>
-</ul>
-<div style="margin-top:14px">
-<a class="btn whatsapp" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Book a drop-in</a>
-</div>
-</div>
-<div class="card">
-<h3>4-Session Bundle</h3>
-<p style="margin-top:8px"><b style="font-size:28px">€48</b> <span style="color:var(--muted)">/ 4 classes</span></p>
-<ul class="list">
-<li><span>€12 per class</span><small>save vs drop-in</small></li>
-<li><span>Best for consistency</span><small>progress faster</small></li>
-</ul>
-<div style="margin-top:14px">
-<a class="btn primary" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Get the bundle</a>
-</div>
-</div>
-<div class="card">
-<h3>Payment options</h3>
-<p>Pay in advance by bank transfer or Revolut. If you use bank transfer, please include your name as the reference.</p>
-<div aria-label="Bank transfer details" class="payBox">
-<div class="payRow">
-<div>
-<div class="payLabel">Bank transfer — Account name (maiden name)</div>
-<div class="payValue">Gina Andreea Paun</div>
-</div>
-<button class="copyBtn" data-copy="Gina Andreea Paun" type="button">Copy</button>
-</div><div class="copyHint" data-role="maiden-note">Note: My bank account is in my maiden name (Paun).</div>
-<div class="payRow">
-<div>
-<div class="payLabel">IBAN</div>
-<div class="payValue mono">IE69AIBK93351145078007</div>
-</div>
-<button class="copyBtn" data-copy="IE69AIBK93351145078007" type="button">Copy</button>
-</div>
-<div class="payRow">
-<div>
-<div class="payLabel">SWIFT / BIC</div>
-<div class="payValue mono">AIBKIE2D</div>
-</div>
-<button class="copyBtn" data-copy="AIBKIE2D" type="button">Copy</button>
-</div>
-</div>
-<div aria-label="Revolut details" class="payBox">
-<div class="payRow">
-<div>
-<div class="payLabel">Revolut</div>
-<div class="payValue mono">@andreed579</div>
-</div>
-<button class="copyBtn" data-copy="@andreed579" type="button">Copy</button>
-</div>
-</div>
-<div aria-live="polite" class="copyHint" id="copyHint"></div>
-</div>
-</div>
+  <div class="sectionTitle">
+    <h2>Pricing</h2>
+    <p>Simple options — classes, mobile 1:1, and small group training.</p>
+  </div>
+
+  <div class="pricingGrid" aria-label="Pricing options">
+
+    <!-- Pilates Drop-In -->
+    <div class="card priceCard">
+      <h3>€15 <span class="muted">/ class</span></h3>
+      <ul class="list">
+        <li><span>Drop-in friendly</span></li>
+        <li><span>All levels welcome</span></li>
+        <li><span>45 minutes</span></li>
+      </ul>
+      <div style="margin-top:14px">
+        <a class="btn whatsapp" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Book a drop-in</a>
+      </div>
+    </div>
+
+    <!-- Pilates Bundle -->
+    <div class="card priceCard featured">
+      <h3>€48 <span class="muted">/ 4 classes</span></h3>
+      <p class="subPrice">€12 per class</p>
+      <ul class="list">
+        <li><span>Best for consistency</span></li>
+        <li><span>Save vs drop-in</span></li>
+      </ul>
+      <div style="margin-top:14px">
+        <a class="btn primary" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Get the bundle</a>
+      </div>
+    </div>
+
+    <!-- 1:1 Mobile -->
+    <div class="card priceCard">
+      <h3>€50 <span class="muted">/ session</span></h3>
+      <p class="subPrice">Private Pilates & Strength Session (60 min)</p>
+      <ul class="list">
+        <li><span>Pilates + resistance training</span></li>
+        <li><span>Fully personalised</span></li>
+        <li><span>Equipment provided</span></li>
+      </ul>
+      <p class="blockPrice">5 sessions: €240<br>10 sessions: €450</p>
+      <div style="margin-top:14px">
+        <a class="btn" href="#contact">Enquire now</a>
+      </div>
+    </div>
+
+    <!-- 2 People -->
+    <div class="card priceCard">
+      <h3>€65 <span class="muted">/ session</span></h3>
+      <p class="subPrice">Semi-Private Pilates & Strength Training (2 People – 60 min)</p>
+      <ul class="list">
+        <li><span>Train with a friend</span></li>
+        <li><span>Individual coaching</span></li>
+        <li><span>Same location required</span></li>
+      </ul>
+      <p class="blockPrice">5 sessions: €300</p>
+      <div style="margin-top:14px">
+        <a class="btn" href="#contact">Book together</a>
+      </div>
+    </div>
+
+    <!-- 3 People -->
+    <div class="card priceCard">
+      <h3>€25 <span class="muted">/ person</span></h3>
+      <p class="subPrice">Small Group Pilates & Strength Training (3 People – 60 min)</p>
+      <ul class="list">
+        <li><span>Max 3 participants</span></li>
+        <li><span>Pilates strength focus</span></li>
+        <li><span>Supportive environment</span></li>
+      </ul>
+      <p class="blockPrice">5 sessions: €110 per person</p>
+      <div style="margin-top:14px">
+        <a class="btn" href="#contact">Start a group</a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="pricingNote">
+    Home sessions available within Portlaoise and surrounding areas (approximately 20 minutes). Locations further afield may include a small travel supplement.
+  </p>
+
+  <!-- Payment (full width, below pricing) -->
+  <div class="paymentSection" aria-label="Payment options">
+    <div class="card paymentCard">
+      <div class="sectionTitle" style="margin-bottom:10px">
+        <h2 style="font-size:18px">Payment</h2>
+        <p>Pay in advance to secure your spot.</p>
+      </div>
+
+      <div class="twoCol payCols">
+        <div>
+          <b>Bank transfer (preferred)</b>
+          <div class="payBox" aria-label="Bank transfer details">
+            <div class="payRow">
+              <div>
+                <div class="payLabel">Account name (maiden name)</div>
+                <div class="payValue">Gina Andreea Paun</div>
+              </div>
+              <button class="copyBtn" data-copy="Gina Andreea Paun" type="button">Copy</button>
+            </div>
+            <div class="copyHint">Note: My bank account is in my maiden name (Paun).</div>
+
+            <div class="payRow">
+              <div>
+                <div class="payLabel">IBAN</div>
+                <div class="payValue mono">IE69AIBK93351145078007</div>
+              </div>
+              <button class="copyBtn" data-copy="IE69AIBK93351145078007" type="button">Copy</button>
+            </div>
+
+            <div class="payRow">
+              <div>
+                <div class="payLabel">SWIFT / BIC</div>
+                <div class="payValue mono">AIBKIE2D</div>
+              </div>
+              <button class="copyBtn" data-copy="AIBKIE2D" type="button">Copy</button>
+            </div>
+
+            <div class="payRow">
+              <div>
+                <div class="payLabel">Reference</div>
+                <div class="payValue">Your name + session date</div>
+              </div>
+              <button class="copyBtn" data-copy="Your name + session date" type="button">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <b>Revolut</b>
+          <div class="payBox" aria-label="Revolut details">
+            <div class="payRow">
+              <div>
+                <div class="payLabel">Handle</div>
+                <div class="payValue mono">@andreed579</div>
+              </div>
+              <button class="copyBtn" data-copy="@andreed579" type="button">Copy</button>
+            </div>
+          </div>
+
+          <p class="copyHint" style="margin-top:10px">
+            After payment, send me a quick WhatsApp message with your preferred date/time and I’ll confirm your booking.
+          </p>
+
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn whatsapp" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Message on WhatsApp</a>
+            <a class="btn" href="mailto:hello@andreeafitness.ie">Email</a>
+          </div>
+        </div>
+      </div>
+
+      <div aria-live="polite" class="copyHint" id="copyHint"></div>
+    </div>
+  </div>
 </section>
 <section id="contact">
   <div class="sectionTitle">
     <h2>Book Your First Session</h2>
-    <p>Certified &amp; insured coaching in Portlaoise — beginner friendly and supportive.</p>
+    <p>Certified coaching in Portlaoise — beginner friendly and supportive.</p>
   </div>
 
   <div class="contactGrid">
@@ -731,7 +855,7 @@ Providing in-person training across Portlaoise and County Laois, with online coa
       <div style="margin-top:18px; padding:14px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid var(--border);">
         <b>Professional &amp; Certified</b>
         <div class="copyHint" style="margin-top:6px;">
-          REPs Ireland Registered • Fully insured (public liability)
+          REPs Ireland Registered
         </div>
         <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn" href="https://repsireland.ie/member-profile/?member=76395" target="_blank" rel="noopener">View REPs profile</a>
@@ -974,6 +1098,14 @@ window.location.href = mailto;
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
