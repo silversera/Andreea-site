@@ -43,14 +43,32 @@
   "makesOffer": [
     {
       "@type": "Offer",
-      "name": "Mat Pilates (45 minutes)",
+      "name": "Mat Pilates Class (45 minutes)",
       "price": "15",
       "priceCurrency": "EUR"
     },
     {
       "@type": "Offer",
-      "name": "4-Session Bundle",
+      "name": "4-Class Bundle",
       "price": "48",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Private Pilates & Strength Session (60 minutes)",
+      "price": "50",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Semi-Private Pilates & Strength Training (2 people, 60 minutes)",
+      "price": "65",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Small Group Pilates & Strength Training (3 people, 60 minutes)",
+      "price": "25",
       "priceCurrency": "EUR"
     }
   ],
@@ -412,7 +430,7 @@ html, body { overflow-x: hidden; }
 /* ===== Pricing (services) ===== */
 .pricingGrid{
   display:grid;
-  grid-template-columns: repeat(5, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap:14px;
   align-items:stretch;
 }
@@ -483,7 +501,7 @@ html, body { overflow-x: hidden; }
 <h1>REPs Ireland Certified Female Personal Trainer in Portlaoise</h1>
 <p class="hero-tagline">Move with control. Train with rhythm.</p>
 <p class="sub">
-Based in Portlaoise, I offer 1:1 personal training, small group sessions and Pilates classes designed to build core strength, improve mobility and help you feel stronger and more confident — all in a supportive, welcoming environment.
+I am a certified Mat Pilates Instructor, Fitness Coach, and Personal Trainer with a passion for helping you feel stronger and more confident. With a background in dance and choreography, I bring rhythm and energy into every session — from Pilates and Dance Fitness to Step, Spinning, and Boxercise.
 </p>
 <a class="cta-btn" href="#contact">Book a Free Consultation</a>
 <p class="local-note">
@@ -638,13 +656,26 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 <p style="margin:12px 0 0; color:var(--muted); font-size:12px">Tip: book via WhatsApp, phone, or email to save your spot.</p>
 </div>
 <div class="card">
-<h3>What to expect</h3>
-<ul class="list">
-<li><span>Warm-up + mobility</span><small>8–10 min</small></li>
-<li><span>Core &amp; posture work</span><small>12–15 min</small></li>
-<li><span>Strength flow</span><small>15–18 min</small></li>
-<li><span>Cooldown + breathwork</span><small>3–5 min</small></li>
-</ul>
+<h3>Pilates Class Breakdown</h3>
+<p style="opacity:.8; margin-bottom:16px;">Each class follows a clear structure so you always know what to expect:</p>
+<div class="classBreakdown">
+  <div class="breakItem">
+    <strong>Gentle Warm-Up &amp; Mobility</strong>
+    <p>Prepare the body, improve joint movement and activate key muscle groups.</p>
+  </div>
+  <div class="breakItem">
+    <strong>Core &amp; Posture Focus</strong>
+    <p>Build deep core strength and improve alignment through controlled movements.</p>
+  </div>
+  <div class="breakItem">
+    <strong>Strength Flow</strong>
+    <p>Combine Pilates principles with strength-based sequences for full-body conditioning.</p>
+  </div>
+  <div class="breakItem">
+    <strong>Cooldown &amp; Breathwork</strong>
+    <p>Stretch, reset and finish with controlled breathing to support recovery.</p>
+  </div>
+</div>
 </div>
 </div>
 <div class="card" style="margin-top:14px">
@@ -669,7 +700,7 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 <section id="pricing">
   <div class="sectionTitle">
     <h2>Pricing</h2>
-    <p>Simple options — classes, mobile 1:1, and small group training.</p>
+    <p>Simple options — classes, private training, and small-group sessions.</p>
   </div>
 
   <div class="pricingGrid" aria-label="Pricing options">
