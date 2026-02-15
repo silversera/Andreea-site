@@ -301,7 +301,7 @@
     .gItem{border:1px solid var(--border); border-radius:16px; overflow:hidden; background:rgba(0,0,0,.18); position:relative;}
     .gItem[data-src]{cursor:pointer}
     .gItem:not([data-src]){cursor:default}
-    
+    .gItem img{display:block; width:100%; height:220px; object-fit:cover}
     .gCap{position:absolute; left:10px; bottom:10px; background:rgba(0,0,0,.35); border:1px solid var(--border); color:var(--text); border-radius:999px; padding:6px 10px; font-size:12px}
 
     /* Lightbox */
@@ -348,17 +348,22 @@
       .avatar{width:100%; height:180px}
       .gallery, .galleryGrid{grid-template-columns:1fr}
       
-
-
-
-      
-.galleryGrid{
-  display:grid;
-  gap:18px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  align-items:start;
+.gItem img{
+  width:100%;
+  height:320px;        /* you can keep this */
+  object-fit: contain; /* SHOW FULL IMAGE */
+  background: rgba(255,255,255,0.04); /* optional: looks nicer */
+  display:block;
 }
-      
+
+.gItem video{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:16px;
+  display:block;
+}
+
 @media (max-width: 640px){
   .cta{
     width:100%;
@@ -368,6 +373,7 @@
     flex:1;
     text-align:center;
   }
+}
 }
     .iconBtn{
       display:inline-flex;
@@ -468,22 +474,6 @@ html, body { overflow-x: hidden; }
 }
 @media (max-width: 560px){
   .pricingGrid{ grid-template-columns: 1fr; }
-}
-
-
-/* === Clean Gallery Media Rules (Desktop + Mobile) === */
-.galleryGrid .gItem{
-  border-radius:18px;
-  overflow:hidden;
-}
-
-.galleryGrid .gItem img,
-.galleryGrid .gItem video{
-  width:100%;
-  height:240px;
-  object-fit:cover;
-  display:block;
-  background: rgba(255,255,255,0.04);
 }
 
 </style>
@@ -1049,8 +1039,11 @@ I provide in-person training across Portlaoise and County Laois, with online coa
       </video>
       <span class="gCap">Core Strength</span>
     </div>
-    </div>
-  
+  </div>
+
+  <p class="mini" style="margin-top:10px">
+    Want these to be your real class photos? Upload images to the repo and I’ll swap the links.
+  </p>
 </section>
 
 <footer>
@@ -1178,17 +1171,6 @@ window.location.href = mailto;
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
