@@ -301,7 +301,7 @@
     .gItem{border:1px solid var(--border); border-radius:16px; overflow:hidden; background:rgba(0,0,0,.18); position:relative;}
     .gItem[data-src]{cursor:pointer}
     .gItem:not([data-src]){cursor:default}
-    .gItem img{display:block; width:100%; height:220px; object-fit:cover}
+    
     .gCap{position:absolute; left:10px; bottom:10px; background:rgba(0,0,0,.35); border:1px solid var(--border); color:var(--text); border-radius:999px; padding:6px 10px; font-size:12px}
 
     /* Lightbox */
@@ -348,21 +348,9 @@
       .avatar{width:100%; height:180px}
       .gallery, .galleryGrid{grid-template-columns:1fr}
       
-.gItem img{
-  width:100%;
-  height:240px;
-  object-fit:cover;
-  display:block;
-  background: rgba(255,255,255,0.04);
-}
 
-.gItem video{
-  width:100%;
-  height:240px;
-  object-fit:cover;
-  display:block;
-  background: rgba(255,255,255,0.04);
-}
+
+
       
 .galleryGrid .gItem{
   border-radius: 18px;
@@ -478,6 +466,22 @@ html, body { overflow-x: hidden; }
 }
 @media (max-width: 560px){
   .pricingGrid{ grid-template-columns: 1fr; }
+}
+
+
+/* === Clean Gallery Media Rules (Desktop + Mobile) === */
+.galleryGrid .gItem{
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.galleryGrid .gItem img,
+.galleryGrid .gItem video{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  display:block;
+  background: rgba(255,255,255,0.04);
 }
 
 </style>
