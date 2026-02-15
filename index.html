@@ -297,8 +297,10 @@
     .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
 
     /* Gallery */
-    .gallery{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
-    .gItem{border:1px solid var(--border); border-radius:16px; overflow:hidden; background:rgba(0,0,0,.18); position:relative; cursor:pointer}
+    .gallery, .galleryGrid{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
+    .gItem{border:1px solid var(--border); border-radius:16px; overflow:hidden; background:rgba(0,0,0,.18); position:relative;}
+    .gItem[data-src]{cursor:pointer}
+    .gItem:not([data-src]){cursor:default}
     .gItem img{display:block; width:100%; height:220px; object-fit:cover}
     .gCap{position:absolute; left:10px; bottom:10px; background:rgba(0,0,0,.35); border:1px solid var(--border); color:var(--text); border-radius:999px; padding:6px 10px; font-size:12px}
 
@@ -344,7 +346,7 @@
       .links{display:none}
       .profile{grid-template-columns:1fr}
       .avatar{width:100%; height:180px}
-      .gallery{grid-template-columns:1fr}
+      .gallery, .galleryGrid{grid-template-columns:1fr}
       
 .gItem img{
   width:100%;
@@ -371,6 +373,7 @@
     flex:1;
     text-align:center;
   }
+}
 }
     .iconBtn{
       display:inline-flex;
@@ -1003,7 +1006,6 @@ I provide in-person training across Portlaoise and County Laois, with online coa
   </div>
 
   <div class="galleryGrid">
-    
     <div class="gItem" data-src="images/pilates-instructor-portlaoise.webp" data-title="Mat Pilates">
       <img
         src="images/pilates-instructor-portlaoise.webp"
@@ -1013,44 +1015,37 @@ I provide in-person training across Portlaoise and County Laois, with online coa
       <span class="gCap">Mat Pilates</span>
     </div>
 
-<div class="gItem" 
-     data-src="images/the-hundred.webp" 
-     data-title="The Hundred">
-  <img
-    src="images/the-hundred.webp"
-    alt="Mat Pilates The Hundred core exercise demonstration"
-    loading="lazy"
-  />
-  <span class="gCap">The Hundred</span>
-</div>
-
-<div class="gItem" 
-     data-src="images/criss-cross.webp" 
-     data-title="Criss Cross">
-  <img
-    src="images/criss-cross.webp"
-    alt="Mat Pilates Criss Cross abdominal exercise demonstration"
-    loading="lazy"
-  />
-  <span class="gCap">Criss Cross</span>
-  </div>
-    
-</div>
-</section>    
-        <div class="gItem">
-      <video autoplay muted loop playsinline>
-        <source src="videos/pilates-gallery-optimized.mp4" type="video/mp4">
-      </video>
-      <span class="gCap">Core Strenght</span>
+    <div class="gItem" data-src="images/the-hundred.webp" data-title="The Hundred">
+      <img
+        src="images/the-hundred.webp"
+        alt="Mat Pilates The Hundred core exercise demonstration"
+        loading="lazy"
+      />
+      <span class="gCap">The Hundred</span>
     </div>
 
+    <div class="gItem" data-src="images/criss-cross.webp" data-title="Criss Cross">
+      <img
+        src="images/criss-cross.webp"
+        alt="Mat Pilates Criss Cross abdominal exercise demonstration"
+        loading="lazy"
+      />
+      <span class="gCap">Criss Cross</span>
+    </div>
+
+    <div class="gItem" data-title="Core Strength">
+      <video autoplay muted loop playsinline>
+        <source src="videos/pilates-gallery-optimized.mp4" type="video/mp4" />
+      </video>
+      <span class="gCap">Core Strength</span>
+    </div>
   </div>
-</section>
 
   <p class="mini" style="margin-top:10px">
     Want these to be your real class photos? Upload images to the repo and I’ll swap the links.
   </p>
 </section>
+
 <footer>
 <div class="footRow">
 <div>© <span id="year"></span> Andreea's Rhythmic Fitness • Portlaoise</div>
@@ -1148,7 +1143,7 @@ window.location.href = mailto;
         if(lbImg) lbImg.src = '';
       }
 
-      document.querySelectorAll('.gItem').forEach(el => {
+      document.querySelectorAll('.gItem[data-src]').forEach(el => {
         el.addEventListener('click', () => {
           const src = el.getAttribute('data-src');
           const title = el.getAttribute('data-title') || 'Image';
