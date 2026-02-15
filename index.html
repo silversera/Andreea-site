@@ -350,7 +350,7 @@
       
 .gItem img{
   width:100%;
-  height:320px;        /* you can keep this */
+  height:240px;        /* you can keep this */
   object-fit: contain; /* SHOW FULL IMAGE */
   background: rgba(255,255,255,0.04); /* optional: looks nicer */
   display:block;
@@ -358,8 +358,9 @@
 
 .gItem video{
   width:100%;
-  height:240px;
-  object-fit:cover;
+  height:240px;          /* must match image height */
+  object-fit: contain;   /* match the image behavior */
+  background: rgba(255,255,255,0.04);
   display:block;
 }
 
@@ -1167,6 +1168,7 @@ window.location.href = mailto;
   </script>
 </body>
 </html>
+
 
 
 
