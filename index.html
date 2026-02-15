@@ -363,7 +363,20 @@
   border-radius:16px;
   display:block;
 }
+.videoSection .videoCard{
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
 
+.videoSection .promoVideo{
+  width: 100%;
+  aspect-ratio: 16 / 9;  /* perfect for desktop */
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
 @media (max-width: 640px){
   .cta{
     width:100%;
@@ -373,7 +386,6 @@
     flex:1;
     text-align:center;
   }
-}
 }
     .iconBtn{
       display:inline-flex;
@@ -1175,6 +1187,7 @@ window.location.href = mailto;
   </script>
 </body>
 </html>
+
 
 
 
