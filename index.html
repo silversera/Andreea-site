@@ -43,14 +43,32 @@
   "makesOffer": [
     {
       "@type": "Offer",
-      "name": "Mat Pilates (45 minutes)",
+      "name": "Mat Pilates Class (45 minutes)",
       "price": "15",
       "priceCurrency": "EUR"
     },
     {
       "@type": "Offer",
-      "name": "4-Session Bundle",
+      "name": "4-Class Bundle",
       "price": "48",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Private Pilates & Strength Session (60 minutes)",
+      "price": "75",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "5-Session Personal Training Package",
+      "price": "325",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "10-Session Personal Training Package",
+      "price": "600",
       "priceCurrency": "EUR"
     }
   ],
@@ -279,8 +297,10 @@
     .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
 
     /* Gallery */
-    .gallery{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
-    .gItem{border:1px solid var(--border); border-radius:16px; overflow:hidden; background:rgba(0,0,0,.18); position:relative; cursor:pointer}
+    .gallery, .galleryGrid{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
+    .gItem{border:1px solid var(--border); border-radius:16px; overflow:hidden; background:rgba(0,0,0,.18); position:relative;}
+    .gItem[data-src]{cursor:pointer}
+    .gItem:not([data-src]){cursor:default}
     .gItem img{display:block; width:100%; height:220px; object-fit:cover}
     .gCap{position:absolute; left:10px; bottom:10px; background:rgba(0,0,0,.35); border:1px solid var(--border); color:var(--text); border-radius:999px; padding:6px 10px; font-size:12px}
 
@@ -326,11 +346,37 @@
       .links{display:none}
       .profile{grid-template-columns:1fr}
       .avatar{width:100%; height:180px}
-      .gallery{grid-template-columns:1fr}
-      .gItem img{height:240px}
-      .calendarWrap iframe, .reviewEmbed iframe{height:520px}
-    }
-  
+      .gallery, .galleryGrid{grid-template-columns:1fr}
+      
+.gItem img{
+  width:100%;
+  height:320px;        /* you can keep this */
+  object-fit: contain; /* SHOW FULL IMAGE */
+  background: rgba(255,255,255,0.04); /* optional: looks nicer */
+  display:block;
+}
+
+.gItem video{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:16px;
+  display:block;
+}
+.videoSection .videoCard{
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.videoSection .promoVideo{
+  width: 100%;
+  aspect-ratio: 16 / 9;  /* perfect for desktop */
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
 @media (max-width: 640px){
   .cta{
     width:100%;
@@ -412,7 +458,7 @@ html, body { overflow-x: hidden; }
 /* ===== Pricing (services) ===== */
 .pricingGrid{
   display:grid;
-  grid-template-columns: repeat(5, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap:14px;
   align-items:stretch;
 }
@@ -483,7 +529,7 @@ html, body { overflow-x: hidden; }
 <h1>REPs Ireland Certified Female Personal Trainer in Portlaoise</h1>
 <p class="hero-tagline">Move with control. Train with rhythm.</p>
 <p class="sub">
-Based in Portlaoise, I offer 1:1 personal training, small group sessions and Pilates classes designed to build core strength, improve mobility and help you feel stronger and more confident — all in a supportive, welcoming environment.
+I am a certified Mat Pilates Instructor, Fitness Coach, and Personal Trainer with a passion for helping you feel stronger and more confident. With a background in dance and choreography, I bring rhythm and energy into every session — from Pilates and Dance Fitness to Step, Spinning, and Boxercise.
 </p>
 <a class="cta-btn" href="#contact">Book a Free Consultation</a>
 <p class="local-note">
@@ -513,11 +559,11 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 </div>
 <div class="qItem">
 <b>Pay as you go</b>
-<span>€15 / class</span>
+<span>€15 / Pilates class</span>
 </div>
 <div class="qItem">
 <b>Bundle</b>
-<span>€48 / 4 sessions</span>
+<span>€48 / 4 Pilates classes</span>
 </div>
 <div class="qItem" style="grid-column:1 / -1">
 <b>Bring</b>
@@ -638,13 +684,25 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 <p style="margin:12px 0 0; color:var(--muted); font-size:12px">Tip: book via WhatsApp, phone, or email to save your spot.</p>
 </div>
 <div class="card">
-<h3>What to expect</h3>
-<ul class="list">
-<li><span>Warm-up + mobility</span><small>8–10 min</small></li>
-<li><span>Core &amp; posture work</span><small>12–15 min</small></li>
-<li><span>Strength flow</span><small>15–18 min</small></li>
-<li><span>Cooldown + breathwork</span><small>3–5 min</small></li>
-</ul>
+<h3>Pilates Class Breakdown</h3>
+<p style="opacity:.8; margin-bottom:16px;">Each class follows a clear structure so you always know what to expect:</p>
+<div class="classBreakdown">
+  <div class="breakItem">
+    <strong>Gentle Warm-Up &amp; Mobility</strong>
+    <p>Prepare the body, improve joint movement and activate key muscle groups.</p>
+  </div>
+  <div class="breakItem">
+    <strong>Core &amp; Posture Focus</strong>
+    <p>Build deep core strength and improve alignment through controlled movements.</p>
+  </div>
+  <div class="breakItem">
+    <strong>Strength Flow</strong>
+    <p>Combine Pilates principles with strength-based sequences for full-body conditioning.</p>
+  </div>
+  <div class="breakItem">
+    <strong>Cooldown &amp; Breathwork</strong>
+    <p>Stretch, reset and finish with controlled breathing to support recovery.</p>
+  </div>
 </div>
 </div>
 <section style="max-width:900px;margin:0 auto;padding:40px 20px;text-align:center;">
@@ -684,14 +742,14 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 <section id="pricing">
   <div class="sectionTitle">
     <h2>Pricing</h2>
-    <p>Simple options — classes, mobile 1:1, and small group training.</p>
+    <p>Simple options — classes, private training, and small-group sessions.</p>
   </div>
 
   <div class="pricingGrid" aria-label="Pricing options">
 
     <!-- Pilates Drop-In -->
     <div class="card priceCard">
-      <h3>€15 <span class="muted">/ class</span></h3>
+      <h3>€15 <span class="muted">/ Pilates class</span></h3>
       <ul class="list">
         <li><span>Drop-in friendly</span></li>
         <li><span>All levels welcome</span></li>
@@ -704,7 +762,7 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 
     <!-- Pilates Bundle -->
     <div class="card priceCard featured">
-      <h3>€48 <span class="muted">/ 4 classes</span></h3>
+      <h3>€48 <span class="muted">/ 4 Pilates classes</span></h3>
       <p class="subPrice">€12 per class</p>
       <ul class="list">
         <li><span>Best for consistency</span></li>
@@ -714,128 +772,165 @@ I provide in-person training across Portlaoise and County Laois, with online coa
         <a class="btn primary" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Get the bundle</a>
       </div>
     </div>
+<div class="card" style="border:1px solid rgba(34,197,94,.35); background:linear-gradient(180deg, rgba(34,197,94,.12), rgba(0,0,0,.18));">
+  
+<!-- Indroductory Class -->
+  <h3>New Client Intro Session</h3>
+  <p class="copyHint" style="margin-top:6px;">One-time offer • 60 minutes</p>
 
-    <!-- 1:1 Mobile -->
-    <div class="card priceCard">
-      <h3>€50 <span class="muted">/ session</span></h3>
-      <p class="subPrice">Private Pilates & Strength Session (60 min)</p>
-      <ul class="list">
-        <li><span>Pilates + resistance training</span></li>
-        <li><span>Fully personalised</span></li>
-        <li><span>Equipment provided</span></li>
-      </ul>
-      <p class="blockPrice">5 sessions: €240<br>10 sessions: €450</p>
-      <div style="margin-top:14px">
-        <a class="btn" href="#contact">Enquire now</a>
-      </div>
-    </div>
-
-    <!-- 2 People -->
-    <div class="card priceCard">
-      <h3>€65 <span class="muted">/ session</span></h3>
-      <p class="subPrice">Semi-Private Pilates & Strength Training (2 People – 60 min)</p>
-      <ul class="list">
-        <li><span>Train with a friend</span></li>
-        <li><span>Individual coaching</span></li>
-        <li><span>Same location required</span></li>
-      </ul>
-      <p class="blockPrice">5 sessions: €300</p>
-      <div style="margin-top:14px">
-        <a class="btn" href="#contact">Book together</a>
-      </div>
-    </div>
-
-    <!-- 3 People -->
-    <div class="card priceCard">
-      <h3>€25 <span class="muted">/ person</span></h3>
-      <p class="subPrice">Small Group Pilates & Strength Training (3 People – 60 min)</p>
-      <ul class="list">
-        <li><span>Max 3 participants</span></li>
-        <li><span>Pilates strength focus</span></li>
-        <li><span>Supportive environment</span></li>
-      </ul>
-      <p class="blockPrice">5 sessions: €110 per person</p>
-      <div style="margin-top:14px">
-        <a class="btn" href="#contact">Start a group</a>
-      </div>
-    </div>
-
-  </div>
-
-  <p class="pricingNote">
-    Home sessions available within Portlaoise and surrounding areas (approximately 20 minutes). Locations further afield may include a small travel supplement.
+  <p style="margin-top:12px;">
+    <b style="font-size:32px">€50</b>
+    <span style="color:var(--muted)">/ first session</span>
   </p>
 
-  <!-- Payment (full width, below pricing) -->
-  <div class="paymentSection" aria-label="Payment options">
-    <div class="card paymentCard">
-      <div class="sectionTitle" style="margin-bottom:10px">
-        <h2 style="font-size:18px">Payment</h2>
-        <p>Pay in advance to secure your spot.</p>
-      </div>
+  <ul class="list">
+    <li><span>Initial assessment</span><small>movement + posture</small></li>
+    <li><span>Personalised session</span><small>based on your goals</small></li>
+    <li><span>Plan for next steps</span><small>clear guidance</small></li>
+  </ul>
 
-      <div class="twoCol payCols">
-        <div>
-          <b>Bank transfer (preferred)</b>
-          <div class="payBox" aria-label="Bank transfer details">
-            <div class="payRow">
-              <div>
-                <div class="payLabel">Account name (maiden name)</div>
-                <div class="payValue">Gina Andreea Paun</div>
-              </div>
-              <button class="copyBtn" data-copy="Gina Andreea Paun" type="button">Copy</button>
-            </div>
-            <div class="copyHint">Note: My bank account is in my maiden name (Paun).</div>
+  <p style="margin-top:12px; font-size:12px; color:var(--muted);">
+    Available for new clients only. One-time use per person.
+  </p>
 
-            <div class="payRow">
-              <div>
-                <div class="payLabel">IBAN</div>
-                <div class="payValue mono">IE69AIBK93351145078007</div>
-              </div>
-              <button class="copyBtn" data-copy="IE69AIBK93351145078007" type="button">Copy</button>
-            </div>
+  <div style="margin-top:14px">
+    <a class="btn primary" href="#contact">Start here</a>
+  </div>
+</div>
+    
+    <!-- 1:1 Mobile -->
+    <div class="card">
+  <h3>1:1 Private Training</h3>
+  <p class="copyHint" style="margin-top:6px;">Pilates & Strength • 60 minutes</p>
 
-            <div class="payRow">
-              <div>
-                <div class="payLabel">SWIFT / BIC</div>
-                <div class="payValue mono">AIBKIE2D</div>
-              </div>
-              <button class="copyBtn" data-copy="AIBKIE2D" type="button">Copy</button>
-            </div>
+  <p style="margin-top:12px;">
+    <b style="font-size:28px">€75</b>
+    <span style="color:var(--muted)">/ session</span>
+  </p>
 
-            <div class="payRow">
-              <div>
-                <div class="payLabel">Reference</div>
-                <div class="payValue">Your name + session date</div>
-              </div>
-              <button class="copyBtn" data-copy="Your name + session date" type="button">Copy</button>
-            </div>
-          </div>
-        </div>
+  <ul class="list">
+    <li>
+      <span>5-session pack</span>
+      <small>€325 (€65/session)</small>
+    </li>
+    <li>
+      <span>10-session pack</span>
+      <small>€600 (€60/session)</small>
+    </li>
+  </ul>
 
-        <div>
-          <b>Revolut</b>
-          <div class="payBox" aria-label="Revolut details">
-            <div class="payRow">
-              <div>
-                <div class="payLabel">Handle</div>
-                <div class="payValue mono">@andreed579</div>
-              </div>
-              <button class="copyBtn" data-copy="@andreed579" type="button">Copy</button>
-            </div>
-          </div>
+  <p style="margin-top:12px; color:var(--muted); font-size:13px;">
+    Fully personalised • Equipment included
+  </p>
 
-          <p class="copyHint" style="margin-top:10px">
-            After payment, send me a quick WhatsApp message with your preferred date/time and I’ll confirm your booking.
-          </p>
+  <div style="margin-top:14px">
+    <a class="btn primary" href="#contact">Enquire now</a>
+  </div>
+</div>
 
-          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-            <a class="btn whatsapp" href="https://wa.me/353896032793" rel="noreferrer" target="_blank">Message on WhatsApp</a>
-            <a class="btn" href="mailto:hello@andreeafitness.ie">Email</a>
-          </div>
-        </div>
-      </div>
+    <!-- 2 People -->
+    <div class="card">
+  <h3>2-Person Semi-Private Training</h3>
+  <p class="copyHint" style="margin-top:6px;">Pilates & Strength • 60 minutes</p>
 
+  <p style="margin-top:12px;">
+    <b style="font-size:28px">€50</b>
+    <span style="color:var(--muted)">/ person</span>
+  </p>
+
+  <ul class="list">
+    <li>
+      <span>5-session pack</span>
+      <small>€225 (€45/session)</small>
+    </li>
+  </ul>
+
+  <p style="margin-top:12px; color:var(--muted); font-size:13px;">
+    Train with a friend • Individual coaching • Shared motivation
+  </p>
+
+  <div style="margin-top:14px">
+    <a class="btn" href="#contact">Book together</a>
+  </div>
+</div>
+
+    <!-- 3 People -->
+<div class="card">
+  <h3>Small Group Personal Training (3 people)</h3>
+  <p class="copyHint" style="margin-top:6px;">Pilates & Strength • 60 minutes</p>
+
+  <p style="margin-top:12px;">
+    <b style="font-size:28px">€40</b>
+    <span style="color:var(--muted)">/ person</span>
+  </p>
+
+  <ul class="list">
+    <li>
+      <span>5-session pack</span>
+      <small>€180 (€36/session)</small>
+    </li>
+  </ul>
+
+  <p style="margin-top:12px; color:var(--muted); font-size:13px;">
+    Max 3 participants • Personalised guidance • Supportive environment
+  </p>
+
+  <div style="margin-top:14px">
+    <a class="btn" href="#contact">Start a group</a>
+  </div>
+</div>
+
+  <p class="pricingNote">
+    Home sessions are available within Portlaoise. Locations outside this area may be subject to an additional travel fee.
+  </p>
+ <!-- Online Session -->
+ <div class="card">
+  <h3>1:1 Online Personal Training</h3>
+  <p class="copyHint" style="margin-top:6px;">Pilates & Strength • Live via Google Meet • 60 minutes</p>
+
+  <p style="margin-top:12px;">
+    <b style="font-size:28px">€60</b>
+    <span style="color:var(--muted)">/ session</span>
+  </p>
+
+  <ul class="list">
+    <li>
+      <span>5-session pack</span>
+      <small>€275 (€55/session)</small>
+    </li>
+    <li>
+      <span>10-session pack</span>
+      <small>€500 (€50/session)</small>
+    </li>
+  </ul>
+
+  <p style="margin-top:12px; color:var(--muted); font-size:13px;">
+    Train from home • Personalised coaching • No equipment required
+  </p>
+
+  <div style="margin-top:14px">
+    <a class="btn" href="#contact">Book online</a>
+  </div>
+</div> 
+    
+<div class="card">
+  <h3>Payment</h3>
+
+  <p class="copyHint" style="margin-top:8px;">
+    Secure your session by booking via WhatsApp or email. 
+    Payment instructions will be sent upon confirmation.
+  </p>
+
+  <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+    <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank">
+      Message on WhatsApp
+    </a>
+
+    <a class="btn" href="mailto:hello@andreeafitness.ie">
+      Email
+    </a>
+  </div>
+</div>
       <div aria-live="polite" class="copyHint" id="copyHint"></div>
     </div>
   </div>
@@ -843,7 +938,6 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 <section id="contact">
   <div class="sectionTitle">
     <h2>Book Your First Session</h2>
-    <p>Certified coaching in Portlaoise — beginner friendly and supportive.</p>
   </div>
 
   <div class="contactGrid">
@@ -968,26 +1062,55 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 </div>
 </section>
 <section id="gallery">
-<div class="sectionTitle">
-<h2>Photo Gallery</h2>
-<p>A quick look at the vibe.</p>
-</div>
-<div aria-label="Photo gallery" class="gallery">
-<div class="gItem" data-src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=1400&amp;q=70" data-title="Pilates flow">
-<img alt="Pilates flow" loading="lazy" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=900&amp;q=70"/>
-<span class="gCap">Pilates flow</span>
-</div>
-<div class="gItem" data-src="https://images.unsplash.com/photo-1518459031867-a89b944bffe4?auto=format&amp;fit=crop&amp;w=1400&amp;q=70" data-title="Core strength">
-<img alt="Core strength" loading="lazy" src="https://images.unsplash.com/photo-1518459031867-a89b944bffe4?auto=format&amp;fit=crop&amp;w=900&amp;q=70"/>
-<span class="gCap">Core strength</span>
-</div>
-<div class="gItem" data-src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?auto=format&amp;fit=crop&amp;w=1400&amp;q=70" data-title="Mobility">
-<img alt="Mobility" loading="lazy" src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?auto=format&amp;fit=crop&amp;w=900&amp;q=70"/>
-<span class="gCap">Mobility</span>
-</div>
-</div>
-<p class="mini" style="margin-top:10px">Want these to be your real class photos? Upload images to the repo and I’ll swap the links.</p>
+  <div class="sectionTitle">
+    <h2>Photo Gallery</h2>
+    <p>A quick look at the vibe.</p>
+  </div>
+
+  <div class="galleryGrid">
+    <div class="gItem" data-src="images/pilates-instructor-portlaoise.webp" data-title="Mat Pilates">
+      <img
+        src="images/pilates-instructor-portlaoise.webp"
+        alt="Pilates instructor in Portlaoise demonstrating mat Pilates"
+        loading="lazy"
+      />
+      <span class="gCap">Mat Pilates</span>
+    </div>
+
+    <div class="gItem" data-src="images/the-hundred.webp" data-title="The Hundred">
+      <img
+        src="images/the-hundred.webp"
+        alt="Mat Pilates The Hundred core exercise demonstration"
+        loading="lazy"
+      />
+      <span class="gCap">The Hundred</span>
+    </div>
+
+    <div class="gItem" data-src="images/criss-cross.webp" data-title="Criss Cross">
+      <img
+        src="images/criss-cross.webp"
+        alt="Mat Pilates Criss Cross abdominal exercise demonstration"
+        loading="lazy"
+      />
+      <span class="gCap">Criss Cross</span>
+    </div>
+    
+    </div>
 </section>
+  
+<section id="video" class="videoSection">
+  <div class="sectionTitle">
+    <h2>Class Preview</h2>
+  </div>
+
+  <div class="videoCard">
+    <video class="promoVideo" autoplay muted loop playsinline controls>
+      <source src="videos/pilates-gallery-optimized.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
 <footer>
 <div class="footRow">
 <div>© <span id="year"></span> Andreea's Rhythmic Fitness • Portlaoise</div>
@@ -1085,7 +1208,7 @@ window.location.href = mailto;
         if(lbImg) lbImg.src = '';
       }
 
-      document.querySelectorAll('.gItem').forEach(el => {
+      document.querySelectorAll('.gItem[data-src]').forEach(el => {
         el.addEventListener('click', () => {
           const src = el.getAttribute('data-src');
           const title = el.getAttribute('data-title') || 'Image';
@@ -1113,6 +1236,27 @@ window.location.href = mailto;
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
