@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>REPs Ireland Certified Female Personal Trainer in Portlaoise | Pilates & Fitness Coaching</title>
 <meta content="Female personal trainer in Portlaoise offering Pilates, 1:1 coaching, small group training and fitness classes. Friendly, supportive and results-driven sessions. Book today." name="description"/>
@@ -515,7 +515,6 @@ html, body { overflow-x: hidden; }
   <a class="btn" href="/#pricing">See pricing</a>
   <a class="btn primary" href="/#contact">Get started</a>
   <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">WhatsApp</a>
-  <a class="btn" href="/terms.html">Terms</a>
 </div>
 </div>
 </div>
@@ -616,7 +615,7 @@ I provide in-person training across Portlaoise and County Laois, with online coa
     <div class="profile">
      <img 
     class="avatar"
-    src="eu bun.jpg"
+    src="eu-bun.jpg"
     alt="Gina Andreea Serafim – Personal Trainer in Portlaoise"
     loading="lazy"
   />
@@ -736,6 +735,37 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 
 </section>
 
+<!-- Calendly script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</section>
+<section style="max-width:900px;margin:0 auto;padding:40px 20px;text-align:center;">
+
+  <h2 style="margin-bottom:10px;">Book Your Pilates Class</h2>
+
+  <p style="margin-bottom:5px;">
+    📍 Maldron Hotel, Portlaoise
+  </p>
+
+  <p style="margin-bottom:20px;">
+    Every Saturday • Limited spots available
+  </p>
+
+  <p style="font-weight:bold;margin-bottom:25px;">
+    Max 12 participants • Booking closes when full
+  </p>
+
+  <!-- Calendly inline widget begin -->
+  <div class="calendly-inline-widget"
+    data-url="https://calendly.com/hello-andreeafitness/pilates-mat-class-maldron-hotel"
+    style="min-width:320px;height:750px;">
+  </div>
+  <!-- Calendly inline widget end -->
+
+  <!-- Optional WhatsApp fallback -->
+  <a href="https://wa.me/353896032793"
+     style="display:inline-block;margin-top:20px;padding:14px 24px;background:#25D366;color:white;border-radius:10px;text-decoration:none;font-weight:bold;">
+     Prefer WhatsApp? Message me
+  </a>
 <!-- Calendly script -->
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </section>
@@ -863,14 +893,16 @@ I provide in-person training across Portlaoise and County Laois, with online coa
     <b style="font-size:28px">€40</b>
     <span style="color:var(--muted)">/ person</span>
   </p>
+<ul class="list">
+  <li>
+    <span>5-session pack</span>
+    <small>€180 (€36/session)</small>
+  </li>
+</ul>
 
-  <ul class="list">
-    <li>
-      <span>5-session pack</span>
-      <small>€180 (€36/session)</small>
-    </li>
-  </ul>
-
+<p style="margin-top:12px; color:var(--muted); font-size:13px;">
+  Max 3 participants • Personalised guidance • Supportive environment
+</p>
   <p style="margin-top:12px; color:var(--muted); font-size:13px;">
     Max 3 participants • Personalised guidance • Supportive environment
   </p>
@@ -920,12 +952,15 @@ I provide in-person training across Portlaoise and County Laois, with online coa
     Secure your session by booking via WhatsApp or email. 
     Payment instructions will be sent upon confirmation.
   </p>
+<div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+  <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank">
+    Message on WhatsApp
+  </a>
 
-  <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank">
-      Message on WhatsApp
-    </a>
-
+  <a class="btn" href="mailto:hello@andreeafitness.ie">
+    Email
+  </a>
+</div>
     <a class="btn" href="mailto:hello@andreeafitness.ie">
       Email
     </a>
@@ -1096,8 +1131,6 @@ I provide in-person training across Portlaoise and County Laois, with online coa
     </div>
     
     </div>
-</section>
-  
 <section id="video" class="videoSection">
   <div class="sectionTitle">
     <h2>Class Preview</h2>
@@ -1222,8 +1255,6 @@ window.location.href = mailto;
 
       // ===== Testimonials slider controls =====
       const slider = document.getElementById('tSlider');
-      const prev = document.getElementById('tPrev');
-      const next = document.getElementById('tNext');
       function scrollByCard(dir){
         if(!slider) return;
         const card = slider.querySelector('.tCard');
