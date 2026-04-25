@@ -387,6 +387,7 @@
     text-align:center;
   }
 }
+    }
     .iconBtn{
       display:inline-flex;
       gap:10px;
@@ -543,6 +544,7 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 <span class="pill">Online Coaching Pilates & Strength</span>
 </div>
 </div>
+</div>
 <div class="hCard">
 <div class="quick">
 <div class="qItem">
@@ -647,8 +649,10 @@ I provide in-person training across Portlaoise and County Laois, with online coa
   This professional experience allows me to design dynamic, rhythm-led fitness sessions that are accessible for beginners while still offering progression and challenge for more advanced clients.
 </p>
         <!-- BIO ENDS HERE -->
-
-     </section>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="classes">
 <div class="sectionTitle">
 <h2>Classes &amp; Services</h2>
@@ -697,6 +701,7 @@ I provide in-person training across Portlaoise and County Laois, with online coa
   </div>
 </div>
 </div>
+</div>
 <section style="max-width:900px;margin:0 auto;padding:40px 20px;text-align:center;">
 
   <h2 style="margin-bottom:10px;">Book Your Pilates Class</h2>
@@ -731,8 +736,6 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 <!-- Calendly script -->
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </section>
-<section id="pricing">
-  <div class="sectionTitle">
 <section id="pricing">
   <div class="sectionTitle">
     <h2>Pricing</h2>
@@ -914,7 +917,7 @@ I provide in-person training across Portlaoise and County Laois, with online coa
     Payment instructions will be sent upon confirmation.
   </p>
 <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
-  <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank">
+  <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noopener noreferrer">
     Message on WhatsApp
   </a>
     <a class="btn" href="mailto:hello@andreeafitness.ie">
@@ -924,7 +927,6 @@ I provide in-person training across Portlaoise and County Laois, with online coa
 </div>
       <div aria-live="polite" class="copyHint" id="copyHint"></div>
     </div>
-  </div>
 </section>
 <section id="contact">
   <div class="sectionTitle">
@@ -1087,6 +1089,7 @@ I provide in-person training across Portlaoise and County Laois, with online coa
     </div>
     
     </div>
+</section>
 <section id="video" class="videoSection">
   <div class="sectionTitle">
     <h2>Class Preview</h2>
@@ -1211,6 +1214,8 @@ window.location.href = mailto;
 
       // ===== Testimonials slider controls =====
       const slider = document.getElementById('tSlider');
+      const prev = document.getElementById('tPrev');
+      const next = document.getElementById('tNext');
       function scrollByCard(dir){
         if(!slider) return;
         const card = slider.querySelector('.tCard');
