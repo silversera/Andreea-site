@@ -22,38 +22,37 @@ jobs:
           python - <<'PY'
           from pathlib import Path
 
-          path = Path('index.html')
-          text = path.read_text(encoding='utf-8')
+          index = Path('index.html')
+          text = index.read_text(encoding='utf-8')
 
           nav_link = '<a href="/personal-training.html">Personal Training</a>'
           if nav_link not in text:
               text = text.replace('<a href="#about">About</a>', '<a href="#about">About</a>\n' + nav_link, 1)
 
-          service_button = 'Explore personal training'
-          if service_button not in text:
-              old = '''<div class="card">
-<h3>Personal Training</h3>
-<p>1:1 coaching tailored to your goals: strength, confidence, mobility, and sustainable progress.</p>
-</div>'''
-              new = '''<div class="card">
-<h3>Personal Training</h3>
-<p>1:1 coaching tailored to your goals: strength, confidence, mobility, and sustainable progress.</p>
-<div style="margin-top:14px">
-<a class="btn primary" href="/personal-training.html">Explore personal training</a>
-</div>
-</div>'''
-              if old not in text:
-                  raise SystemExit('Personal Training service card pattern not found')
-              text = text.replace(old, new, 1)
+          if 'Explore personal training' not in text:
+              card_start = text.find('<h3>Personal Training</h3>')
+              if card_start == -1:
+                  raise SystemExit('Personal Training service card heading not found')
+              close = text.find('</div>', card_start)
+              if close == -1:
+                  raise SystemExit('Personal Training service card closing div not found')
+              button = '\n<div style="margin-top:14px">\n<a class="btn primary" href="/personal-training.html">Explore personal training</a>\n</div>'
+              text = text[:close] + button + text[close:]
 
-          path.write_text(text, encoding='utf-8', newline='')
-          Path('.github/workflows/codex-personal-training-links.yml').unlink()
+          index.write_text(text, encoding='utf-8', newline='')
+
+          for cleanup in [
+              Path('.github/workflows/codex-personal-training-links.yml'),
+              Path('.codex-trigger-personal-training-links.txt'),
+          ]:
+              if cleanup.exists():
+                  cleanup.unlink()
           PY
 
       - name: Commit homepage update
         run: |
           git config user.name "codex-bot"
           git config user.email "codex-bot@users.noreply.github.com"
-          git add index.html .github/workflows/codex-personal-training-links.yml
+          git add index.html .github/workflows/codex-personal-training-links.yml .codex-trigger-personal-training-links.txt
           git commit -m "Add Personal Training links to homepage"
           git push origin HEAD:Test
