@@ -1,0 +1,59 @@
+name: Codex homepage personal training links
+
+on:
+  push:
+    branches:
+      - Test
+
+permissions:
+  contents: write
+
+jobs:
+  patch-homepage:
+    if: contains(github.event.head_commit.message, 'Trigger homepage personal training link patch')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: Test
+
+      - name: Add homepage links
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          nav_link = '<a href="/personal-training.html">Personal Training</a>'
+          if nav_link not in text:
+              text = text.replace('<a href="#about">About</a>', '<a href="#about">About</a>\n' + nav_link, 1)
+
+          service_button = 'Explore personal training'
+          if service_button not in text:
+              old = '''<div class="card">
+<h3>Personal Training</h3>
+<p>1:1 coaching tailored to your goals: strength, confidence, mobility, and sustainable progress.</p>
+</div>'''
+              new = '''<div class="card">
+<h3>Personal Training</h3>
+<p>1:1 coaching tailored to your goals: strength, confidence, mobility, and sustainable progress.</p>
+<div style="margin-top:14px">
+<a class="btn primary" href="/personal-training.html">Explore personal training</a>
+</div>
+</div>'''
+              if old not in text:
+                  raise SystemExit('Personal Training service card pattern not found')
+              text = text.replace(old, new, 1)
+
+          path.write_text(text, encoding='utf-8', newline='')
+          Path('.github/workflows/codex-personal-training-links.yml').unlink()
+          PY
+
+      - name: Commit homepage update
+        run: |
+          git config user.name "codex-bot"
+          git config user.email "codex-bot@users.noreply.github.com"
+          git add index.html .github/workflows/codex-personal-training-links.yml
+          git commit -m "Add Personal Training links to homepage"
+          git push origin HEAD:Test
