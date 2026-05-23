@@ -489,6 +489,11 @@ html, body { overflow-x: hidden; }
   .pricingGrid{ grid-template-columns: 1fr; }
 }
 
+.mobileNavLink{display:none}
+@media (max-width: 960px){
+  .mobileNavLink{display:inline-flex}
+}
+
 </style>
 <link href="/favicon.ico" rel="icon"/><link href="/apple-touch-icon.png" rel="apple-touch-icon"/></head>
 <body>
@@ -504,7 +509,7 @@ html, body { overflow-x: hidden; }
 </a>
 <nav aria-label="Primary" class="links">
 <a href="#about">About</a>
-<a href="/personal-training.html">Personal Training</a>
+<a href="/personal-trainer/">Personal Trainer</a>
 <a href="#classes">Classes</a>
 <a href="#schedule">Schedule</a>
 <a href="#pricing">Pricing</a>
@@ -515,6 +520,7 @@ html, body { overflow-x: hidden; }
 </nav>
 <div class="cta">
   <a class="btn" href="/#pricing">See pricing</a>
+  <a class="btn mobileNavLink" href="/personal-trainer/">Personal Trainer</a>
   <a class="btn primary" href="/#contact">Get started</a>
   <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">WhatsApp</a>
 </div>
@@ -691,7 +697,7 @@ I provide in-person training across Portlaoise and County Laois, with online coa
     <p>One-to-one sessions tailored to your goals (strength, mobility, confidence, technique). Ask for availability.</p>
   
 <div style="margin-top:14px">
-<a class="btn primary" href="/personal-training.html">Explore personal training</a>
+<a class="btn primary" href="/personal-trainer/">Explore personal training</a>
 </div></div>
 
   <div class="card">
