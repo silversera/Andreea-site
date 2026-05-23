@@ -1,0 +1,74 @@
+name: Codex mobile Personal Trainer route
+
+on:
+  push:
+    branches:
+      - Test
+
+permissions:
+  contents: write
+
+jobs:
+  patch-mobile-personal-trainer:
+    if: contains(github.event.head_commit.message, 'Trigger mobile Personal Trainer nav patch')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: Test
+
+      - name: Patch mobile navigation and clean route
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path('.')
+          index = root / 'index.html'
+          personal_training = root / 'personal-training.html'
+          personal_route = root / 'personal-trainer' / 'index.html'
+
+          text = index.read_text(encoding='utf-8')
+          text = text.replace('/personal-training.html', '/personal-trainer/')
+          text = text.replace('>Personal Training</a>', '>Personal Trainer</a>')
+
+          mobile_css = '.mobileNavLink{display:none}\n@media (max-width: 960px){\n  .mobileNavLink{display:inline-flex}\n}\n'
+          if '.mobileNavLink{display:none}' not in text:
+              text = text.replace('\n</style>', '\n' + mobile_css + '\n</style>', 1)
+
+          mobile_link = '  <a class="btn mobileNavLink" href="/personal-trainer/">Personal Trainer</a>\n'
+          if 'class="btn mobileNavLink" href="/personal-trainer/"' not in text:
+              text = text.replace('  <a class="btn" href="/#pricing">See pricing</a>\n', '  <a class="btn" href="/#pricing">See pricing</a>\n' + mobile_link, 1)
+
+          index.write_text(text, encoding='utf-8', newline='')
+
+          personal = personal_training.read_text(encoding='utf-8')
+          personal = personal.replace('https://andreeafitness.ie/personal-training.html', 'https://andreeafitness.ie/personal-trainer/')
+          personal = personal.replace('/personal-training.html', '/personal-trainer/')
+
+          compact_mobile_css = '.mobileNavLink{display:none}@media (max-width:960px){.mobileNavLink{display:inline-flex}}'
+          readable_mobile_css = '.mobileNavLink{display:none}\n@media (max-width: 960px){\n  .mobileNavLink{display:inline-flex}\n}\n'
+          if '.mobileNavLink{display:none}' not in personal:
+              if '</style>' in personal:
+                  personal = personal.replace('</style>', compact_mobile_css + '\n</style>', 1)
+
+          if 'class="btn mobileNavLink' not in personal:
+              personal = personal.replace('<div class="cta"><a class="btn primary" href="/#contact">Get started</a>', '<div class="cta"><a class="btn mobileNavLink active" href="/personal-trainer/">Personal Trainer</a><a class="btn primary" href="/#contact">Get started</a>', 1)
+
+          personal_route.parent.mkdir(parents=True, exist_ok=True)
+          personal_route.write_text(personal, encoding='utf-8', newline='')
+
+          for cleanup in [
+              root / '.github/workflows/codex-mobile-personal-trainer.yml',
+              root / '.codex-trigger-mobile-personal-trainer.txt',
+          ]:
+              if cleanup.exists():
+                  cleanup.unlink()
+          PY
+
+      - name: Commit mobile route update
+        run: |
+          git config user.name "codex-bot"
+          git config user.email "codex-bot@users.noreply.github.com"
+          git add index.html personal-trainer/index.html .github/workflows/codex-mobile-personal-trainer.yml .codex-trigger-mobile-personal-trainer.txt
+          git commit -m "Add mobile Personal Trainer route and nav"
+          git push origin HEAD:Test
