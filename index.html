@@ -92,7 +92,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(14,17,23,.9);backdrop-fi
 .btn:hover,.menuBtn:hover{background:rgba(255,255,255,.08)}
 .btn.primary{background:linear-gradient(135deg,rgba(255,111,97,.98),rgba(255,88,72,.9));border-color:rgba(255,255,255,.2)}
 .btn.whatsapp{background:linear-gradient(135deg,rgba(34,197,94,.94),rgba(16,185,129,.8));border-color:rgba(255,255,255,.18)}
-.menuBtn{display:none;width:46px;padding:0;font-size:22px;line-height:1}
+.menuBtn{display:none;padding:0 12px;line-height:1}
 .mobileMenu{display:none;border-top:1px solid var(--border);padding:10px 0 16px}
 .mobileMenu a{display:flex;align-items:center;min-height:46px;padding:10px 12px;border-radius:10px;color:var(--text);font-weight:750}
 .mobileMenu a:hover,.mobileMenu a:focus{background:rgba(255,255,255,.06)}
@@ -131,6 +131,16 @@ h1{margin:0 0 12px;font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacin
 .eyebrow{margin:0 0 6px;color:var(--soft);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}
 .price{margin:12px 0 0;font-size:32px;line-height:1;font-weight:950}
 .price span{font-size:13px;color:var(--muted);font-weight:800}
+.singleSession{margin:12px 0 0;padding:12px;border:1px solid rgba(255,255,255,.09);border-radius:14px;background:rgba(0,0,0,.12)}
+.singleSession .label{display:block;color:var(--muted);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}
+.singleSession .amount{display:block;margin-top:4px;font-size:21px;font-weight:900}
+.singleSession p{margin-top:4px;font-size:13px}
+.packageOptions{display:grid;gap:10px;margin-top:14px}
+.packageOption{padding:13px;border:1px solid rgba(255,111,97,.26);border-radius:14px;background:linear-gradient(180deg,rgba(255,111,97,.095),rgba(255,255,255,.03))}
+.packageOption.best{border-color:rgba(198,168,255,.42);background:linear-gradient(180deg,rgba(198,168,255,.12),rgba(255,255,255,.03))}
+.packageLabel{display:inline-flex;align-items:center;min-height:26px;margin-bottom:8px;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--text);font-size:12px;font-weight:900}
+.packageLine{display:flex;align-items:baseline;justify-content:space-between;gap:10px;font-size:15px;font-weight:900}
+.packageLine small{color:var(--muted);font-size:13px;font-weight:800;text-align:right}
 .included{display:grid;gap:8px;list-style:none;margin:14px 0 0;padding:0;color:var(--muted);font-size:13px}
 .included li{position:relative;padding-left:20px}
 .included li:before{content:'\2713';position:absolute;left:0;color:var(--accent2);font-weight:900}
@@ -138,6 +148,7 @@ h1{margin:0 0 12px;font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacin
 .list li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--border);font-size:13px}
 .list small{color:var(--muted);text-align:right}
 .supportingServices{margin-top:22px}
+scheduleGrid,.contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .scheduleGrid,.contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .badge{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:rgba(0,0,0,.2);font-weight:900}
 .galleryGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
@@ -175,6 +186,8 @@ footer{padding:32px 0 42px;color:var(--muted);font-size:12px}
   .actions{gap:8px}
   .actions .whatsapp{display:none}
   .pad,.card{padding:16px}
+  .packageLine{align-items:flex-start;flex-direction:column}
+  .packageLine small{text-align:left}
   .list li{align-items:flex-start;flex-direction:column}
   .list small{text-align:left}
 }
@@ -201,7 +214,7 @@ footer{padding:32px 0 42px;color:var(--muted);font-size:12px}
         <a class="btn desktopOnly" href="#pricing">Pricing</a>
         <a class="btn primary" href="#contact">Enquire</a>
         <a class="btn whatsapp" href="https://wa.me/353896032793" target="_blank" rel="noreferrer">WhatsApp</a>
-        <button class="menuBtn" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
+        <button class="menuBtn" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">Menu</button>
       </div>
     </div>
     <nav class="mobileMenu" id="mobileMenu" aria-label="Mobile navigation">
@@ -288,36 +301,80 @@ footer{padding:32px 0 42px;color:var(--muted);font-size:12px}
           <p class="eyebrow">Most personalised</p>
           <h3>1:1 Private Training</h3>
           <p>Pilates &amp; Strength &bull; At your home &bull; 60 minutes</p>
-          <div class="price">&euro;75 <span>/ session</span></div>
+          <div class="singleSession">
+            <span class="label">Single Session</span>
+            <span class="amount">&euro;75 / session</span>
+            <p>Flexible option for getting started</p>
+          </div>
+          <div class="packageOptions" aria-label="1:1 Private Training packages">
+            <div class="packageOption">
+              <span class="packageLabel">Recommended for consistency</span>
+              <div class="packageLine"><span>5-session pack</span><small>&euro;325 (&euro;65/session)</small></div>
+            </div>
+            <div class="packageOption best">
+              <span class="packageLabel">Best value</span>
+              <div class="packageLine"><span>10-session pack</span><small>&euro;600 (&euro;60/session)</small></div>
+            </div>
+          </div>
           <ul class="included"><li>Initial movement/posture check</li><li>Personalised Pilates &amp; strength plan</li><li>Mobility and flexibility work</li><li>Core, posture and stability coaching</li><li>Equipment included where needed</li></ul>
-          <ul class="list"><li><span>5-session pack</span><small>&euro;325 (&euro;65/session)</small></li><li><span>10-session pack</span><small>&euro;600 (&euro;60/session)</small></li></ul>
           <div class="heroActions"><a class="btn primary" href="#contact">Enquire now</a></div>
         </article>
         <article class="card priceCard primaryFocus">
           <p class="eyebrow">Train together</p>
           <h3>2-Person Semi-Private Training</h3>
           <p>Pilates &amp; Strength &bull; At your home &bull; 60 minutes</p>
-          <div class="price">&euro;50 <span>/ person</span></div>
+          <div class="singleSession">
+            <span class="label">Single Session</span>
+            <span class="amount">&euro;50 / person</span>
+            <p>Flexible option for getting started together</p>
+          </div>
+          <div class="packageOptions" aria-label="2-Person Semi-Private Training packages">
+            <div class="packageOption">
+              <span class="packageLabel">Recommended for consistency</span>
+              <div class="packageLine"><span>5-session pack</span><small>&euro;225 (&euro;45/session per person)</small></div>
+            </div>
+          </div>
           <ul class="included"><li>Shared coaching with individual attention</li><li>Pilates &amp; strength-based training</li><li>Mobility, flexibility and posture work</li><li>Core and stability focus</li><li>Gear provided where needed</li></ul>
-          <ul class="list"><li><span>5-session pack</span><small>&euro;225 (&euro;45/session)</small></li></ul>
           <div class="heroActions"><a class="btn" href="#contact">Book together</a></div>
         </article>
         <article class="card priceCard primaryFocus">
           <p class="eyebrow">Private small group</p>
           <h3>Small Group Personal Training (3 people)</h3>
           <p>Pilates &amp; Strength &bull; At your home &bull; 60 minutes</p>
-          <div class="price">&euro;40 <span>/ person</span></div>
+          <div class="singleSession">
+            <span class="label">Single Session</span>
+            <span class="amount">&euro;40 / person</span>
+            <p>Flexible option for trying a private group session</p>
+          </div>
+          <div class="packageOptions" aria-label="Small Group Personal Training packages">
+            <div class="packageOption">
+              <span class="packageLabel">Most popular</span>
+              <div class="packageLine"><span>5-session pack</span><small>&euro;180 (&euro;36/session per person)</small></div>
+            </div>
+          </div>
           <ul class="included"><li>Supportive coaching for up to 3 people</li><li>Strength, Pilates and mobility flow</li><li>Options for different ability levels</li><li>Core and stability focus</li><li>Shared motivation and accountability</li></ul>
-          <ul class="list"><li><span>5-session pack</span><small>&euro;180 (&euro;36/session)</small></li></ul>
           <div class="heroActions"><a class="btn" href="#contact">Start a group</a></div>
         </article>
         <article class="card priceCard primaryFocus">
           <p class="eyebrow">Flexible online option</p>
           <h3>1:1 Online Personal Training</h3>
           <p>Pilates &amp; Strength &bull; Live via Google Meet &bull; 60 minutes</p>
-          <div class="price">&euro;60 <span>/ session</span></div>
+          <div class="singleSession">
+            <span class="label">Single Session</span>
+            <span class="amount">&euro;60 / session</span>
+            <p>Flexible option for getting started online</p>
+          </div>
+          <div class="packageOptions" aria-label="1:1 Online Personal Training packages">
+            <div class="packageOption">
+              <span class="packageLabel">Recommended for consistency</span>
+              <div class="packageLine"><span>5-session pack</span><small>&euro;275 (&euro;55/session)</small></div>
+            </div>
+            <div class="packageOption best">
+              <span class="packageLabel">Best value</span>
+              <div class="packageLine"><span>10-session pack</span><small>&euro;500 (&euro;50/session)</small></div>
+            </div>
+          </div>
           <ul class="included"><li>Personalised progression from home</li><li>Strength, mobility and flexibility work</li><li>Core, posture and stability focus</li><li>Low-equipment options available</li><li>Accountability without travel time</li></ul>
-          <ul class="list"><li><span>5-session pack</span><small>&euro;275 (&euro;55/session)</small></li><li><span>10-session pack</span><small>&euro;500 (&euro;50/session)</small></li></ul>
           <div class="heroActions"><a class="btn" href="#contact">Book online</a></div>
         </article>
         <article class="card priceCard primaryFocus">
